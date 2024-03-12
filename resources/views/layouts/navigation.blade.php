@@ -453,6 +453,26 @@
                 </div>
             </li>
 
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#category" aria-expanded="false" aria-controls="category"
+                    class="side-nav-link">
+                    <i class="ri-file-list-fill"></i>
+                    <span> Category </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="category">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="{{ route('category') }}">Category</a>
+                        </li>
+                        <li>
+                            <a href="ui-alerts.html">Sub Category</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+
 
         </ul>
         <!--- End Sidemenu -->
