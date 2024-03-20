@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Blog extends Model
 {
     use HasFactory;
-
-    public function subcategories()
+    public function blogcategory()
     {
-        return $this->hasMany(Subcategory::class);
+        return $this->hasMany(BlogCategory::class);
     }
 }

@@ -17,11 +17,7 @@
                                         data-bs-target="#exampleModal" data-bs-whatever="@mdo">Create Category</button>
 
                                 </div>
-                                {{-- <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Velonic</a></li>
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                    <li class="breadcrumb-item active">Data Tables</li>
-                                </ol> --}}
+
                             </div>
 
                             <h4 class="page-title">Categories</h4>
@@ -44,7 +40,7 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form method="POST" action="{{ route('create-category') }}"
+                                    <form method="POST" action="{{ route('create-blog-category') }}"
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="mb-3">
@@ -131,7 +127,7 @@
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <form method="POST"
-                                                                        action="{{ route('update-category', $category->id) }}"
+                                                                        action="{{ route('update-blog-category', $category->id) }}"
                                                                         enctype="multipart/form-data">
                                                                         @csrf
                                                                         <div class="mb-3">
@@ -199,7 +195,8 @@
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary"
                                                                             data-bs-dismiss="modal">Close</button>
-                                                                        <a href="{{ route('delete-category', $category->id) }}" type="submit"
+                                                                        <a href="{{ route('delete-blog-category', $category->id) }}"
+                                                                            type="submit"
                                                                             class="btn btn-primary">Confirm</a>
                                                                     </div>
                                                                 </div>

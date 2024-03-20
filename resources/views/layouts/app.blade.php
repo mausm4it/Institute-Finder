@@ -17,24 +17,6 @@
     <link rel="stylesheet" href="{{ asset('public/build/assets/app.css') }}">
     <script src="{{ asset('public/build/assets/app.js') }}" defer></script>
 
-
-
-
-    {{-- external link start --}}
-
-    {{-- <link href="{{ 'public/assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css' }}" rel="stylesheet"
-        type="text/css" />
-    <link href="{{ 'public/assets/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css' }}"
-        rel="stylesheet" type="text/css" />
-    <link href="{{ 'public/assets/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css' }}"
-        rel="stylesheet" type="text/css" />
-    <link href="{{ 'public/assets/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css' }}"
-        rel="stylesheet" type="text/css" />
-    <link href="{{ 'public/assets/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css' }}" rel="stylesheet"
-        type="text/css" />
-    <link href="{{ 'public/assets/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css' }}" rel="stylesheet"
-        type="text/css" /> --}}
-
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('public/assets/images/favicon.ico') }}">
 
@@ -108,37 +90,15 @@
     <!-- App js -->
     <script src="{{ asset('public/assets/js/app.min.js') }}"></script>
 
+    <!-- Vendor js -->
+    <script src="{{ asset('public/assets/js/vendor.min.js') }}"></script>
 
+    <!-- Bootstrap Wizard Form js -->
+    <script src="{{ asset('public/assets/vendor/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js') }}"></script>
 
-
-
-
-
-
-
-
-
-
-    <!-- Datatables js -->
-    {{-- <script src="{{ asset('public/assets/vendor/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('public/assets/vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
-    <script src="{{ asset('public/assets/vendor/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('public/assets/vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js') }}">
-    </script>
-    <script src="{{ asset('public/assets/vendor/datatables.net-fixedcolumns-bs5/js/fixedColumns.bootstrap5.min.js') }}">
-    </script>
-    <script src="{{ asset('public/assets/vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js') }}"></script>
-    <script src="{{ asset('public/assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('public/assets/vendor/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js') }}"></script>
-    <script src="{{ asset('public/assets/vendor/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('public/assets/vendor/datatables.net-buttons/js/buttons.flash.min.js') }}"></script>
-    <script src="{{ asset('public/assets/vendor/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
-    <script src="{{ asset('public/assets/vendor/datatables.net-keytable/js/dataTables.keyTable.min.js') }}"></script>
-    <script src="{{ asset('public/assets/vendor/datatables.net-select/js/dataTables.select.min.js') }}"></script> --}}
-
-    <!-- Datatable Demo Aapp js -->
+    <!-- Wizard Form Demo js -->
+    <script src="{{ asset('public/assets/js/pages/form-wizard.init.js') }}"></script>
     <script src="{{ asset('public/assets/js/pages/datatable.init.js') }}"></script>
-
 
     {{-- external link end --}}
 </body>

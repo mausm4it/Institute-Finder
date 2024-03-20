@@ -14,7 +14,7 @@
                             <div class="page-title-right">
                                 <div class="hstack gap-2 flex-wrap">
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal" data-bs-whatever="@mdo">Create Category</button>
+                                        data-bs-target="#exampleModal" data-bs-whatever="@mdo">Create Sub Category</button>
 
                                 </div>
                                 {{-- <ol class="breadcrumb m-0">
@@ -24,7 +24,7 @@
                                 </ol> --}}
                             </div>
 
-                            <h4 class="page-title">Categories</h4>
+                            <h4 class="page-title">Sub Categories</h4>
                             @include('alert.index')
                         </div>
 
@@ -39,12 +39,12 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Create Category</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Create Sub Category</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form method="POST" action="{{ route('create-category') }}"
+                                    <form method="POST" action="{{ route('create-sub-category') }}"
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="mb-3">
@@ -58,6 +58,21 @@
                                             <input type="text" class="form-control" name="slug"
                                                 placeholder="Enter Category Slug" value="{{ old('slug') }}"
                                                 id="slug">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="col-form-label">Parent Category:</label>
+
+                                            <select class="form-select" name="category_id">
+                                                @if (!empty($categories))
+                                                    @foreach ($categories as $category)
+                                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                    @endforeach
+                                                @endif
+
+
+                                            </select>
+
                                         </div>
 
                                         <script>
@@ -88,7 +103,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="header-title">Categories List</h4>
+                                <h4 class="header-title">Sub Categories List</h4>
 
                             </div>
                             <div class="card-body">
@@ -99,6 +114,7 @@
 
                                             <th>Name</th>
                                             <th>Slug</th>
+                                            <th>Parent Category</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
 
@@ -111,11 +127,12 @@
 
 
                                     <tbody>
-                                        @foreach ($categories as $category)
+                                        @foreach ($subCategories as $subCategory)
                                             <tr>
 
-                                                <td>{{ $category->name }}</td>
-                                                <td>{{ $category->slug }}</td>
+                                                <td>{{ $subCategory->name }}</td>
+                                                <td>{{ $subCategory->slug }}</td>
+                                                <td>{{ $subCategory->category->name }}</td>
                                                 <td>
 
 
@@ -131,7 +148,7 @@
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <form method="POST"
-                                                                        action="{{ route('update-category', $category->id) }}"
+                                                                        action="{{ route('update-sub-category', $subCategory->id) }}"
                                                                         enctype="multipart/form-data">
                                                                         @csrf
                                                                         <div class="mb-3">
@@ -139,7 +156,7 @@
                                                                             <input type="text" class="form-control"
                                                                                 name="name"
                                                                                 placeholder="Enter Category Name"
-                                                                                value="{{ $category->name }}"
+                                                                                value="{{ $subCategory->name }}"
                                                                                 id="name">
                                                                         </div>
                                                                         <div class="mb-3">
@@ -147,8 +164,26 @@
                                                                             <input type="text" class="form-control"
                                                                                 name="slug"
                                                                                 placeholder="Enter Category Slug"
-                                                                                value="{{ $category->slug }}"
+                                                                                value="{{ $subCategory->slug }}"
                                                                                 id="slug">
+                                                                        </div>
+
+
+
+                                                                        <div class="mb-3">
+                                                                            <label class="col-form-label">Parent
+                                                                                Category:</label>
+
+                                                                            <select class="form-select"
+                                                                                name="category_id">
+
+                                                                                <option
+                                                                                    value="{{ $subCategory->category->id }}">
+                                                                                    {{ $subCategory->category->name }}
+                                                                                </option>
+
+                                                                            </select>
+
                                                                         </div>
 
                                                                         <script>
@@ -164,7 +199,8 @@
                                                                             });
                                                                         </script>
                                                                         <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-secondary"
+                                                                            <button type="button"
+                                                                                class="btn btn-secondary"
                                                                                 data-bs-dismiss="modal">Close</button>
                                                                             <button type="submit"
                                                                                 class="btn btn-primary">Update</button>
@@ -194,12 +230,13 @@
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <h3 class="text-danger">Are You Sure Detele This
-                                                                        Category</h3>
+                                                                        Sub Category</h3>
 
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary"
                                                                             data-bs-dismiss="modal">Close</button>
-                                                                        <a href="{{ route('delete-category', $category->id) }}" type="submit"
+                                                                        <a href="{{ route('delete-sub-category', $subCategory->id) }}"
+                                                                            type="submit"
                                                                             class="btn btn-primary">Confirm</a>
                                                                     </div>
                                                                 </div>

@@ -466,7 +466,30 @@
                             <a href="{{ route('category') }}">Category</a>
                         </li>
                         <li>
-                            <a href="ui-alerts.html">Sub Category</a>
+                            <a href="{{ route('sub-category') }}">Sub Category</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#news&blogs" aria-expanded="false" aria-controls="category"
+                    class="side-nav-link">
+                    <i class="ri-file-list-fill"></i>
+                    <span> News and Blogs </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="news&blogs">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="{{ route('blogs') }}">Blogs</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('create-blog') }}">Create Blog</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('blog-category') }}">Category</a>
                         </li>
 
                     </ul>
