@@ -16,7 +16,8 @@ Route::get('/delete-sub-category/{id}', 'SubCategoryController@DeteleSubCategory
 
 //blogs and news
 Route::get('/blogs', 'BlogController@index')->name('blogs');
-Route::get('/create-blog', 'BlogController@CreateBlog')->name('create-blog');
+Route::get('/create-blog-view', 'BlogController@CreateBlogView')->name('create-blog-view');
+Route::post('/create-blog', 'BlogController@CreateBlog')->name('create-blog');
 //categoryBlog
 Route::get('/blog-category', 'BlogController@category')->name('blog-category');
 Route::post('/create-blog-category', 'BlogController@CreateCategory')->name('create-blog-category');

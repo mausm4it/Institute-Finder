@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug');
             $table->string('summary');
-            $table->longText('description');
-            $table->string('blog_image');
+            $table->longText('content')->nullable();
+            $table->string('blog_image')->nullable();
             $table->unsignedBigInteger('blog_category_id');
             $table->foreign('blog_category_id')->references('id')->on('blog_categories')->onDelete('cascade');
 

@@ -11,16 +11,24 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="header-title">Create Blog</h4>
+                                @include('alert.index')
 
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form action="{{ route('create-blog') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
 
 
                                     <div class="mb-3">
                                         <label class="form-label">Title</label>
-                                        <input type="text" class="form-control" name="title"
-                                            placeholder="Enter Blog Title" value="{{ old('title') }}">
+                                        <input type="text" class="form-control" id="title" name="title"
+                                            placeholder="Enter Blog Title" value="{{ old('title') }}" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Slug</label>
+                                        <input type="text" class="form-control" name="slug" id="slug"
+                                            placeholder="Enter Blog Slug" value="{{ old('slug') }}" required>
+
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Summary</label>
@@ -34,32 +42,47 @@
                                     <div class="mb-3">
                                         <label class="form-label">Category</label>
                                         <select value="{{ old('blog_category_id') }}" name="blog_category_id"
-                                            class="form-select">
-                                            <option>Choose</option>
-                                            <option>Option 1</option>
-                                            <option>Option 2</option>
-                                            <option>Option 3</option>
+                                            class="form-select" required>
+                                            @foreach ($categories as $category)
+                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            @endforeach
+
+
                                         </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Blog Image</label>
+                                        <input onchange="BlogImage(event)" class="form-control" type="file"
+                                            name="blog_image" value="{{ old('blog_image') }}">
+                                        <img id="blog_imagePreview" src="#" alt="Preview"
+                                            style="display:none; max-width: 100%; max-height: 100px;">
                                     </div>
 
                                     <div class="mb-3">
 
                                         <label class="form-label">Description</label>
-                                        <textarea name="description" id="editor"></textarea>
 
-                                    </div>
+                                        <style>
+                                            #snow-editor {
 
+                                                height: 300px;
+                                            }
+                                        </style>
+                                        <div id="snow-editor" name="content" style="height: 300px;">
 
-
-                                    <div class="mb-2">
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="customCheck11">
-                                            <label class="form-check-label" for="customCheck11">Check this custom
-                                                checkbox</label>
                                         </div>
+
+
+
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary">Sign in</button>
+
+
+
+
+
+
+                                    <button type="submit" class="btn btn-primary">Post Submit</button>
                                 </form>
 
                             </div> <!-- end card-body -->

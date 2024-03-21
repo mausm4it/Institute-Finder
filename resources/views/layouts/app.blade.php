@@ -36,6 +36,11 @@
     <!-- Icons css -->
     <link href="{{ asset('public/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
 
+    <!-- Quill css -->
+    <link href="{{ asset('public/assets/vendor/quill/quill.core.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('public/assets/vendor/quill/quill.snow.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('public/assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet" type="text/css" />
+
 
     {{-- external link end --}}
 
@@ -100,7 +105,61 @@
     <script src="{{ asset('public/assets/js/pages/form-wizard.init.js') }}"></script>
     <script src="{{ asset('public/assets/js/pages/datatable.init.js') }}"></script>
 
+    <!-- Quill Editor js -->
+    <script src="{{ asset('public/assets/vendor/quill/quill.min.js') }}"></script>
+
+    <!-- Quill Demo js -->
+    <script src="{{ asset('public/assets/js/pages/quilljs.init.js') }}"></script>
+
+
     {{-- external link end --}}
+
+
+
+
+    {{-- Image Preview Script Start --}}
+    <script>
+        // Blog Image
+        function BlogImage(event) {
+            const input = event.target;
+            const preview = document.getElementById('blog_imagePreview');
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'inline-block';
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.src = '#';
+                preview.style.display = 'none';
+            }
+        }
+    </script>
+
+
+    {{-- Image Preview Script End --}}
+
+
+    {{-- Slug Auto By Name or Title start  --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var titleInput = document.getElementById('title');
+            var slugInput = document.getElementById('slug');
+
+            titleInput.addEventListener('keyup', function() {
+                var name = titleInput.value.trim().toLowerCase();
+                var slug = name.replace(/\s+/g, '-'); // Replace spaces with dashes
+                slugInput.value = slug;
+            });
+        });
+    </script>
+    {{-- Slug Auto By Name or Title end  --}}
+
+
 </body>
 
 </html>

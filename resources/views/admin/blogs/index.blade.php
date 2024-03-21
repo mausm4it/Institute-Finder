@@ -13,7 +13,8 @@
                         <div class="page-title-box">
                             <div class="page-title-right">
                                 <div class="hstack gap-2 flex-wrap">
-                                    <button type="button" class="btn btn-primary">Create New Blog</button>
+                                    <a href="{{ route('create-blog-view') }}" type="button" class="btn btn-primary">Create
+                                        New Blog</a>
 
                                 </div>
 
@@ -40,8 +41,8 @@
                                     <thead>
                                         <tr>
 
+                                            <th>Image</th>
                                             <th>Name</th>
-                                            <th>Slug</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
 
@@ -56,46 +57,50 @@
                                     <tbody>
 
                                         <tr>
+                                            @foreach ($blogs as $blog)
+                                                <td><img width="100px" src="{{ $blog->blog_image }}" alt=""></td>
+                                                <td>{{ $blog->title }}</td>
+                                                <td>
 
-                                            <td>1</td>
-                                            <td>2</td>
-                                            <td>
 
 
+                                                    <i class="ri-edit-circle-fill text-info"></i>
+                                                </td>
+                                                <td>
 
-                                                <i class="ri-edit-circle-fill text-info"></i>
-                                            </td>
-                                            <td>
+                                                    <div class="modal fade" id="deleteModal" tabindex="-1"
+                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
 
-                                                <div class="modal fade" id="deleteModal" tabindex="-1"
-                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-
-                                                                <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <h3 class="text-danger">Are You Sure Detele This
-                                                                    Blog</h3>
-
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary"
-                                                                        data-bs-dismiss="modal">Close</button>
-                                                                    <a href="" type="submit"
-                                                                        class="btn btn-primary">Confirm</a>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
-                                                            </div>
+                                                                <div class="modal-body">
+                                                                    <h3 class="text-danger">Are You Sure Detele This
+                                                                        Blog</h3>
 
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-bs-dismiss="modal">Close</button>
+                                                                        <a href="" type="submit"
+                                                                            class="btn btn-primary">Confirm</a>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
 
 
-                                                <i class="ri-delete-bin-3-fill text-danger" data-bs-toggle="modal"
-                                                    data-bs-target="#deleteModal" data-bs-whatever="@mdo"></i>
-                                            </td>
+                                                    <i class="ri-delete-bin-3-fill text-danger" data-bs-toggle="modal"
+                                                        data-bs-target="#deleteModal" data-bs-whatever="@mdo"></i>
+                                                </td>
+                                            @endforeach
+
+
+
 
                                         </tr>
 

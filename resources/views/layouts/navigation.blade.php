@@ -486,7 +486,7 @@
                             <a href="{{ route('blogs') }}">Blogs</a>
                         </li>
                         <li>
-                            <a href="{{ route('create-blog') }}">Create Blog</a>
+                            <a href="{{ route('create-blog-view') }}">Create Blog</a>
                         </li>
                         <li>
                             <a href="{{ route('blog-category') }}">Category</a>
