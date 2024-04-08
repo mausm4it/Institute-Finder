@@ -19,6 +19,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/dashboard';
     protected $namespaceAdmin ='App\\Http\\Controllers\\Admin';
+    protected $namespaceFrontend ='App\\Http\\Controllers\\Frontend';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
@@ -40,6 +41,10 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->namespace($this->namespaceAdmin) 
                 ->group(base_path('routes/admin.php'));
+            
+            Route::middleware('web')
+                ->namespace($this->namespaceFrontend) 
+                ->group(base_path('routes/frontend.php'));
         });
     }
 }

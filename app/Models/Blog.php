@@ -7,9 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
+    protected $fillable = [
+        'title',
+        'slug',
+        'summary',
+        'content',
+        'blog_image',
+        'category_id'
+       
+    ];
     use HasFactory;
-    public function blogcategory()
+    public function category()
     {
-        return $this->hasMany(BlogCategory::class);
+        return $this->belongsTo(Category::class);
     }
 }

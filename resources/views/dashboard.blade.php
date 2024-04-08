@@ -1,431 +1,960 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="content-page">
-        <div class="content">
+    <!-- Page Title Start -->
+    <div class="flex justify-between items-center mb-6">
+        <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Dashboard</h4>
 
-            <!-- Start Content-->
-            <div class="container-fluid">
+        <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
+            <div class="flex items-center gap-2">
+                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">Konrix</a>
+            </div>
 
-                <!-- start page title -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box">
-                            <div class="page-title-right">
-                                <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Velonic</a></li>
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
-                                    <li class="breadcrumb-item active">Welcome!</li>
-                                </ol>
+            <div class="flex items-center gap-2">
+                <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
+                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">Menu</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
+                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400"
+                    aria-current="page">Dashboard</a>
+            </div>
+        </div>
+    </div>
+    <!-- Page Title End -->
+
+    <div class="grid 2xl:grid-cols-4 gap-6 mb-6">
+
+        <div class="2xl:col-span-3">
+            <div class="grid xl:grid-cols-4 md:grid-cols-2 gap-6 mb-6">
+                <div class="card">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Project
+                                    Dashboard</h4>
+                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">
+                                    New Task Assign</p>
                             </div>
-                            <h4 class="page-title">Welcome!</h4>
+
+                            <div>
+                                <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown"
+                                    data-fc-placement="left-start" type="button">
+                                    <i class="mgc_more_1_fill text-xl"></i>
+                                </button>
+
+                                <div
+                                    class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
+                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                        href="javascript:void(0)">
+                                        <i class="mgc_add_circle_line"></i> Add
+                                    </a>
+                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                        href="javascript:void(0)">
+                                        <i class="mgc_edit_line"></i> Edit
+                                    </a>
+                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                        href="javascript:void(0)">
+                                        <i class="mgc_copy_2_line"></i> Copy
+                                    </a>
+                                    <div class="h-px bg-gray-200 dark:bg-gray-700 my-2 -mx-2"></div>
+                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-danger hover:bg-danger/5"
+                                        href="javascript:void(0)">
+                                        <i class="mgc_delete_line"></i> Delete
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-end">
+                            <div class="flex-grow">
+                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold"><i
+                                        class="mgc_alarm_2_line"></i> 4 Hrs ago</p>
+                            </div>
+                            <div class="flex">
+                                <a href="javascript:void(0);">
+                                    <img src="public/assets/images/users/avatar-1.jpg"
+                                        class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700"
+                                        alt="friend">
+                                </a>
+                                <a href="javascript:void(0);" class="-ms-2">
+                                    <img src="public/assets/images/users/avatar-2.jpg"
+                                        class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700"
+                                        alt="friend">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- end page title -->
 
-                <div class="row">
-                    <div class="col-xxl-3 col-sm-6">
-                        <div class="card widget-flat text-bg-pink">
-                            <div class="card-body">
-                                <div class="float-end">
-                                    <i class="ri-eye-line widget-icon"></i>
+                <div class="card">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Admin Template
+                                </h4>
+                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">
+                                    New Task Assign</p>
+                            </div>
+                            <div>
+                                <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown"
+                                    data-fc-placement="left-start" type="button">
+                                    <i class="mgc_more_1_fill text-xl"></i>
+                                </button>
+
+                                <div
+                                    class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
+                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                        href="javascript:void(0)">
+                                        <i class="mgc_add_circle_line"></i> Add
+                                    </a>
+                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                        href="javascript:void(0)">
+                                        <i class="mgc_edit_line"></i> Edit
+                                    </a>
+                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                        href="javascript:void(0)">
+                                        <i class="mgc_copy_2_line"></i> Copy
+                                    </a>
+                                    <div class="h-px bg-gray-200 dark:bg-gray-700 my-2 -mx-2"></div>
+                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-danger hover:bg-danger/5"
+                                        href="javascript:void(0)">
+                                        <i class="mgc_delete_line"></i> Delete
+                                    </a>
                                 </div>
-                                <h6 class="text-uppercase mt-0" title="Customers">Daily Visits</h6>
-                                <h2 class="my-2">8,652</h2>
-                                <p class="mb-0">
-                                    <span class="badge bg-white bg-opacity-10 me-1">2.97%</span>
-                                    <span class="text-nowrap">Since last month</span>
-                                </p>
                             </div>
                         </div>
-                    </div> <!-- end col-->
 
-                    <div class="col-xxl-3 col-sm-6">
-                        <div class="card widget-flat text-bg-purple">
-                            <div class="card-body">
-                                <div class="float-end">
-                                    <i class="ri-wallet-2-line widget-icon"></i>
-                                </div>
-                                <h6 class="text-uppercase mt-0" title="Customers">Revenue</h6>
-                                <h2 class="my-2">$9,254.62</h2>
-                                <p class="mb-0">
-                                    <span class="badge bg-white bg-opacity-10 me-1">18.25%</span>
-                                    <span class="text-nowrap">Since last month</span>
-                                </p>
+                        <div class="flex items-end">
+                            <div class="flex-grow">
+                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold"><i
+                                        class="mgc_alarm_2_line"></i> 3 Hrs ago</p>
+                            </div>
+                            <div class="flex">
+                                <a href="javascript:void(0);">
+                                    <img src="public/assets/images/users/avatar-3.jpg"
+                                        class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700"
+                                        alt="friend">
+                                </a>
+                                <a href="javascript:void(0);" class="-ms-2">
+                                    <img src="public/assets/images/users/avatar-4.jpg"
+                                        class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700"
+                                        alt="friend">
+                                </a>
                             </div>
                         </div>
-                    </div> <!-- end col-->
-
-                    <div class="col-xxl-3 col-sm-6">
-                        <div class="card widget-flat text-bg-info">
-                            <div class="card-body">
-                                <div class="float-end">
-                                    <i class="ri-shopping-basket-line widget-icon"></i>
-                                </div>
-                                <h6 class="text-uppercase mt-0" title="Customers">Orders</h6>
-                                <h2 class="my-2">753</h2>
-                                <p class="mb-0">
-                                    <span class="badge bg-white bg-opacity-25 me-1">-5.75%</span>
-                                    <span class="text-nowrap">Since last month</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div> <!-- end col-->
-
-                    <div class="col-xxl-3 col-sm-6">
-                        <div class="card widget-flat text-bg-primary">
-                            <div class="card-body">
-                                <div class="float-end">
-                                    <i class="ri-group-2-line widget-icon"></i>
-                                </div>
-                                <h6 class="text-uppercase mt-0" title="Customers">Users</h6>
-                                <h2 class="my-2">63,154</h2>
-                                <p class="mb-0">
-                                    <span class="badge bg-white bg-opacity-10 me-1">8.21%</span>
-                                    <span class="text-nowrap">Since last month</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div> <!-- end col-->
+                    </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-widgets">
-                                    <a href="javascript:;" data-bs-toggle="reload"><i class="ri-refresh-line"></i></a>
-                                    <a data-bs-toggle="collapse" href="#weeklysales-collapse" role="button"
-                                        aria-expanded="false" aria-controls="weeklysales-collapse"><i
-                                            class="ri-subtract-line"></i></a>
-                                    <a href="#" data-bs-toggle="remove"><i class="ri-close-line"></i></a>
+                <div class="card">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Client Project
+                                </h4>
+                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">
+                                    New Task Assign</p>
+                            </div>
+                            <div>
+                                <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown"
+                                    data-fc-placement="left-start" type="button">
+                                    <i class="mgc_more_1_fill text-xl"></i>
+                                </button>
+
+                                <div
+                                    class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
+                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                        href="javascript:void(0)">
+                                        <i class="mgc_add_circle_line"></i> Add
+                                    </a>
+                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                        href="javascript:void(0)">
+                                        <i class="mgc_edit_line"></i> Edit
+                                    </a>
+                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                        href="javascript:void(0)">
+                                        <i class="mgc_copy_2_line"></i> Copy
+                                    </a>
+                                    <div class="h-px bg-gray-200 dark:bg-gray-700 my-2 -mx-2"></div>
+                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-danger hover:bg-danger/5"
+                                        href="javascript:void(0)">
+                                        <i class="mgc_delete_line"></i> Delete
+                                    </a>
                                 </div>
-                                <h5 class="header-title mb-0">Weekly Sales Report</h5>
+                            </div>
+                        </div>
 
-                                <div id="weeklysales-collapse" class="collapse pt-3 show">
-                                    <div dir="ltr">
-                                        <div id="revenue-chart" class="apex-charts" data-colors="#3bc0c3,#1a2942,#d1d7d973">
-                                        </div>
-                                    </div>
+                        <div class="flex items-end">
+                            <div class="flex-grow">
+                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold"><i
+                                        class="mgc_alarm_2_line"></i> 5 Hrs ago</p>
+                            </div>
+                            <div class="flex">
+                                <a href="javascript:void(0);">
+                                    <img src="public/assets/images/users/avatar-5.jpg"
+                                        class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700"
+                                        alt="friend">
+                                </a>
+                                <a href="javascript:void(0);" class="-ms-2">
+                                    <img src="public/assets/images/users/avatar-6.jpg"
+                                        class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700"
+                                        alt="friend">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                                    <div class="row text-center">
-                                        <div class="col">
-                                            <p class="text-muted mt-3">Current Week</p>
-                                            <h3 class=" mb-0">
-                                                <span>$506.54</span>
-                                            </h3>
-                                        </div>
-                                        <div class="col">
-                                            <p class="text-muted mt-3">Previous Week</p>
-                                            <h3 class=" mb-0">
-                                                <span>$305.25 </span>
-                                            </h3>
-                                        </div>
-                                        <div class="col">
-                                            <p class="text-muted mt-3">Conversation</p>
-                                            <h3 class=" mb-0">
-                                                <span>3.27%</span>
-                                            </h3>
-                                        </div>
-                                        <div class="col">
-                                            <p class="text-muted mt-3">Customers</p>
-                                            <h3 class=" mb-0">
-                                                <span>3k</span>
-                                            </h3>
-                                        </div>
-                                    </div>
+                <div class="card">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Figma Design
+                                </h4>
+                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">
+                                    New Task Assign</p>
+                            </div>
+                            <div>
+                                <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown"
+                                    data-fc-placement="left-start" type="button">
+                                    <i class="mgc_more_1_fill text-xl"></i>
+                                </button>
+
+                                <div
+                                    class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
+                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                        href="javascript:void(0)">
+                                        <i class="mgc_add_circle_line"></i> Add
+                                    </a>
+                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                        href="javascript:void(0)">
+                                        <i class="mgc_edit_line"></i> Edit
+                                    </a>
+                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                        href="javascript:void(0)">
+                                        <i class="mgc_copy_2_line"></i> Copy
+                                    </a>
+                                    <div class="h-px bg-gray-200 dark:bg-gray-700 my-2 -mx-2"></div>
+                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-danger hover:bg-danger/5"
+                                        href="javascript:void(0)">
+                                        <i class="mgc_delete_line"></i> Delete
+                                    </a>
                                 </div>
+                            </div>
+                        </div>
 
-                            </div> <!-- end card-body-->
-                        </div> <!-- end card-->
-                    </div> <!-- end col-->
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-widgets">
-                                    <a href="javascript:;" data-bs-toggle="reload"><i class="ri-refresh-line"></i></a>
-                                    <a data-bs-toggle="collapse" href="#yearly-sales-collapse" role="button"
-                                        aria-expanded="false" aria-controls="yearly-sales-collapse"><i
-                                            class="ri-subtract-line"></i></a>
-                                    <a href="#" data-bs-toggle="remove"><i class="ri-close-line"></i></a>
+                        <div class="flex items-end">
+                            <div class="flex-grow">
+                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold"><i
+                                        class="mgc_alarm_2_line"></i> 1 Day ago</p>
+                            </div>
+                            <div class="flex">
+                                <a href="javascript:void(0);">
+                                    <img src="public/assets/images/users/avatar-7.jpg"
+                                        class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700"
+                                        alt="friend">
+                                </a>
+                                <a href="javascript:void(0);" class="-ms-2">
+                                    <img src="public/assets/images/users/avatar-8.jpg"
+                                        class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700"
+                                        alt="friend">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-6">
+                <div class="col-span-1">
+                    <div class="card">
+                        <div class="p-6">
+                            <h4 class="card-title">Monthly Target</h4>
+
+                            <div id="monthly-target" class="apex-charts my-8" data-colors="#0acf97,#3073F1"></div>
+
+                            <div class="flex justify-center">
+                                <div class="w-1/2 text-center">
+                                    <h5>Pending</h5>
+                                    <p class="fw-semibold text-muted">
+                                        <i class="mgc_round_fill text-primary"></i> Projects
+                                    </p>
                                 </div>
-                                <h5 class="header-title mb-0">Yearly Sales Report</h5>
-
-                                <div id="yearly-sales-collapse" class="collapse pt-3 show">
-                                    <div dir="ltr">
-                                        <div id="yearly-sales-chart" class="apex-charts"
-                                            data-colors="#3bc0c3,#1a2942,#d1d7d973"></div>
-                                    </div>
-                                    <div class="row text-center">
-                                        <div class="col">
-                                            <p class="text-muted mt-3 mb-2">Quarter 1</p>
-                                            <h4 class="mb-0">$56.2k</h4>
-                                        </div>
-                                        <div class="col">
-                                            <p class="text-muted mt-3 mb-2">Quarter 2</p>
-                                            <h4 class="mb-0">$42.5k</h4>
-                                        </div>
-                                        <div class="col">
-                                            <p class="text-muted mt-3 mb-2">All Time</p>
-                                            <h4 class="mb-0">$102.03k</h4>
-                                        </div>
-                                    </div>
+                                <div class="w-1/2 text-center">
+                                    <h5>Done</h5>
+                                    <p class="fw-semibold text-muted">
+                                        <i class="mgc_round_fill text-success"></i> Projects
+                                    </p>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-2">
+                    <div class="card">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center">
+                                <h4 class="card-title">Project Statistics</h4>
+                                <div class="flex gap-2">
+                                    <button type="button"
+                                        class="btn btn-sm bg-primary/25 text-primary hover:bg-primary hover:text-white">
+                                        All
+                                    </button>
+                                    <button type="button"
+                                        class="btn btn-sm bg-gray-400/25 text-gray-400 hover:bg-gray-400 hover:text-white">
+                                        6M
+                                    </button>
+                                    <button type="button"
+                                        class="btn btn-sm bg-gray-400/25 text-gray-400 hover:bg-gray-400 hover:text-white">
+                                        1Y
+                                    </button>
+                                </div>
+                            </div>
 
-                            </div> <!-- end card-body-->
-                        </div> <!-- end card-->
+                            <div dir="ltr" class="mt-2">
+                                <div id="crm-project-statistics" class="apex-charts" data-colors="#cbdcfc,#3073F1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-grow-1 overflow-hidden">
-                                        <h4 class="fs-22 fw-semibold">69.25%</h4>
-                                        <p class="text-uppercase fw-medium text-muted text-truncate mb-0"> US Dollar Share
-                                        </p>
-                                    </div>
+        <div class="col-span-1">
+            <div class="card mb-6">
+                <div class="px-6 py-5 flex justify-between items-center">
+                    <h4 class="header-title">Project Summary</h4>
+                    <div>
+                        <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown"
+                            data-fc-placement="left-start" type="button">
+                            <i class="mgc_more_1_fill text-xl"></i>
+                        </button>
+
+                        <div
+                            class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
+                            <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                href="javascript:void(0)">
+                                <i class="mgc_add_circle_line"></i> Add
+                            </a>
+                            <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                href="javascript:void(0)">
+                                <i class="mgc_edit_line"></i> Edit
+                            </a>
+                            <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                href="javascript:void(0)">
+                                <i class="mgc_copy_2_line"></i> Copy
+                            </a>
+                            <div class="h-px bg-gray-200 dark:bg-gray-700 my-2 -mx-2"></div>
+                            <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-danger hover:bg-danger/5"
+                                href="javascript:void(0)">
+                                <i class="mgc_delete_line"></i> Delete
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-4 py-2 bg-warning/20 text-warning" role="alert">
+                    <i class="mgc_folder_star_line me-1 text-lg align-baseline"></i> <b>38</b> Total Admin
+                    & Client Projects
+                </div>
+
+                <div class="p-6 space-y-3">
+                    <div class="flex items-center border border-gray-200 dark:border-gray-700 rounded px-3 py-2">
+                        <div class="flex-shrink-0 me-2">
+                            <div
+                                class="w-12 h-12 flex justify-center items-center rounded-full text-primary bg-primary/25">
+                                <i class="mgc_group_line text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h5 class="font-semibold mb-1">Project Discssion</h5>
+                            <p class="text-gray-400">6 Person</p>
+                        </div>
+                        <div>
+                            <button class="text-gray-400" data-fc-type="tooltip" data-fc-placement="top">
+                                <i class="mgc_information_line text-xl"></i>
+                            </button>
+                            <div class="bg-slate-700 hidden px-2 py-1 rounded transition-all text-white opacity-0 z-50"
+                                role="tooltip">
+                                Info <div class="bg-slate-700 w-2.5 h-2.5 rotate-45 -z-10 rounded-[1px]" data-fc-arrow>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center border border-gray-200 dark:border-gray-700 rounded px-3 py-2">
+                        <div class="flex-shrink-0 me-2">
+                            <div
+                                class="w-12 h-12 flex justify-center items-center rounded-full text-warning bg-warning/25">
+                                <i class="mgc_compass_line text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h5 class="fw-semibold my-0">In Progress</h5>
+                            <p>16 Projects</p>
+                        </div>
+                        <div>
+                            <button class="text-gray-400" data-fc-type="tooltip" data-fc-placement="top">
+                                <i class="mgc_information_line text-xl"></i>
+                            </button>
+                            <div class="bg-slate-700 hidden px-2 py-1 rounded transition-all text-white opacity-0 z-50"
+                                role="tooltip">
+                                Info <div class="bg-slate-700 w-2.5 h-2.5 rotate-45 -z-10 rounded-[1px]" data-fc-arrow>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center border border-gray-200 dark:border-gray-700 rounded px-3 py-2">
+                        <div class="flex-shrink-0 me-2">
+                            <div class="w-12 h-12 flex justify-center items-center rounded-full text-danger bg-danger/25">
+                                <i class="mgc_check_circle_line text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h5 class="fw-semibold my-0">Completed Projects</h5>
+                            <p>24</p>
+                        </div>
+                        <div>
+                            <button class="text-gray-400" data-fc-type="tooltip" data-fc-placement="top">
+                                <i class="mgc_information_line text-xl"></i>
+                            </button>
+                            <div class="bg-slate-700 hidden px-2 py-1 rounded transition-all text-white opacity-0 z-50"
+                                role="tooltip">
+                                Info <div class="bg-slate-700 w-2.5 h-2.5 rotate-45 -z-10 rounded-[1px]" data-fc-arrow>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center border border-gray-200 dark:border-gray-700 rounded px-3 py-2">
+                        <div class="flex-shrink-0 me-2">
+                            <div
+                                class="w-12 h-12 flex justify-center items-center rounded-full text-success bg-success/25">
+                                <i class="mgc_send_line text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h5 class="fw-semibold my-0">Delivery Projects</h5>
+                            <p>20</p>
+                        </div>
+                        <div>
+                            <button class="text-gray-400" data-fc-type="tooltip" data-fc-placement="top">
+                                <i class="mgc_information_line text-xl"></i>
+                            </button>
+                            <div class="bg-slate-700 hidden px-2 py-1 rounded transition-all text-white opacity-0 z-50"
+                                role="tooltip">
+                                Info <div class="bg-slate-700 w-2.5 h-2.5 rotate-45 -z-10 rounded-[1px]" data-fc-arrow>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-6">
+                <h4 class="text-gray-600 dark:text-gray-300 mb-2.5">On Time Completed Rate <span
+                        class="px-2 py-0.5 rounded bg-success/25 text-success ms-2"><i
+                            class="mgc_arrow_up_line text-sm align-baseline me-1"></i>59%</span></h4>
+                <div class="flex justify-between items-center mb-2">
+                    <h5 class="text-base font-semibold">Completed Projects</h5>
+                    <h5 class="text-gray-600 dark:text-gray-300">65%</h5>
+                </div>
+                <div class="flex w-full h-1 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700 ">
+                    <div class="flex flex-col justify-center overflow-hidden bg-primary w-1/4" role="progressbar"
+                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- Grid End -->
+
+    <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-6 mb-6">
+        <div class="col-span-1">
+            <div class="card">
+                <div class="p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 me-3">
+                            <div class="w-12 h-12 flex justify-center items-center rounded text-primary bg-primary/25">
+                                <i class="mgc_document_2_line text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h5 class="mb-1">Active Projects</h5>
+                            <p>85</p>
+                        </div>
+                        <div>
+                            <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown"
+                                data-fc-placement="left-start" type="button">
+                                <i class="mgc_more_2_fill text-xl"></i>
+                            </button>
+
+                            <div
+                                class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                    href="javascript:void(0)">
+                                    Today
+                                </a>
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                    href="javascript:void(0)">
+                                    Yesterday
+                                </a>
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                    href="javascript:void(0)">
+                                    Last Week
+                                </a>
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                    href="javascript:void(0)">
+                                    Last Month
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-span-1">
+            <div class="card">
+                <div class="p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 me-3">
+                            <div class="w-12 h-12 flex justify-center items-center rounded text-success bg-success/25">
+                                <i class="mgc_group_line text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h5 class="mb-1">Total Employees</h5>
+                            <p>32</p>
+                        </div>
+                        <div>
+                            <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown"
+                                data-fc-placement="left-start" type="button">
+                                <i class="mgc_more_2_fill text-xl"></i>
+                            </button>
+
+                            <div
+                                class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                    href="javascript:void(0)">
+                                    Today
+                                </a>
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                    href="javascript:void(0)">
+                                    Yesterday
+                                </a>
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                    href="javascript:void(0)">
+                                    Last Week
+                                </a>
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                    href="javascript:void(0)">
+                                    Last Month
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-span-1">
+            <div class="card">
+                <div class="p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 me-3">
+                            <div class="w-12 h-12 flex justify-center items-center rounded text-info bg-info/25">
+                                <i class="mgc_star_line text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h5 class="mb-1">Project Reviews</h5>
+                            <p>40</p>
+                        </div>
+                        <div>
+                            <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown"
+                                data-fc-placement="left-start" type="button">
+                                <i class="mgc_more_2_fill text-xl"></i>
+                            </button>
+
+                            <div
+                                class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                    href="javascript:void(0)">
+                                    Today
+                                </a>
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                    href="javascript:void(0)">
+                                    Yesterday
+                                </a>
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                    href="javascript:void(0)">
+                                    Last Week
+                                </a>
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                    href="javascript:void(0)">
+                                    Last Month
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-span-1">
+            <div class="card">
+                <div class="p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 me-3">
+                            <div class="w-12 h-12 flex justify-center items-center rounded text-warning bg-warning/25">
+                                <i class="mgc_new_folder_line text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h5 class="mb-1">New Projects</h5>
+                            <p>25</p>
+                        </div>
+                        <div>
+                            <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown"
+                                data-fc-placement="left-start" type="button">
+                                <i class="mgc_more_2_fill text-xl"></i>
+                            </button>
+
+                            <div
+                                class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                    href="javascript:void(0)">
+                                    Today
+                                </a>
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                    href="javascript:void(0)">
+                                    Yesterday
+                                </a>
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                    href="javascript:void(0)">
+                                    Last Week
+                                </a>
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                    href="javascript:void(0)">
+                                    Last Month
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- Grid End -->
+
+    <div class="grid 2xl:grid-cols-4 md:grid-cols-2 gap-6">
+        <div class="2xl:col-span-2 md:col-span-2">
+            <div class="card">
+                <div class="p-6">
+                    <div class="flex justify-between items-center">
+                        <h4 class="card-title">Project Overview</h4>
+                        <div>
+                            <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown"
+                                data-fc-placement="left-start" type="button">
+                                <i class="mgc_more_2_fill text-xl"></i>
+                            </button>
+
+                            <div
+                                class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                    href="javascript:void(0)">
+                                    Today
+                                </a>
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
+                                    href="javascript:void(0)">
+                                    Yesterday
+                                </a>
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                    href="javascript:void(0)">
+                                    Last Week
+                                </a>
+                                <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                                    href="javascript:void(0)">
+                                    Last Month
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 items-center gap-4">
+                        <div class="md:order-1 order-2">
+                            <div class="flex flex-col gap-6">
+                                <div class="flex items-center">
                                     <div class="flex-shrink-0">
-                                        <div id="us-share-chart" class="apex-charts" dir="ltr"></div>
+                                        <i
+                                            class="mgc_round_fill h-10 w-10 flex justify-center items-center rounded-full bg-primary/25 text-lg text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow ms-3">
+                                        <h5 class="fw-semibold mb-1">Product Design</h5>
+                                        <ul class="flex items-center gap-2">
+                                            <li class="list-inline-item"><b>26</b> Total Projects</li>
+                                            <li class="list-inline-item">
+                                                <div class="w-1 h-1 rounded bg-gray-400"></div>
+                                            </li>
+                                            <li class="list-inline-item"><b>4</b> Employees</li>
+                                        </ul>
                                     </div>
                                 </div>
-                            </div><!-- end card body -->
-                        </div> <!-- end card-->
-                    </div> <!-- end col-->
 
-                </div>
-                <!-- end row -->
-
-                <div class="row">
-                    <div class="col-xl-4">
-                        <!-- Chat-->
-                        <div class="card">
-                            <div class="card-body p-0">
-                                <div class="p-3">
-                                    <div class="card-widgets">
-                                        <a href="javascript:;" data-bs-toggle="reload"><i
-                                                class="ri-refresh-line"></i></a>
-                                        <a data-bs-toggle="collapse" href="#yearly-sales-collapse" role="button"
-                                            aria-expanded="false" aria-controls="yearly-sales-collapse"><i
-                                                class="ri-subtract-line"></i></a>
-                                        <a href="#" data-bs-toggle="remove"><i class="ri-close-line"></i></a>
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0">
+                                        <i
+                                            class="mgc_round_fill h-10 w-10 flex justify-center items-center rounded-full bg-danger/25 text-lg text-danger"></i>
                                     </div>
-                                    <h5 class="header-title mb-0">Chat</h5>
-                                </div>
-
-                                <div id="yearly-sales-collapse" class="collapse show">
-                                    <div class="chat-conversation mt-2">
-                                        <div class="card-body py-0 mb-3" data-simplebar style="height: 322px;">
-                                            <ul class="conversation-list">
-                                                <li class="clearfix">
-                                                    <div class="chat-avatar">
-                                                        <img src="assets/images/users/avatar-5.jpg" alt="male">
-                                                        <i>10:00</i>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <i>Geneva</i>
-                                                            <p>
-                                                                Hello!
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd">
-                                                    <div class="chat-avatar">
-                                                        <img src="assets/images/users/avatar-1.jpg" alt="Female">
-                                                        <i>10:01</i>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <i>Thomson</i>
-                                                            <p>
-                                                                Hi, How are you? What about our next meeting?
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <div class="chat-avatar">
-                                                        <img src="assets/images/users/avatar-5.jpg" alt="male">
-                                                        <i>10:01</i>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <i>Geneva</i>
-                                                            <p>
-                                                                Yeah everything is fine
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd">
-                                                    <div class="chat-avatar">
-                                                        <img src="assets/images/users/avatar-1.jpg" alt="male">
-                                                        <i>10:02</i>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <i>Thomson</i>
-                                                            <p>
-                                                                Wow that's great
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="card-body pt-0">
-                                            <form class="needs-validation" novalidate name="chat-form" id="chat-form">
-                                                <div class="row align-items-start">
-                                                    <div class="col">
-                                                        <input type="text" class="form-control chat-input"
-                                                            placeholder="Enter your text" required>
-                                                        <div class="invalid-feedback">
-                                                            Please enter your messsage
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-auto d-grid">
-                                                        <button type="submit"
-                                                            class="btn btn-danger chat-send waves-effect waves-light">Send</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-
-                                    </div> <!-- end .chat-conversation-->
-                                </div>
-                            </div>
-
-                        </div> <!-- end card-->
-                    </div> <!-- end col-->
-
-                    <div class="col-xl-8">
-                        <!-- Todo-->
-                        <div class="card">
-                            <div class="card-body p-0">
-                                <div class="p-3">
-                                    <div class="card-widgets">
-                                        <a href="javascript:;" data-bs-toggle="reload"><i
-                                                class="ri-refresh-line"></i></a>
-                                        <a data-bs-toggle="collapse" href="#yearly-sales-collapse" role="button"
-                                            aria-expanded="false" aria-controls="yearly-sales-collapse"><i
-                                                class="ri-subtract-line"></i></a>
-                                        <a href="#" data-bs-toggle="remove"><i class="ri-close-line"></i></a>
+                                    <div class="flex-grow ms-3">
+                                        <h5 class="fw-semibold mb-1">Web Development</h5>
+                                        <ul class="flex items-center gap-2">
+                                            <li class="list-inline-item"><b>30</b> Total Projects</li>
+                                            <li class="list-inline-item">
+                                                <div class="w-1 h-1 rounded bg-gray-400"></div>
+                                            </li>
+                                            <li class="list-inline-item"><b>5</b> Employees</li>
+                                        </ul>
                                     </div>
-                                    <h5 class="header-title mb-0">Projects</h5>
                                 </div>
 
-                                <div id="yearly-sales-collapse" class="collapse show">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0">
+                                        <i
+                                            class="mgc_round_fill h-10 w-10 flex justify-center items-center rounded-full bg-success/25 text-lg text-success"></i>
+                                    </div>
+                                    <div class="flex-grow ms-3">
+                                        <h5 class="fw-semibold mb-1">Illustration Design</h5>
+                                        <ul class="flex items-center gap-2">
+                                            <li class="list-inline-item"><b>12</b> Total Projects</li>
+                                            <li class="list-inline-item">
+                                                <div class="w-1 h-1 rounded bg-gray-400"></div>
+                                            </li>
+                                            <li class="list-inline-item"><b>3</b> Employees</li>
+                                        </ul>
+                                    </div>
+                                </div>
 
-                                    <div class="table-responsive">
-                                        <table class="table table-nowrap table-hover mb-0">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Project Name</th>
-                                                    <th>Start Date</th>
-                                                    <th>Due Date</th>
-                                                    <th>Status</th>
-                                                    <th>Assign</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Velonic Admin v1</td>
-                                                    <td>01/01/2015</td>
-                                                    <td>26/04/2015</td>
-                                                    <td><span class="badge bg-info-subtle text-info">Released</span></td>
-                                                    <td>Techzaa Studio</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Velonic Frontend v1</td>
-                                                    <td>01/01/2015</td>
-                                                    <td>26/04/2015</td>
-                                                    <td><span class="badge bg-info-subtle text-info">Released</span></td>
-                                                    <td>Techzaa Studio</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>Velonic Admin v1.1</td>
-                                                    <td>01/05/2015</td>
-                                                    <td>10/05/2015</td>
-                                                    <td><span class="badge bg-pink-subtle text-pink">Pending</span></td>
-                                                    <td>Techzaa Studio</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td>Velonic Frontend v1.1</td>
-                                                    <td>01/01/2015</td>
-                                                    <td>31/05/2015</td>
-                                                    <td><span class="badge bg-purple-subtle text-purple">Work in
-                                                            Progress</span></td>
-                                                    <td>Techzaa Studio</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>5</td>
-                                                    <td>Velonic Admin v1.3</td>
-                                                    <td>01/01/2015</td>
-                                                    <td>31/05/2015</td>
-                                                    <td><span class="badge bg-warning-subtle text-warning">Coming
-                                                            soon</span></td>
-                                                    <td>Techzaa Studio</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>6</td>
-                                                    <td>Velonic Admin v1.3</td>
-                                                    <td>01/01/2015</td>
-                                                    <td>31/05/2015</td>
-                                                    <td><span class="badge bg-primary-subtle text-primary">Coming
-                                                            soon</span></td>
-                                                    <td>Techzaa Studio</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>7</td>
-                                                    <td>Velonic Admin v1.3</td>
-                                                    <td>01/01/2015</td>
-                                                    <td>31/05/2015</td>
-                                                    <td><span class="badge bg-danger-subtle text-danger">Cool</span></td>
-                                                    <td>Techzaa Studio</td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0">
+                                        <i
+                                            class="mgc_round_fill h-10 w-10 flex justify-center items-center rounded-full bg-warning/25 text-lg text-warning"></i>
+                                    </div>
+                                    <div class="flex-grow ms-3">
+                                        <h5 class="fw-semibold mb-1">UI/UX Design</h5>
+                                        <ul class="flex items-center gap-2">
+                                            <li class="list-inline-item"><b>8</b> Total Projects</li>
+                                            <li class="list-inline-item">
+                                                <div class="w-1 h-1 rounded bg-gray-400"></div>
+                                            </li>
+                                            <li class="list-inline-item"><b>4</b> Employees</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                        </div> <!-- end card-->
-                    </div> <!-- end col-->
-                </div>
-                <!-- end row -->
+                        </div>
 
+                        <div class="md:order-2 order-1">
+                            <div id="project-overview-chart" class="apex-charts"
+                                data-colors="#3073F1,#ff679b,#0acf97,#ffbc00"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- container -->
-
         </div>
-        <!-- content -->
 
+        <div class="col-span-1">
+            <div class="card">
+                <div class="card-header">
+                    <div class="flex justify-between items-center">
+                        <h4 class="card-title">Daily Task</h4>
+                        <div>
+                            <select class="form-input form-select-sm">
+                                <option selected>Today</option>
+                                <option value="1">Yesterday</option>
+                                <option value="2">Tomorrow</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="py-6">
+                    <div class="px-6" data-simplebar style="max-height: 304px;">
+                        <div class="space-y-4">
+                            <div class="border border-gray-200 dark:border-gray-700 rounded p-2">
+                                <ul class="flex items-center gap-2 mb-2">
+                                    <a href="javascript:void(0);"
+                                        class="text-base text-gray-600 dark:text-gray-400">Landing Page
+                                        Design</a>
+                                    <i class="mgc_round_fill text-[5px]"></i>
+                                    <h5 class="text-sm font-semibold">2 Hrs ago</h5>
+                                </ul>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm mb-1">Create a new
+                                    landing page (Saas Product)</p>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm"><i
+                                        class="mgc_group_line text-xl me-1 align-middle"></i> <b>5</b>
+                                    People</p>
+                            </div>
 
-    </div>
+                            <div class="border border-gray-200 dark:border-gray-700 rounded p-2">
+                                <ul class="flex items-center gap-2 mb-2">
+                                    <a href="javascript:void(0);" class="text-base text-gray-600 dark:text-gray-400">Admin
+                                        Dashboard</a>
+                                    <i class="mgc_round_fill text-[5px]"></i>
+                                    <h5 class="text-sm font-semibold">3 Hrs ago</h5>
+                                </ul>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm mb-1">Create a new
+                                    Admin dashboard</p>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm"><i
+                                        class="mgc_group_line text-xl me-1 align-middle"></i> <b>2</b>
+                                    People</p>
+                            </div>
+
+                            <div class="border border-gray-200 dark:border-gray-700 rounded p-2">
+                                <ul class="flex items-center gap-2 mb-2">
+                                    <a href="javascript:void(0);"
+                                        class="text-base text-gray-600 dark:text-gray-400">Client Work</a>
+                                    <i class="mgc_round_fill text-[5px]"></i>
+                                    <h5 class="text-sm font-semibold">5 Hrs ago</h5>
+                                </ul>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm mb-1">Create a new
+                                    Power Project (Sktech design)</p>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm"><i
+                                        class="mgc_group_line text-xl me-1 align-middle"></i> <b>2</b>
+                                    People</p>
+                            </div>
+
+                            <div class="border border-gray-200 dark:border-gray-700 rounded p-2">
+                                <ul class="flex items-center gap-2 mb-2">
+                                    <a href="javascript:void(0);" class="text-base text-gray-600 dark:text-gray-400">UI/UX
+                                        Design</a>
+                                    <i class="mgc_round_fill text-[5px]"></i>
+                                    <h5 class="text-sm font-semibold">6 Hrs ago</h5>
+                                </ul>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm mb-1">Create a new UI
+                                    Kit in figma</p>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm"><i
+                                        class="mgc_group_line text-xl me-1 align-middle"></i> <b>3</b>
+                                    People</p>
+                            </div>
+
+                            <div class="flex items-center justify-center">
+                                <div class="animate-spin flex">
+                                    <i class="mgc_loading_2_line text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-span-1">
+            <div class="card">
+                <div class="card-header flex justify-between items-center">
+                    <h4 class="card-title">Team Members</h4>
+                    <div>
+                        <select class="form-select form-select-sm">
+                            <option selected>Active</option>
+                            <option value="1">Offline</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="py-6">
+                    <div class="px-6" data-simplebar style="max-height: 304px;">
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <img class="me-3 rounded-full" src="public/assets/images/users/avatar-1.jpg"
+                                    width="40" alt="Generic placeholder image">
+                                <div class="w-full overflow-hidden">
+                                    <h5 class="font-semibold"><a href="javascript:void(0);"
+                                            class="text-gray-600 dark:text-gray-400">Risa Pearson</a></h5>
+                                    <div class="flex items-center gap-2">
+                                        <div>UI/UX Designer</div>
+                                        <i class="mgc_round_fill text-[5px]"></i>
+                                        <div>2.5 Year Experience</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <img class="me-3 rounded-full" src="public/assets/images/users/avatar-2.jpg"
+                                    width="40" alt="Generic placeholder image">
+                                <div class="w-full overflow-hidden">
+                                    <h5 class="font-semibold"><a href="javascript:void(0);"
+                                            class="text-gray-600 dark:text-gray-400">Margaret D. Evans</a>
+                                    </h5>
+                                    <div class="flex items-center gap-2">
+                                        <div>PHP Developer</div>
+                                        <i class="mgc_round_fill text-[5px]"></i>
+                                        <div>2 Year Experience</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <img class="me-3 rounded-full" src="public/assets/images/users/avatar-3.jpg"
+                                    width="40" alt="Generic placeholder image">
+                                <div class="w-full overflow-hidden">
+                                    <h5 class="font-semibold"><a href="javascript:void(0);"
+                                            class="text-gray-600 dark:text-gray-400">Bryan J. Luellen</a>
+                                    </h5>
+                                    <div class="flex items-center gap-2">
+                                        <div>Front end Developer</div>
+                                        <i class="mgc_round_fill text-[5px]"></i>
+                                        <div>1 Year Experience</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <img class="me-3 rounded-full" src="public/assets/images/users/avatar-4.jpg"
+                                    width="40" alt="Generic placeholder image">
+                                <div class="w-full overflow-hidden">
+                                    <h5 class="font-semibold"><a href="javascript:void(0);"
+                                            class="text-gray-600 dark:text-gray-400">Kathryn S.
+                                            Collier</a></h5>
+                                    <div class="flex items-center gap-2">
+                                        <div>UI/UX Designer</div>
+                                        <i class="mgc_round_fill text-[5px]"></i>
+                                        <div>3 Year Experience</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <img class="me-3 rounded-full" src="public/assets/images/users/avatar-5.jpg"
+                                    width="40" alt="Generic placeholder image">
+                                <div class="w-full overflow-hidden">
+                                    <h5 class="font-semibold"><a href="javascript:void(0);"
+                                            class="text-gray-600 dark:text-gray-400">Timothy Kauper</a>
+                                    </h5>
+                                    <div class="flex items-center gap-2">
+                                        <div>Backend Developer</div>
+                                        <i class="mgc_round_fill text-[5px]"></i>
+                                        <div>2 Year Experience</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <img class="me-3 rounded-full" src="public/assets/images/users/avatar-6.jpg"
+                                    width="40" alt="Generic placeholder image">
+                                <div class="w-full overflow-hidden">
+                                    <h5 class="font-semibold"><a href="javascript:void(0);"
+                                            class="text-gray-600 dark:text-gray-400">Zara Raws</a></h5>
+                                    <div class="flex items-center gap-2">
+                                        <div>Python Developer</div>
+                                        <i class="mgc_round_fill text-[5px]"></i>
+                                        <div>1 Year Experience</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- Grid End -->
 @endsection
-{{-- <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
-    </div>
-</x-app-layout> --}}
