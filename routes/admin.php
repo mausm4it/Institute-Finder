@@ -53,11 +53,11 @@ Route::post('/create-course-duration', 'CourseDurationCOntroller@CreateCourseDur
 Route::post('/update-course-duration/{id}', 'CourseDurationCOntroller@UpdateCourseDuration')->name('update-course-duration');
 Route::get('/delete-course-duration/{id}', 'CourseDurationCOntroller@DeteleCourseDuration')->name('delete-course-duration');
 
-//City
-Route::get('/city', 'CityController@index')->name('city');
-Route::post('/create-city', 'CityController@CreateCity')->name('create-city');
-Route::post('/update-city/{id}', 'CityController@UpdateCity')->name('update-city');
-Route::get('/delete-city/{id}', 'CityController@DeteleCity')->name('delete-city');
+//Campus
+Route::get('/campus', 'CampusController@index')->name('campus');
+Route::post('/create-campus', 'CampusController@CreateCampus')->name('create-campus');
+Route::post('/update-campus/{id}', 'CampusController@UpdateCampus')->name('update-campus');
+Route::get('/delete-campus/{id}', 'CampusController@DeteleCampus')->name('delete-campus');
 
 //College
 Route::get('/create-college', 'CollegeController@CreateCollege')->name('create-college');

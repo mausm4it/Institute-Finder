@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\College;
 use App\Models\Course;
-use App\Models\City;
+use App\Models\Campus;
 use App\Models\TypeOfCollege;
 use Illuminate\Support\Facades\Storage;
 class CollegeController extends Controller
@@ -19,16 +19,16 @@ class CollegeController extends Controller
     
     public function CreateCollege(){
         $courses = Course::all();
-        $cities = City::all();
+        $campuses = Campus::all();
         $type_of_collages = TypeOfCollege::all();
-        return view('admin.college.create', compact('courses','cities' ,'type_of_collages'));
+        return view('admin.college.create', compact('courses','campuses' ,'type_of_collages'));
     }
     public function EditCollege($id){
         $college = College::find($id);
         $courses = Course::all();
-        $cities = City::all();
+        $campuses = Campus::all();
         $type_of_collages = TypeOfCollege::all();
-        return view('admin.college.edit', compact('college','courses','cities' ,'type_of_collages'));
+        return view('admin.college.edit', compact('college','courses','campuses' ,'type_of_collages'));
     }
 
     public function MakeCollege(Request $request){
@@ -77,11 +77,12 @@ class CollegeController extends Controller
         $college->brochuri = $request->brochuri;
         $college->placement = $request->placement;
         $college->video_link = $request->video_link;
+        $college->ranking_number = $request->ranking_number;
         $college->meta_keywords = $request->meta_keywords;
         $college->meta_description = $request->meta_description;
         $college->save();
 
-        $college->cities()->sync($request->cities);
+        $college->campuses()->sync($request->campuses);
         $college->courses()->sync($request->courses);
         $college->type_of_collages()->sync($request->type_of_collages);
 
@@ -137,11 +138,12 @@ class CollegeController extends Controller
         $college->brochuri = $request->brochuri;
         $college->placement = $request->placement;
         $college->video_link = $request->video_link;
+        $college->ranking_number = $request->ranking_number;
         $college->meta_keywords = $request->meta_keywords;
         $college->meta_description = $request->meta_description;
         $college->save();
 
-        $college->cities()->sync($request->cities);
+        $college->campuses()->sync($request->campuses);
         $college->courses()->sync($request->courses);
         $college->type_of_collages()->sync($request->type_of_collages);
         // dd('Ok DOne');
@@ -151,7 +153,7 @@ class CollegeController extends Controller
 
     public function DeteleCollege($id){
         $college = College::find($id);
-        $college->cities()->detach();
+        $college->campuses()->detach();
         $college->courses()->detach();
         $college->type_of_collages()->detach();
         $college->delete();

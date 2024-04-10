@@ -59,7 +59,7 @@
 
                         </div>
                     </div>
-                    @isset($cities)
+                    @isset($campuses)
                         <div class="card p-6">
                             <div class="flex justify-between items-center mb-4">
                                 <p class="card-title">Campuses in Institute</p>
@@ -72,10 +72,10 @@
                             <div class="flex flex-col gap-3">
                                 <div class="">
                                     <label for="category_id" class="mb-2 block">Campus Areas</label>
-                                    <select name="cities[]" class="selectize" multiple="multiple">
-                                        @isset($cities)
-                                            @foreach ($cities as $city)
-                                                <option value="{{ $city->id }}">{{ $city->name }}</option>
+                                    <select name="campuses[]" class="selectize" multiple="multiple">
+                                        @isset($campuses)
+                                            @foreach ($campuses as $campus)
+                                                <option value="{{ $campus->id }}">{{ $campus->name }}</option>
                                             @endforeach
                                         @endisset
 
@@ -149,6 +149,13 @@
                         <label for="video_link" class="mb-2 block">Institute Video Link</label>
                         <input type="text" id="video_link" name="video_link" value="{{ old('video_link') }}"
                             class="form-input" placeholder="Enter video link" aria-describedby="input-helper-text">
+                    </div>
+
+                    <div class="card p-6">
+                        <label for="ranking_number" class="mb-2 block">Ranking Number Of Institute <span
+                                class="text-red-500">*</span></label>
+                        <input type="text" id="ranking_number" name="ranking_number" value="{{ old('ranking_number') }}"
+                            class="form-input" placeholder="Enter Ranking Number" aria-describedby="input-helper-text">
                     </div>
                     <div class="card p-6">
                         <label for="meta_keywords" class="mb-2 block">Meta Keywords

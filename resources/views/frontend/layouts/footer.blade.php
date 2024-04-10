@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="widget bt-instafeed-widget">
-                        <ul id="instafeed">
+                        {{-- <ul id="instafeed">
                             <li class="feed-item">
                                 <a href="#">
                                     <img src="public/frontend/assets/images/widget/instagram/1/1.png" alt="#">
@@ -49,7 +49,7 @@
                                     <img src="public/frontend/assets/images/widget/instagram/1/8.png" alt="#">
                                 </a>
                             </li>
-                        </ul>
+                        </ul> --}}
                         <div class="instafeed-heading">
                             <div class="heading">
                                 <h4>Follow Us <span>#qayima</span></h4>

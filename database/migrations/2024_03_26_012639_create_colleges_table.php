@@ -22,8 +22,9 @@ return new class extends Migration
             //$table->integer('city_id');
             // $table->integer('tyoe_of_college_id');
             // $table->string('credit')->nullable();
-            // $table->string('semester')->nullable();
-            // $table->string('program_type')->nullable();
+
+            // $table->unsignedBigInteger('country_id');
+            // $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
             $table->string('video_link')->nullable();
             $table->longText('about_college')->nullable();
             $table->longText('admisstion_current_time')->nullable();
@@ -32,8 +33,10 @@ return new class extends Migration
             $table->longText('hostel')->nullable();
             $table->string('thumbline')->nullable();
             $table->string('gallery')->nullable();
-            $table->string('brochuri')->nullable();
+            $table->string('brochuri')->nullable(); 
             $table->longText('placement')->nullable();
+            $table->string('ranking_number')->nullable();
+            $table->integer('views')->default(0);
             $table->string('meta_keywords')->nullable();
             $table->string('meta_description')->nullable();
 

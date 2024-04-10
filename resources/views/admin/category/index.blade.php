@@ -46,7 +46,7 @@
                             </button>
                         </div>
                         <div class="px-4 py-8 overflow-y-auto">
-                            <form action="{{ route('create-category') }}" method="POST">
+                            <form action="{{ route('create-category') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
                                     <label for="name"
@@ -65,7 +65,7 @@
                                 <div class="mb-3">
                                     <label for="category_icon"
                                         class="text-gray-800 text-sm font-medium inline-block mb-2">Categoory Icon</label>
-                                    <input onchange="BlogImage(event)" class="form-control" type="file"
+                                    <input onchange="BlogImage(event)" class="form-input" type="file"
                                         name="category_icon" value="{{ old('category_icon') }}">
                                     <img id="blog_imagePreview" src="#" alt="Preview"
                                         style="display:none; max-width: 100%; max-height: 100px;">
@@ -171,7 +171,7 @@
                                                                 <label for="category_icon"
                                                                     class="text-gray-800 text-sm font-medium inline-block mb-2">Categoory
                                                                     Icon</label>
-                                                                <input onchange="BlogImage(event)" class="form-control"
+                                                                <input onchange="BlogImage(event)" class="form-input"
                                                                     type="file" name="category_icon"
                                                                     value="{{ $item->category_icon }}">
                                                                 <img id="blog_imagePreview" src="#" alt="Preview"

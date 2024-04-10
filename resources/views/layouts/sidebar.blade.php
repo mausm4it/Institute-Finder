@@ -61,8 +61,9 @@
                                  <span class="menu-text">Sub Category</span>
                              </a>
                          </li>
+
                          <li class="menu-item">
-                             <a href="{{ route('city') }}" class="menu-link">
+                             <a href="{{ route('campus') }}" class="menu-link">
                                  <span class="menu-text">Campus Area</span>
                              </a>
                          </li>

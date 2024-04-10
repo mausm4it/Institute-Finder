@@ -13,9 +13,9 @@ class College extends Model
         return $this->belongsToMany(Course::class);
     }
 
-    public function cities()
+    public function campuses()
     {
-        return $this->belongsToMany(City::class);
+        return $this->belongsToMany(Campus::class);
     }
 
       public function subcategories()
