@@ -51,6 +51,15 @@
                                     <span class="material-symbols-rounded">close</span>
                                 </button>
                             </div>
+                            @if ($errors->any())
+                                <div class="bg-danger/25 text-danger  text-sm rounded-md p-4" role="alert">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <form id="createblog" action="{{ route('create-blog') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf <main class="flex-grow p-6 ">
@@ -74,9 +83,12 @@
 
                                                 <div class="">
                                                     <input onchange="BlogImage(event)" class="form-control" type="file"
-                                                        name="blog_image" value="{{ old('blog_image') }}">
+                                                        name="blog_image" value="{{ old('blog_image') }}" required>
                                                     <img id="blog_imagePreview" src="#" alt="Preview"
                                                         style="display:none; max-width: 100%; max-height: 100px;">
+                                                    @error('blog_image')
+                                                        <div class=" text-danger">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
 
@@ -90,9 +102,11 @@
                                                 </div>
 
                                                 <div class="flex flex-col gap-3">
-                                                    <div class="">
-                                                        <label for="category_id" class="mb-2 block">Catagory</label>
-                                                        <select name="category_id" id="category_id" class="form-select">
+
+                                                    @if ($categories->isNotEmpty())
+                                                        <label for="blog_category_id" class="mb-2 block">Catagory</label>
+                                                        <select name="blog_category_id" id="blog_category_id"
+                                                            class="form-select">
                                                             @isset($categories)
                                                                 @foreach ($categories as $item)
                                                                     <option value="{{ $item->id }}">{{ $item->name }}
@@ -103,7 +117,33 @@
 
 
                                                         </select>
-                                                    </div>
+                                                        @error('blog_category_id')
+                                                            <div class=" text-danger">{{ $message }}</div>
+                                                        @enderror
+                                                    @else
+                                                        <div class="card p-6">
+                                                            <p class="text-warning pb-1">You Have Not Any Blog Category</p>
+                                                            <p class="text-primary pb-4">Please Create Blog Category</p>
+
+                                                            <a href="{{ route('blog-category') }}"
+                                                                class="btn bg-success/20 text-sm font-medium text-success hover:text-white hover:bg-success"
+                                                                data-fc-type="modal" data-fc-target="createCategory"><i
+                                                                    class="mgc_add_circle_line me-3"></i>
+                                                                Add
+                                                                Blog Category</a>
+
+                                                        </div>
+                                                    @endif
+
+
+
+
+
+
+
+
+
+
 
 
                                                 </div>
@@ -120,6 +160,9 @@
                                                 <textarea id="meta_keywords" name="meta_keywords" class="form-input" rows="3">
                                                   
                                                 </textarea>
+                                                @error('meta_keywords')
+                                                    <div class=" text-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
 
                                             <div class="card p-6">
@@ -128,6 +171,9 @@
                                                 <textarea id="meta_description" name="meta_description" class="form-input" rows="3">
                                                  
                                                 </textarea>
+                                                @error('meta_description')
+                                                    <div class=" text-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
@@ -141,29 +187,38 @@
                                                                 class="text-red-500">*</span></label>
                                                         <input type="text" id="title" value="{{ old('title') }}"
                                                             name="title" class="form-input" placeholder="Enter Title"
-                                                            aria-describedby="input-helper-text">
+                                                            aria-describedby="input-helper-text" required>
+                                                        @error('title')
+                                                            <div class=" text-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                     <div class="">
                                                         <label for="slug" class="mb-2 block">Blog Slug <span
                                                                 class="text-red-500">*</span></label>
                                                         <input type="text" value="{{ old('slug') }}" id="slug"
                                                             name="slug" class="form-input" placeholder="Enter Slug"
-                                                            aria-describedby="input-helper-text">
+                                                            aria-describedby="input-helper-text" required>
+                                                        @error('slug')
+                                                            <div class=" text-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                     <div class="">
                                                         <label for="summary" class="mb-2 block">Blog Summary
                                                             <span class="text-red-500">*</span></label>
-                                                        <textarea id="summary" name="summary" class="form-input" rows="3">
-                                                           {{ old('summary') }}
-                                                        </textarea>
+                                                        <textarea id="summary" name="summary" class="form-input" rows="3" required>{{ old('summary') }}</textarea>
+                                                        @error('summary')
+                                                            <div class=" text-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                     <div class="">
                                                         <label for="content" class="mb-2 block">Blog Description
                                                             <span class="text-red-500">*</span></label>
-                                                        <div id="editor" style="height: 300px;">
-                                                            {!! old('content') !!}
+                                                        @error('content')
+                                                            <div class=" text-danger">{{ $message }}</div>
+                                                        @enderror
+                                                        <div id="editorQuill" style="height: 300px;">
                                                         </div>
-                                                        <input type="hidden" name="content" id="content">
+                                                        <input type="hidden" name="content" id="content" required>
                                                     </div>
 
 

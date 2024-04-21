@@ -4,13 +4,17 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Models\Setting;
+use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
      */
+
     public function register(): void
     {
         //
@@ -20,7 +24,18 @@ class AppServiceProvider extends ServiceProvider
      * Bootstrap any application services.
      */
     public function boot(): void
+
     {
-        View::share('settings', Setting::find(1));
+        if(Schema::hasTable('settings')){
+            View::share('settings', Setting::find(1));
+        }
+
+        if(Schema::hasTable('categories')){
+            View::share('categories', Category::all());
+        }
+        if(Schema::hasTable('sub_categories')){
+            View::share('sub_categories', SubCategory::all());
+        }
+       
     }
 }

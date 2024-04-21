@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 use App\Models\College;
 use App\Models\Course;
 use App\Models\Campus;
+use App\Models\Country;
 use App\Models\TypeOfCollege;
+
+use App\Models\CourseDuration;
+use App\Models\SubCategory;
 use Illuminate\Support\Facades\Storage;
 class CollegeController extends Controller
 {
@@ -20,20 +24,36 @@ class CollegeController extends Controller
     public function CreateCollege(){
         $courses = Course::all();
         $campuses = Campus::all();
+        $countries = Country::all();
         $type_of_collages = TypeOfCollege::all();
-        return view('admin.college.create', compact('courses','campuses' ,'type_of_collages'));
+        $course_durations = CourseDuration::all();
+        $sub_categories = SubCategory::all();
+        
+        return view('admin.college.create', compact('courses','campuses' ,'type_of_collages',
+        'countries' , 'course_durations', 'sub_categories'));
     }
     public function EditCollege($id){
         $college = College::find($id);
         $courses = Course::all();
         $campuses = Campus::all();
+        $countries = Country::all();
         $type_of_collages = TypeOfCollege::all();
-        return view('admin.college.edit', compact('college','courses','campuses' ,'type_of_collages'));
+        return view('admin.college.edit', compact('college','courses','campuses' ,'type_of_collages', 'countries'));
     }
 
     public function MakeCollege(Request $request){
+
+      
         $request->validate([
-            'blog_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'thumbline' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'slug' => 'required',
+            'name' => 'required|string|max:255',
+            'country' => 'required',
+            'campuses' => 'required',
+            'courses' => 'required',
+            
+            'brochuri' => 'file|max:10240|mimes:pdf,doc,docx',
+
           ]);
         
         $college = new College();
@@ -77,14 +97,15 @@ class CollegeController extends Controller
         $college->brochuri = $request->brochuri;
         $college->placement = $request->placement;
         $college->video_link = $request->video_link;
+        $college->type_of_college_id = $request->type_of_college_id;
         $college->ranking_number = $request->ranking_number;
         $college->meta_keywords = $request->meta_keywords;
         $college->meta_description = $request->meta_description;
         $college->save();
 
-        $college->campuses()->sync($request->campuses);
-        $college->courses()->sync($request->courses);
-        $college->type_of_collages()->sync($request->type_of_collages);
+        $college->campuses()->attach($request->campuses);
+        $college->courses()->attach($request->courses);
+        $college->countries()->attach($request->country);
 
 
         // dd('Ok DOne');
@@ -94,7 +115,14 @@ class CollegeController extends Controller
     public function UpdateCollege(Request $request, $id){
 
         $request->validate([
-            'blog_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'thumbline' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'slug' => 'required',
+            'name' => 'required|string|max:255',
+            'country' => 'required',
+            'campuses' => 'required',
+            'courses' => 'required',
+         
+            'brochuri' => 'file|max:10240|mimes:pdf,doc,docx',
           ]);
         
         $college = College::find($id);
@@ -138,6 +166,7 @@ class CollegeController extends Controller
         $college->brochuri = $request->brochuri;
         $college->placement = $request->placement;
         $college->video_link = $request->video_link;
+        $college->type_of_college_id = $request->type_of_college_id;
         $college->ranking_number = $request->ranking_number;
         $college->meta_keywords = $request->meta_keywords;
         $college->meta_description = $request->meta_description;
@@ -145,7 +174,8 @@ class CollegeController extends Controller
 
         $college->campuses()->sync($request->campuses);
         $college->courses()->sync($request->courses);
-        $college->type_of_collages()->sync($request->type_of_collages);
+        $college->countries()->sync($request->country);
+        
         // dd('Ok DOne');
         return redirect()->route('college')->with('success', 'Institute Info Updated Successfully');
     }
@@ -155,7 +185,6 @@ class CollegeController extends Controller
         $college = College::find($id);
         $college->campuses()->detach();
         $college->courses()->detach();
-        $college->type_of_collages()->detach();
         $college->delete();
     
          return redirect()->back()->with('success', 'Institute DELETED SUCCESSFULY');

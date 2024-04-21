@@ -15,6 +15,10 @@ class CourseDurationCOntroller extends Controller
 
 
     public function CreateCourseDuration(Request $request){
+        $request->validate([
+            'slug' => 'required',
+            'name' => 'required|string|max:255',
+          ]);
         $course = new CourseDuration();
 
         $course->name = $request->name;
@@ -29,6 +33,11 @@ class CourseDurationCOntroller extends Controller
 
 
     public function UpdateCourseDuration(Request $request , $id){
+
+        $request->validate([
+            'slug' => 'required',
+            'name' => 'required|string|max:255',
+          ]);
         $course =  CourseDuration::find($id);
 
  

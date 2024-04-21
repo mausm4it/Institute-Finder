@@ -54,6 +54,15 @@
             </div>
         </div>
     </div>
+    @if ($errors->any())
+        <div class="bg-danger/25 text-danger  text-sm rounded-md p-4" role="alert">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     @isset($settings->id)
         <form class="m-5 card p-5" method="POST" action="{{ route('update-settings', $settings->id) }}"
             enctype="multipart/form-data">

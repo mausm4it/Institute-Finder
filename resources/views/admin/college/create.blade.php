@@ -2,7 +2,15 @@
 
 @section('content')
     <h2 class="bg-primary text-white p-3 text-center text-lg">Create Institute Info </h2>
-
+    @if ($errors->any())
+        <div class="bg-danger/25 text-danger  text-sm rounded-md p-4" role="alert">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
     <form id="createblog" action="{{ route('make-college') }}" method="post" enctype="multipart/form-data">
         @csrf <main class="flex-grow p-6 ">
@@ -21,10 +29,32 @@
             </div>
 
 
+
             <div class="grid lg:grid-cols-4 gap-6">
-                <div class="col-span-1 flex flex-col gap-6">
+                <div class="col-span-1 flex flex-col gap-6 ">
+
                     <div class="card p-6">
-                        <h4>Institute Thumbline
+                        <h4>Select Country <span class="text-red-500">*</span>
+                        </h4>
+                        <br>
+                        <select id="search-select" name="country" class="search-select"
+                            aria-describedby="input-helper-text">
+                            <option value="">Select Country</option>
+                            @foreach ($countries as $country)
+                                <option value="{{ $country->id }}">{{ $country->name }}</option>
+                            @endforeach
+                        </select>
+
+                        @error('country')
+                            <div class=" text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+
+
+
+                    <div class="card p-6">
+                        <h4>Institute Thumbline <span class="text-red-500">*</span>
                         </h4>
                         <br>
 
@@ -33,9 +63,12 @@
 
                         <div class="">
                             <input onchange="BlogImage(event)" class="form-control" type="file" name="thumbline"
-                                value="">
+                                value="" required>
                             <img id="blog_imagePreview" src="#" alt="Preview"
                                 style="display:none; max-width: 100%; max-height: 100px;">
+                            @error('thumbline')
+                                <div class=" text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="card p-6">
@@ -43,6 +76,9 @@
                         </h4>
                         <br>
                         <input class="form-control" type="file" name="gallery[]" value="" multiple>
+                        @error('gallery')
+                            <div class=" text-danger">{{ $message }}</div>
+                        @enderror
 
                     </div>
 
@@ -55,14 +91,19 @@
 
 
                         <div class="">
-                            <input class="form-control" type="file" name="brochuri" value="">
+                            <input class="form-control" type="file" name="brochuri" value=""
+                                accept=".pdf, .doc, .docx">
+                            @error('brochuri')
+                                <div class=" text-danger">{{ $message }}</div>
+                            @enderror
 
                         </div>
                     </div>
-                    @isset($campuses)
+
+                    @if ($campuses->isNotEmpty())
                         <div class="card p-6">
                             <div class="flex justify-between items-center mb-4">
-                                <p class="card-title">Campuses in Institute</p>
+                                <p class="card-title">Campuses in Institute <span class="text-red-500">*</span></p>
                                 <div
                                     class="inline-flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-700 w-9 h-9">
                                     <i class="mgc_compass_line"></i>
@@ -71,8 +112,8 @@
 
                             <div class="flex flex-col gap-3">
                                 <div class="">
-                                    <label for="category_id" class="mb-2 block">Campus Areas</label>
-                                    <select name="campuses[]" class="selectize" multiple="multiple">
+                                    <label for="campuses" class="mb-2 block">Campus Areas</label>
+                                    <select name="campuses[]" id="campuses" class="selectize" multiple="multiple">
                                         @isset($campuses)
                                             @foreach ($campuses as $campus)
                                                 <option value="{{ $campus->id }}">{{ $campus->name }}</option>
@@ -81,16 +122,31 @@
 
 
                                     </select>
+                                    @error('campuses')
+                                        <div class=" text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
 
                             </div>
                         </div>
-                    @endisset
-                    @isset($courses)
+                    @else
+                        <div class="card p-6">
+                            <p class="text-warning pb-1">You Have Not Any Campus</p>
+                            <p class="text-primary pb-4">Please Create Campus</p>
+                            <div class="flex flex-wrap gap-4 ">
+                                <a href="{{ route('campus') }}"
+                                    class="btn bg-success/20 text-sm font-medium text-success hover:text-white hover:bg-success"><i
+                                        class="mgc_add_circle_line me-3"></i> Add
+                                    Campus</a>
+                            </div>
+                        </div>
+                    @endif
+
+                    @if ($courses->isNotEmpty())
                         <div class="card p-6">
                             <div class="flex justify-between items-center mb-4">
-                                <p class="card-title">Courses in Institute</p>
+                                <p class="card-title">Courses in Institute <span class="text-red-500">*</span></p>
                                 <div
                                     class="inline-flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-700 w-9 h-9">
                                     <i class="mgc_compass_line"></i>
@@ -99,8 +155,8 @@
 
                             <div class="flex flex-col gap-3">
                                 <div class="">
-                                    <label for="category_id" class="mb-2 block">Courses</label>
-                                    <select name="courses[]" class="selectize" multiple="multiple">
+                                    <label for="courses" class="mb-2 block">Courses</label>
+                                    <select name="courses[]" id="courses" class="selectize" multiple="multiple">
                                         @isset($courses)
                                             @foreach ($courses as $course)
                                                 <option value="{{ $course->id }}">{{ $course->name }}</option>
@@ -109,16 +165,30 @@
 
 
                                     </select>
+                                    @error('courses')
+                                        <div class=" text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
 
                             </div>
                         </div>
-                    @endisset
-                    @isset($type_of_collages)
+                    @else
+                        <div class="card p-6">
+                            <p class="text-warning pb-1">You Have Not Any Course</p>
+                            <p class="text-primary pb-4">Please Create Course</p>
+                            <div class="flex flex-wrap gap-4 ">
+                                <a href="{{ route('course') }}"
+                                    class="btn bg-success/20 text-sm font-medium text-success hover:text-white hover:bg-success"><i
+                                        class="mgc_add_circle_line me-3"></i> Add
+                                    course</a>
+                            </div>
+                        </div>
+                    @endif
+                    @if ($type_of_collages->isNotEmpty())
                         <div class="card p-6">
                             <div class="flex justify-between items-center mb-4">
-                                <p class="card-title">Type Of Institute</p>
+                                <p class="card-title">Type Of Institute <span class="text-red-500">*</span></p>
                                 <div
                                     class="inline-flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-700 w-9 h-9">
                                     <i class="mgc_compass_line"></i>
@@ -127,47 +197,74 @@
 
                             <div class="flex flex-col gap-3">
                                 <div class="">
-                                    <label for="category_id" class="mb-2 block">Type Of Institute</label>
-                                    <select name="type_of_collages[]" class="selectize" multiple="multiple">
-                                        @isset($type_of_collages)
-                                            @foreach ($type_of_collages as $type_of_college)
-                                                <option value="{{ $type_of_college->id }}">{{ $type_of_college->name }}</option>
-                                            @endforeach
-                                        @endisset
+                                    <label for="type_of_college_id" class="mb-2 block">Type Of Institute</label>
+                                    <select name="type_of_college_id" id="type_of_college_id" class="selectize">
+                                        @foreach ($type_of_collages as $type_of_collage)
+                                            <option value="{{ $type_of_collage->id }}">{{ $type_of_collage->name }}
+                                            </option>
+                                        @endforeach
 
 
                                     </select>
+                                    @error('type_of_collages')
+                                        <div class=" text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
 
                             </div>
                         </div>
-                    @endisset
+                    @else
+                        <div class="card p-6">
+                            <p class="text-warning pb-1">You Have Not Any Type Of Institute</p>
+                            <p class="text-primary pb-4">Please Create Type Of Institute</p>
+                            <div class="flex flex-wrap gap-4 ">
+                                <a href="{{ route('type-of-college') }}"
+                                    class="btn bg-success/20 text-sm font-medium text-success hover:text-white hover:bg-success"><i
+                                        class="mgc_add_circle_line me-3"></i> Add
+                                    Type Of Institute</a>
+                            </div>
+                        </div>
+                    @endif
 
 
                     <div class="card p-6">
                         <label for="video_link" class="mb-2 block">Institute Video Link</label>
                         <input type="text" id="video_link" name="video_link" value="{{ old('video_link') }}"
                             class="form-input" placeholder="Enter video link" aria-describedby="input-helper-text">
+                        @error('video_link')
+                            <div class=" text-danger">{{ $message }}</div>
+                        @enderror
+
                     </div>
 
                     <div class="card p-6">
                         <label for="ranking_number" class="mb-2 block">Ranking Number Of Institute <span
                                 class="text-red-500">*</span></label>
-                        <input type="text" id="ranking_number" name="ranking_number" value="{{ old('ranking_number') }}"
-                            class="form-input" placeholder="Enter Ranking Number" aria-describedby="input-helper-text">
+                        <input type="text" id="ranking_number" name="ranking_number"
+                            value="{{ old('ranking_number') }}" class="form-input" placeholder="Enter Ranking Number"
+                            aria-describedby="input-helper-text">
+                        @error('ranking_number')
+                            <div class=" text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="card p-6">
                         <label for="meta_keywords" class="mb-2 block">Meta Keywords
                             <span class="text-red-500 text-xs">Please Write With Coma [Example:
                                 keywords1,keywords2,keywords3]</span></label>
                         <textarea id="meta_keywords" name="meta_keywords" class="form-input" rows="3">{{ old('meta_keywords') }}</textarea>
+                        @error('meta_keywords')
+                            <div class=" text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="card p-6">
                         <label for="meta_description" class="mb-2 block">Meta Description
                         </label>
                         <textarea id="meta_description" name="meta_description" class="form-input" rows="3">{{ old('meta_keywords') }}</textarea>
+                        @error('meta_keywords')
+                            <div class=" text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
 
@@ -180,80 +277,85 @@
                                 <label for="name" class="mb-2 block">Name Of Institute <span
                                         class="text-red-500">*</span></label>
                                 <input type="text" id="name" name="name" value="{{ old('name') }}"
-                                    class="form-input" placeholder="Enter name" aria-describedby="input-helper-text">
+                                    class="form-input" placeholder="Enter name" aria-describedby="input-helper-text"
+                                    required>
+                                @error('name')
+                                    <div class=" text-danger">{{ $message }}</div>
+                                @enderror
+
                             </div>
                             <div class="">
                                 <label for="slug" class="mb-2 block">Slug <span class="text-red-500">*</span></label>
                                 <input type="text" id="slug" name="slug" value="{{ old('slug') }}"
-                                    class="form-input" placeholder="Enter Slug" aria-describedby="input-helper-text">
+                                    class="form-input" placeholder="Enter Slug" aria-describedby="input-helper-text"
+                                    required>
+                                @error('slug')
+                                    <div class=" text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="">
                                 <label for="summary" class="mb-2 block">Summary
                                     <span class="text-red-500">*</span></label>
-                                <textarea id="summary" name="summary" class="form-input" rows="3">{{ old('summary') }}</textarea>
+                                <textarea id="summary" id="summary" name="summary" class="form-input" rows="3" required>{{ old('summary') }}</textarea>
+                                @error('summary')
+                                    <div class=" text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="">
                                 <label for="about_college" class="mb-2 block">About Of Institute
                                     <span class="text-red-500">*</span></label>
+                                @error('about_college')
+                                    <div class=" text-danger">{{ $message }}</div>
+                                @enderror
                                 <div id="editorQuill" style="height: 300px;">
                                 </div>
                                 <input type="hidden" name="about_college" id="about_college">
+
                             </div>
                             <div class="">
                                 <label for="admisstion_current_time" class="mb-2 block">Admission Information
                                 </label>
+                                @error('admisstion_current_time')
+                                    <div class=" text-danger">{{ $message }}</div>
+                                @enderror
                                 <textarea id="admisstion_current_time" name="admisstion_current_time" class="form-input" rows="3">{{ old('admisstion_current_time') }}</textarea>
+
                             </div>
                             <div class="">
                                 <label for="schollership" class="mb-2 block">Schollership Information
                                 </label>
+                                @error('schollership')
+                                    <div class=" text-danger">{{ $message }}</div>
+                                @enderror
                                 <textarea id="schollership" name="schollership" class="form-input" rows="3">{{ old('schollership') }}</textarea>
                             </div>
                             <div class="">
                                 <label for="faculty" class="mb-2 block">Faculty Information
                                 </label>
+                                @error('faculty')
+                                    <div class=" text-danger">{{ $message }}</div>
+                                @enderror
                                 <textarea id="faculty" name="faculty" class="form-input" rows="3">{{ old('faculty') }}</textarea>
                             </div>
                             <div class="">
                                 <label for="hostel" class="mb-2 block">Hostel Information
                                 </label>
+                                @error('hostel')
+                                    <div class=" text-danger">{{ $message }}</div>
+                                @enderror
                                 <textarea id="hostel" name="hostel" class="form-input" rows="3">{{ old('hostel') }}</textarea>
                             </div>
                             <div class="">
                                 <label for="placement" class="mb-2 block">Placement Information
                                 </label>
+                                @error('placement')
+                                    <div class=" text-danger">{{ $message }}</div>
+                                @enderror
                                 <textarea id="placement" name="placement" class="form-input" rows="3">{{ old('placement') }}</textarea>
                             </div>
 
 
 
-                            {{-- <div class="">
-    <label for="product-status" class="mb-2 block">Status <span
-            class="text-red-500">*</span></label>
-    <div class="flex gap-x-6">
-
-
-        <div class="flex">
-            <input type="radio" name="radio-group" class="form-radio"
-                id="private">
-            <label for="private"
-                class="text-sm text-gray-500 ms-2 dark:text-gray-400">Private</label>
-        </div>
-
-    </div>
-</div> --}}
-
-                            {{-- <div class="grid md:grid-cols-2 gap-3">
-    <div class="">
-        <label for="start-date" class="mb-2 block">Start Date</label>
-        <input type="date" id="start-date" class="form-input">
-    </div>
-
-    <div class="">
-        <label for="due-date" class="mb-2 block">Due Date</label>
-        <input type="date" id="due-date" class="form-input">
-    </div>
-</div> --}}
 
 
                         </div>

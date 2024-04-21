@@ -15,6 +15,10 @@ class CampusController extends Controller
 
 
     public function CreateCampus(Request $request){
+        $request->validate([
+            'slug' => 'required',
+            'name' => 'required|string|max:255',
+          ]);
         $campus = new Campus();
 
         $campus->name = $request->name;
@@ -29,6 +33,10 @@ class CampusController extends Controller
 
 
     public function UpdateCampus(Request $request , $id){
+        $request->validate([
+            'slug' => 'required',
+            'name' => 'required|string|max:255',
+          ]);
         $campus =  Campus::find($id);
 
  

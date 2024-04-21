@@ -6,8 +6,9 @@
                     <div class="header-navigation-left">
                         <!-- Site Branding -->
                         <div class="site-branding">
-                            <a href="index.html">
-                                <img src="{{ asset('storage/app/' . $settings->logo) }}" alt="{{ $settings->name }}" />
+                            <a href="{{ route('home') }}">
+                                <img width="150" src="{{ asset('storage/app/' . $settings->logo) }}"
+                                    alt="{{ $settings->name }}" />
                             </a>
                         </div><!--  /.site-branding -->
                         <div class="mobile-element-meta">
@@ -46,209 +47,52 @@
                                 <div class="menu-content">
                                     <ul class="mainmenu">
                                         <li>
-                                            <a class="active" href="#">Home</a>
+                                            <a class="active" href="{{ route('home') }}">Home</a>
+
+                                        </li>
+
+                                        <li>
+                                            <a href="#">Goal</a>
                                             <ul class="sub-menu">
-                                                <li><a href="index.html">Home one</a></li>
-                                                <li><a href="index02.html">Home Two</a></li>
-                                                <li><a href="index03.html">Home Three</a></li>
+                                                @foreach ($sub_categories as $sub_category)
+                                                    <li><a href="listing-grid.html">{{ $sub_category->name }}</a></li>
+                                                @endforeach
+
+
                                             </ul>
                                         </li>
+
+
                                         <li class="megamenu">
-                                            <a href="#">Explore</a>
+                                            <a href="#">Category</a>
                                             <div
                                                 class="sub-menu megamenu-main megamenu-carousel carousel-nav-text owl-carousel">
-                                                <a href="#" class="cat-item cat-nightlife">
-                                                    <figure class="cat-thumb">
-                                                        <img src="public/frontend/assets/images/categories/component/1.jpg"
-                                                            alt="Thmubnail">
-                                                    </figure><!--./ cat-thumb -->
+                                                @foreach ($categories as $category)
+                                                    <a href="#" class="cat-item cat-nightlife">
+                                                        <figure class="cat-thumb">
+                                                            <img src="{{ asset('storage/app/' . $category->category_icon) }}"
+                                                                alt="Thmubnail">
+                                                        </figure><!--./ cat-thumb -->
 
-                                                    <div class="cat-content">
-                                                        <div class="cat-content-inner">
-                                                            <p class="listing-no">20</p>
-                                                            <h3 class="title">Nightlife</h3><!--./ title -->
-                                                        </div><!--./ cat-content-inner -->
-                                                    </div><!--./ cat-content -->
-                                                    <div class="cat-content-hover">
-                                                        <div class="content-hover-inner">
-                                                            <div class="icon">
-                                                                <span class="icon-cafe"></span>
-                                                            </div>
-                                                            <h3 class="title">Nightlife</h3><!--./ title -->
-                                                        </div>
-                                                    </div><!--./ cat-content-hover -->
-                                                </a>
-                                                <a href="#" class="cat-item cat-hotel">
-                                                    <figure class="cat-thumb">
-                                                        <img src="public/frontend/assets/images/categories/component/2.jpg"
-                                                            alt="Thmubnail">
-                                                    </figure><!--./ cat-thumb -->
+                                                        <div class="cat-content">
+                                                            <div class="cat-content-inner">
 
-                                                    <div class="cat-content">
-                                                        <div class="cat-content-inner">
-                                                            <p class="listing-no">10</p>
-                                                            <h3 class="title">Hotels</h3><!--./ title -->
-                                                        </div><!--./ cat-content-inner -->
-                                                    </div><!--./ cat-content -->
-                                                    <div class="cat-content-hover">
-                                                        <div class="content-hover-inner">
-                                                            <div class="icon">
-                                                                <span class="icon-building"></span>
-                                                            </div>
-                                                            <h3 class="title">Hotels</h3><!--./ title -->
-                                                        </div>
-                                                    </div><!--./ cat-content-hover -->
-                                                </a>
-                                                <a href="#" class="cat-item cat-sopping">
-                                                    <figure class="cat-thumb">
-                                                        <img src="public/frontend/assets/images/categories/component/3.jpg"
-                                                            alt="Thmubnail">
-                                                    </figure><!--./ cat-thumb -->
+                                                                <h3 class="title">{{ $category->name }}</h3>
+                                                                <!--./ title -->
+                                                            </div><!--./ cat-content-inner -->
+                                                        </div><!--./ cat-content -->
+                                                        <div class="cat-content-hover">
+                                                            <div class="content-hover-inner">
 
-                                                    <div class="cat-content">
-                                                        <div class="cat-content-inner">
-                                                            <p class="listing-no">35</p>
-                                                            <h3 class="title">Shopping</h3><!--./ title -->
-                                                        </div><!--./ cat-content-inner -->
-                                                    </div><!--./ cat-content -->
-                                                    <div class="cat-content-hover">
-                                                        <div class="content-hover-inner">
-                                                            <div class="icon">
-                                                                <span class="icon-shopping-cart"></span>
+                                                                <h3 class="title">{{ $category->name }}</h3>
+                                                                <!--./ title -->
                                                             </div>
-                                                            <h3 class="title">Shopping</h3><!--./ title -->
-                                                        </div>
-                                                    </div><!--./ cat-content-hover -->
-                                                </a>
-                                                <a href="#" class="cat-item cat-places">
-                                                    <figure class="cat-thumb">
-                                                        <img src="public/frontend/assets/images/categories/component/4.jpg"
-                                                            alt="Thmubnail">
-                                                    </figure><!--./ cat-thumb -->
+                                                        </div><!--./ cat-content-hover -->
+                                                    </a>
+                                                @endforeach
 
-                                                    <div class="cat-content">
-                                                        <div class="cat-content-inner">
-                                                            <p class="listing-no">80</p>
-                                                            <h3 class="title">Places</h3><!--./ title -->
-                                                        </div><!--./ cat-content-inner -->
-                                                    </div><!--./ cat-content -->
-                                                    <div class="cat-content-hover">
-                                                        <div class="content-hover-inner">
-                                                            <div class="icon">
-                                                                <span class="icon-vynil"></span>
-                                                            </div>
-                                                            <h3 class="title">Places</h3><!--./ title -->
-                                                        </div>
-                                                    </div><!--./ cat-content-hover -->
-                                                </a>
-                                                <a href="#" class="cat-item cat-nightlife">
-                                                    <figure class="cat-thumb">
-                                                        <img src="public/frontend/assets/images/categories/component/1.jpg"
-                                                            alt="Thmubnail">
-                                                    </figure><!--./ cat-thumb -->
 
-                                                    <div class="cat-content">
-                                                        <div class="cat-content-inner">
-                                                            <p class="listing-no">20</p>
-                                                            <h3 class="title">Nightlife</h3><!--./ title -->
-                                                        </div><!--./ cat-content-inner -->
-                                                    </div><!--./ cat-content -->
-                                                    <div class="cat-content-hover">
-                                                        <div class="content-hover-inner">
-                                                            <div class="icon">
-                                                                <span class="icon-cafe"></span>
-                                                            </div>
-                                                            <h3 class="title">Nightlife</h3><!--./ title -->
-                                                        </div>
-                                                    </div><!--./ cat-content-hover -->
-                                                </a>
-                                                <a href="#" class="cat-item cat-hotel">
-                                                    <figure class="cat-thumb">
-                                                        <img src="public/frontend/assets/images/categories/component/2.jpg"
-                                                            alt="Thmubnail">
-                                                    </figure><!--./ cat-thumb -->
-
-                                                    <div class="cat-content">
-                                                        <div class="cat-content-inner">
-                                                            <p class="listing-no">10</p>
-                                                            <h3 class="title">Hotels</h3><!--./ title -->
-                                                        </div><!--./ cat-content-inner -->
-                                                    </div><!--./ cat-content -->
-                                                    <div class="cat-content-hover">
-                                                        <div class="content-hover-inner">
-                                                            <div class="icon">
-                                                                <span class="icon-building"></span>
-                                                            </div>
-                                                            <h3 class="title">Hotels</h3><!--./ title -->
-                                                        </div>
-                                                    </div><!--./ cat-content-hover -->
-                                                </a>
-                                                <a href="#" class="cat-item cat-sopping">
-                                                    <figure class="cat-thumb">
-                                                        <img src="public/frontend/assets/images/categories/component/3.jpg"
-                                                            alt="Thmubnail">
-                                                    </figure><!--./ cat-thumb -->
-
-                                                    <div class="cat-content">
-                                                        <div class="cat-content-inner">
-                                                            <p class="listing-no">35</p>
-                                                            <h3 class="title">Shopping</h3><!--./ title -->
-                                                        </div><!--./ cat-content-inner -->
-                                                    </div><!--./ cat-content -->
-                                                    <div class="cat-content-hover">
-                                                        <div class="content-hover-inner">
-                                                            <div class="icon">
-                                                                <span class="icon-shopping-cart"></span>
-                                                            </div>
-                                                            <h3 class="title">Shopping</h3><!--./ title -->
-                                                        </div>
-                                                    </div><!--./ cat-content-hover -->
-                                                </a>
-                                                <a href="#" class="cat-item cat-places">
-                                                    <figure class="cat-thumb">
-                                                        <img src="public/frontend/assets/images/categories/component/4.jpg"
-                                                            alt="Thmubnail">
-                                                    </figure><!--./ cat-thumb -->
-
-                                                    <div class="cat-content">
-                                                        <div class="cat-content-inner">
-                                                            <p class="listing-no">80</p>
-                                                            <h3 class="title">Places</h3><!--./ title -->
-                                                        </div><!--./ cat-content-inner -->
-                                                    </div><!--./ cat-content -->
-                                                    <div class="cat-content-hover">
-                                                        <div class="content-hover-inner">
-                                                            <div class="icon">
-                                                                <span class="icon-vynil"></span>
-                                                            </div>
-                                                            <h3 class="title">Places</h3><!--./ title -->
-                                                        </div>
-                                                    </div><!--./ cat-content-hover -->
-                                                </a>
                                             </div><!--/.mega-menu-content-->
-                                        </li>
-                                        <li>
-                                            <a href="#">Listing</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="listing-grid.html">Listing Grid</a></li>
-                                                <li><a href="listing-list.html">Listing List</a></li>
-                                                <li><a href="listing-map.html">Listing map</a></li>
-                                                <li><a href="listing-map-grid.html">Listing map Grid</a></li>
-                                                <li><a href="listing-map-list.html">Listing map List</a></li>
-                                                <li><a href="listing-details.html">Listing details one</a></li>
-                                                <li><a href="listing-details-two.html">Listing details two</a></li>
-                                                <li><a href="listing-details-three.html">Listing details three</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">User Panel</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="dashboard.html">dashboard</a></li>
-                                                <li><a href="user-profile.html">My Profile</a></li>
-                                                <li><a href="dashboard-booking.html">Booking</a></li>
-                                                <li><a href="dashboard-listing.html">My Listing</a></li>
-                                                <li><a href="dashboard-history.html">History</a></li>
-                                            </ul>
                                         </li>
                                         <li>
                                             <a href="#">Pages</a>
@@ -261,6 +105,17 @@
                                                 <li><a href="404.html">Error 404</a></li>
                                             </ul>
                                         </li>
+                                        <li>
+                                            <a href="#">User Panel</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="dashboard.html">dashboard</a></li>
+                                                <li><a href="user-profile.html">My Profile</a></li>
+                                                <li><a href="dashboard-booking.html">Booking</a></li>
+                                                <li><a href="dashboard-listing.html">My Listing</a></li>
+                                                <li><a href="dashboard-history.html">History</a></li>
+                                            </ul>
+                                        </li>
+
                                     </ul> <!-- /.menu-list -->
                                 </div> <!-- /.hours-content-->
                             </div><!-- /.menu-wrapper -->

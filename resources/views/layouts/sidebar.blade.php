@@ -11,6 +11,7 @@
 
              <!-- Dark Brand Logo -->
              <div class="logo-dark">
+
                  <img src="{{ asset('storage/app/' . $settings->logo) }}" class="logo-lg h-6" alt="Dark logo">
                  <img src="{{ asset('storage/app/' . $settings->icon) }}" class="logo-sm" alt="Small logo">
              </div>
@@ -36,12 +37,7 @@
 
 
 
-                 <li class="menu-item">
-                     <a href="{{ route('blogs') }}" class="menu-link">
-                         <span class="menu-icon"><i class="mgc_task_2_line"></i></span>
-                         <span class="menu-text">Blogs</span>
-                     </a>
-                 </li>
+
                  <li class="menu-title">Component</li>
                  <li class="menu-item">
                      <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
@@ -112,10 +108,61 @@
                      </ul>
                  </li>
                  <li class="menu-item">
+                     <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
+                         <span class="menu-icon"><i class="mgc_task_2_line"></i></span>
+                         <span class="menu-text"> Blogs </span>
+                         <span class="menu-arrow"></span>
+                     </a>
+
+                     <ul class="sub-menu hidden">
+                         <li class="menu-item">
+                             <a href="{{ route('blogs') }}" class="menu-link">
+                                 <span class="menu-text">List</span>
+                             </a>
+                         </li>
+                         <li class="menu-item">
+                             <a href="{{ route('blog-category') }}" class="menu-link">
+                                 <span class="menu-text">Blog Category</span>
+                             </a>
+                         </li>
+
+
+                     </ul>
+                 </li>
+                 <li class="menu-item">
                      <a href="{{ route('settings') }}" class="menu-link">
-                         <span class="menu-icon"><i class="mgc_settings_5_fill"></i></span>
+
+                         <span class="flex items-center justify-center animate-spin">
+                             <i class="mgc_settings_4_line text-2xl"></i>
+                         </span>
+
                          <span class="menu-text">Settings</span>
                      </a>
+                 </li>
+
+                 <li class="menu-item">
+                     <a href="javascript:void(0)" data-fc-type="collapse" class="menu-link">
+                         <span class="menu-icon"><i class="mgc_contacts_fill"></i></span>
+                         <span class="menu-text"> Users Role</span>
+                         <span class="menu-arrow"></span>
+                     </a>
+
+                     <ul class="sub-menu hidden">
+                         <li class="menu-item">
+                             <a href="{{ route('users') }}" class="menu-link">
+                                 <span class="menu-text">Users</span>
+                             </a>
+                         </li>
+
+                         <li class="menu-item">
+                             <a href="{{ route('role') }}" class="menu-link">
+                                 <span class="menu-text">Roles</span>
+                             </a>
+                         </li>
+
+
+
+                     </ul>
                  </li>
 
              </ul>

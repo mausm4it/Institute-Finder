@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Country extends Model
 {
@@ -26,4 +27,10 @@ class Country extends Model
     {
         return $this->hasManyThrough(City::class, State::class);
     }
+
+    public function colleges():BelongsToMany
+    {
+        return $this->belongsToMany(College::class);
+    }
+    
 }

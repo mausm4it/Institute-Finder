@@ -19,6 +19,11 @@ class SubCategoryController extends Controller
 
     public function CreateSubCategory(Request $request){
         $subCategory = new SubCategory();
+        $request->validate([
+            'slug' => 'required',
+            'category_id' => 'required',
+            'name' => 'required|string|max:255',
+          ]);
 
         $subCategory->name = $request->name;
         $subCategory->slug = $request->slug;
@@ -32,6 +37,11 @@ class SubCategoryController extends Controller
 
 
     public function UpdateSubCategory(Request $request , $id){
+        $request->validate([
+            'slug' => 'required',
+            'category_id' => 'required',
+            'name' => 'required|string|max:255',
+          ]);
         $subCategory =  SubCategory::find($id);
 
  

@@ -53,6 +53,9 @@
                                         class="text-gray-800 text-sm font-medium inline-block mb-2">Name</label>
                                     <input type="text" class="form-input" value="{{ old('name') }}" name="name"
                                         id="name" placeholder="Enter Name">
+                                    @error('name')
+                                        <div class=" text-danger">{{ $message }}</div>
+                                    @enderror
 
                                 </div>
                                 <div class="mb-3">
@@ -60,15 +63,21 @@
                                         class="text-gray-800 text-sm font-medium inline-block mb-2">Slug</label>
                                     <input type="text" class="form-input" value="{{ old('slug') }}" name="slug"
                                         id="slug" placeholder="Enter Slug">
+                                    @error('slug')
+                                        <div class=" text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="category_icon"
                                         class="text-gray-800 text-sm font-medium inline-block mb-2">Categoory Icon</label>
                                     <input onchange="BlogImage(event)" class="form-input" type="file"
-                                        name="category_icon" value="{{ old('category_icon') }}">
+                                        name="category_icon" value="{{ old('profile_picture') }}">
                                     <img id="blog_imagePreview" src="#" alt="Preview"
                                         style="display:none; max-width: 100%; max-height: 100px;">
+                                    @error('category_icon')
+                                        <div class=" text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="flex justify-end items-center gap-4 p-4 ">
                                     <button
@@ -94,8 +103,8 @@
                         class="bg-slate-300 bg-opacity-20 border-t dark:bg-slate-800 divide-gray-300 dark:border-gray-700">
                         <tr>
                             <th scope="col"
-                                class="py-3.5 ps-4 pe-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">ID
-                            </th>
+                                class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">
+                                Image</th>
                             <th scope="col"
                                 class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">
                                 Name</th>
@@ -112,9 +121,9 @@
                         @isset($categories)
                             @foreach ($categories as $item)
                                 <tr>
-                                    <td
-                                        class="whitespace-nowrap py-4 ps-4 pe-3 text-sm font-medium text-gray-900 dark:text-gray-200">
-                                        <b>#{{ $item->id }}</b>
+                                    <td class="whitespace-nowrap px-3 py-4 pe-3 text-sm">
+                                        <img width="50" src="{{ asset('storage/app/' . $item->category_icon) }}"
+                                            alt="">
                                     </td>
                                     <td class="whitespace-nowrap py-4 pe-3 text-sm">
                                         {{ $item->name }}
@@ -149,7 +158,8 @@
                                                         </button>
                                                     </div>
                                                     <div class="px-4 py-8 overflow-y-auto">
-                                                        <form action="{{ route('update-category', $item->id) }}" method="POST">
+                                                        <form action="{{ route('update-category', $item->id) }}"
+                                                            method="POST">
                                                             @csrf
                                                             <div class="mb-3">
                                                                 <label for="name"
@@ -157,6 +167,9 @@
                                                                 <input type="text" class="form-input"
                                                                     value="{{ $item->name }}" name="name"
                                                                     id="name" placeholder="Enter Name">
+                                                                @error('name')
+                                                                    <div class=" text-danger">{{ $message }}</div>
+                                                                @enderror
 
                                                             </div>
                                                             <div class="mb-3">
@@ -165,6 +178,9 @@
                                                                 <input type="text" class="form-input"
                                                                     value="{{ $item->slug }}" name="slug"
                                                                     id="slug" placeholder="Enter Slug">
+                                                                @error('slug')
+                                                                    <div class=" text-danger">{{ $message }}</div>
+                                                                @enderror
                                                             </div>
 
                                                             <div class="mb-3">
@@ -176,6 +192,9 @@
                                                                     value="{{ $item->category_icon }}">
                                                                 <img id="blog_imagePreview" src="#" alt="Preview"
                                                                     style="display:none; max-width: 100%; max-height: 100px;">
+                                                                @error('category_icon')
+                                                                    <div class=" text-danger">{{ $message }}</div>
+                                                                @enderror
                                                             </div>
                                                             <div class="flex justify-end items-center gap-4 p-4 ">
                                                                 <button

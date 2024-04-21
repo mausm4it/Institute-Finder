@@ -40,19 +40,12 @@
 
 
     {{-- external Css --}}
-    <style>
-        .span {
-            color: #00AA9E;
-        }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('public/frontend/masum4it/masum4it_css.css') }}">
 
-        .toggle {
-            display: none;
-        }
 
-        .active {
-            display: inline-block;
-        }
-    </style>
+    {{-- external css end --}}
+
 </head>
 
 <body>
@@ -94,26 +87,74 @@
     <script src="{{ asset('public/frontend/assets/js/main.js') }}"></script>
 
 
-    {{-- external js --}}
+    {{-- external js start --}}
+    <script src="{{ asset('public/frontend/assets/masum4it/masum4it_js.js') }}"></script>
     <script>
-        function displayWord() {
-            var words = document.getElementsByClassName("toggle");
-            var wordCounter = 0;
+        $(document).ready(function() {
+            $('#search-box').on('keyup', function() {
+                var query = $(this).val();
 
-            setInterval(updateWord, 1000);
+                $.ajax({
+                    url: '{{ route('search') }}',
+                    method: 'GET',
+                    data: {
+                        query: query
+                    },
+                    success: function(response) {
+                        // Clear previous suggestions
+                        $('#search-results').empty();
 
-            function updateWord() {
-                if (wordCounter >= words.length) wordCounter = 0;
-                for (var i = 0; i < words.length; i++) {
-                    words[i].classList.remove('active');
-                }
-                words[wordCounter].classList.add('active');
-                wordCounter++;
-            }
-        }
-        displayWord();
+                        // Append new suggestions
+                        $.each(response, function(index, college) {
+                            // Create a div for each college result
+                            var collegeDiv = $('<div class="college-result"></div>');
+
+                            // Create an anchor element for the college link
+                            var collegeLink = $('<a href="/college/' + college.slug +
+                                '"></a>');
+
+                            // Create an image element with the college thumbnail
+                            var imgElement = $('<img src="storage/app/' + college
+                                .thumbline + '" alt="' + college.name + '"/>');
+
+                            // Create a paragraph element with the college name
+                            var nameElement = $('<span class="college-name">' + college
+                                .name + '</span>');
+
+                            // Append the image and name to the college link
+                            collegeLink.append(imgElement, nameElement);
+
+                            // Append the college link to the college result div
+                            collegeDiv.append(collegeLink);
+
+                            // Append the college result div to the search results container
+                            $('#search-results').append(collegeDiv);
+                        });
+
+                    }
+                });
+            });
+        });
     </script>
+
+    {{-- external js end --}}
+
+
+
+
 </body>
 
 
 </html>
+{{-- <select id="filterByPrice">
+    <option value="">Filter By Price</option>
+    <option value="0-50">$0 - $50</option>
+    <option value="50-100">$50 - $100</option>
+    <option value="100-200">$100 - $200</option>
+    <option value="200-">Above $200</option>
+</select>
+
+<select id="filterByCategory">
+    <option value="">Filter By Category</option>
+    <!-- Populate with your category options -->
+</select> --}}

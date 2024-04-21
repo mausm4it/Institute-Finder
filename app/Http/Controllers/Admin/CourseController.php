@@ -21,6 +21,15 @@ class CourseController extends Controller
 
 
     public function CreateCourse(Request $request){
+
+        $request->validate([
+            'slug' => 'required',
+            'semester' => 'required',
+            'credit' => 'required',
+            'course_duration_id' => 'required',
+            'sub_category_id' => 'required',
+            'name' => 'required|string|max:255',
+          ]);
         $course = new Course();
 
         $course->name = $request->name;
@@ -39,6 +48,14 @@ class CourseController extends Controller
 
 
     public function UpdateCourse(Request $request , $id){
+        $request->validate([
+            'slug' => 'required',
+            'semester' => 'required',
+            'credit' => 'required',
+            'course_duration_id' => 'required',
+            'sub_category_id' => 'required',
+            'name' => 'required|string|max:255',
+          ]);
         $course =  Course::find($id);
 
  

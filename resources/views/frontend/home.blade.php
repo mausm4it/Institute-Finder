@@ -13,48 +13,29 @@
                         <h1 class="banner-title">
                             Find <span class="toggle active span">Colleges</span>
                             <span class="toggle span">University</span>
-                            <span class="toggle span">School</span> in Bangladesh
+                            <span class="toggle span">School</span> in There
                         </h1>
 
 
-                        <form action="#" class="advance-search-form">
+                        <form action="{{ route('search') }}" class="advance-search-form" method="GET">
                             <div class="inner-form">
                                 <div class="advance-form-input search">
-                                    <input id="search" type="text" placeholder="What are you looking for?" />
+                                    <input name="name" id="search-box" type="text"
+                                        placeholder="What are you looking for?" />
                                 </div>
-                                <select class="advance-form-input select-custom category">
-                                    <option>Courses</option>
-                                    <option>Beauty</option>
-                                    <option>Nightlife</option>
-                                    <option>Hotels</option>
-                                    <option>Automotive</option>
-                                    <option>Travels</option>
-                                    <option>Real Estates</option>
-                                    <option>Shopping</option>
-                                </select>
-                                <select class="advance-form-input select-custom location">
-                                    <option>Location </option>
-                                    <option>New York</option>
-                                    <option>California</option>
-                                    <option>Washington</option>
-                                    <option>New Jersey</option>
-                                    <option>Los Angeles</option>
-                                    <option>Florida</option>
-                                </select>
                                 <div class="advance-form-input submitbtn">
-                                    <button class="btn btn-default" type="button">EXPLORE NOW</button>
+                                    <button class="btn btn-default" type="submit">SEARCH NOW</button>
                                 </div>
                             </div>
                         </form>
-
-
+                        <div id="search-results"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    @isset($categories)
+    @if (!$categories->isEmpty())
         <div class="testimonial-block bg-snow ptb-100">
             <div class="container">
                 <div class="row">
@@ -136,7 +117,8 @@
                 </div>
             </div>
         </div>
-    @endisset
+    @endif
+
 
 
     <div class="todos-block bg-snow ptb-100">
@@ -159,49 +141,62 @@
             </div>
 
             <div class="row">
+                @foreach ($colleges as $college)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="todo-item">
+                            <div class="todo-thumbnail-area">
+                                <figure class="item-thumb">
+                                    <img src="{{ asset('storage/app/' . $college->thumbline) }}" alt="Thmubnail">
+                                </figure><!--./ item-thumb -->
+                                <div class="todo-overlay-info">
+                                    <div class="todo-type-cat">
+                                        <a href="#" class="offer">hot offer</a>
+                                        <a href="#" class="nightlife">Evening Shift</a>
+                                    </div><!--./ todo-type-cat -->
+                                    <div class="todo-meta-bottom">
+                                        <div class="todo-rating">
+                                            <span>4.8</span>19 Ratings
+                                        </div><!--./ todo-rating -->
+                                        <div class="save">
+                                            <a href="#" class="">
+                                                <i style="font-size:24px" class="fa">&#xf079;</i>
+                                            </a>
+                                        </div><!--./ save -->
+                                    </div><!--./ todo-meta-bottom -->
+                                </div><!--./ section-header -->
+                            </div><!--./ todo-overlay-info -->
+                            <div class="todo-content">
+                                <h3 class="title"><a
+                                        href="{{ route('college-details', $college->slug) }}">{{ $college->name }}</a></h3>
+                                <div class="todo-price-status">
+                                    <div class="todo-price">
+                                        @if ($college->type_of_college != null && $college->type_of_college != '')
+                                            {{ $college->type_of_college->name }}
+                                        @endif
+                                    </div>
+                                    <div class="todo-status">Open Now</div>
+                                </div><!--./ todo-footer -->
+                                <div class="todo-meta">
+                                    <div class="todo-location">
+                                        <span class="icon-location"></span>
+                                        Campuses:
+                                        @foreach ($college->campuses as $item)
+                                            {{ $item->name }} ,
+                                        @endforeach
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="todo-item">
-                        <div class="todo-thumbnail-area">
-                            <figure class="item-thumb">
-                                <img src="public/frontend/assets/images/todo/1.jpg" alt="Thmubnail">
-                            </figure><!--./ item-thumb -->
-                            <div class="todo-overlay-info">
-                                <div class="todo-type-cat">
-                                    <a href="#" class="offer">hot offer</a>
-                                    <a href="#" class="nightlife">Nightlife</a>
-                                </div><!--./ todo-type-cat -->
-                                <div class="todo-meta-bottom">
-                                    <div class="todo-rating">
-                                        <span>4.8</span>19 Ratings
-                                    </div><!--./ todo-rating -->
-                                    <div class="save">
-                                        <a href="#" class="">
-                                            <i class="fa fa-heart"></i>
-                                        </a>
-                                    </div><!--./ save -->
-                                </div><!--./ todo-meta-bottom -->
-                            </div><!--./ section-header -->
-                        </div><!--./ todo-overlay-info -->
-                        <div class="todo-content">
-                            <h3 class="title"><a href="listing-details.html">Marriott JW Classic Dinner</a></h3>
-                            <div class="todo-price-status">
-                                <div class="todo-price">$12 - $33</div>
-                                <div class="todo-status">Open Now</div>
-                            </div><!--./ todo-footer -->
-                            <div class="todo-meta">
-                                <div class="todo-location">
-                                    <span class="icon-location"></span>
-                                    Saint Mario, Brokelyn, New York, US
-                                </div><!--./ todo-location -->
-                                <div class="todo-number">
-                                    <span class="icon-phone"></span>
-                                    +1 2 334458887
-                                </div><!--./ todo-number -->
-                            </div><!--./ todo-meta -->
-                        </div><!--./ todo-content -->
-                    </div>
-                </div><!--~./ end todo item ~-->
+                                    </div><!--./ todo-location -->
+                                    {{-- <div class="todo-number">
+                                        <span class="icon-phone"></span>
+                                        Courses:
+                                        @foreach ($college->courses as $item)
+                                            {{ $item->name }} ,
+                                        @endforeach
+                                    </div><!--./ todo-number --> --}}
+                                </div><!--./ todo-meta -->
+                            </div><!--./ todo-content -->
+                        </div>
+                    </div><!--~./ end todo item ~-->
+                @endforeach
 
 
             </div>

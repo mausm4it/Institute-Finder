@@ -16,6 +16,13 @@ class CategoryController extends Controller
 
 
     public function CreateCategory(Request $request){
+
+         
+        $request->validate([
+            'category_icon' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048|required',
+            'slug' => 'required',
+            'name' => 'required|string|max:255',
+          ]);
         $category = new Category();
         if ($request->hasFile('category_icon')) {
           
@@ -41,7 +48,13 @@ class CategoryController extends Controller
 
 
     public function UpdateCategory(Request $request , $id){
+        $request->validate([
+            'category_icon' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048|required',
+            'slug' => 'required',
+            'name' => 'required|string|max:255',
+          ]);
         $category =  Category::find($id);
+  
 
         if ($request->hasFile('category_icon')) {
           

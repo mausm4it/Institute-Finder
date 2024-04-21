@@ -51,6 +51,15 @@
                                     <span class="material-symbols-rounded">close</span>
                                 </button>
                             </div>
+                            @if ($errors->any())
+                                <div class="bg-danger/25 text-danger  text-sm rounded-md p-4" role="alert">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <form id="createblog" action="{{ route('create-course') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf <main class="flex-grow p-6 ">
@@ -73,26 +82,43 @@
                                         <div class="col-span-1 flex flex-col gap-6">
                                             <div class="card p-6">
 
-                                                @isset($sub_categories)
 
-                                                    <label for="course_duration_id"
-                                                        class="text-gray-800 text-sm font-medium inline-block mb-2">Course
-                                                        Duration</label>
-                                                    <select name="course_duration_id" id="course_duration_id"
-                                                        class="form-input">
+                                                @if ($sub_categories->isNotEmpty())
+                                                    <label for="sub_category_id"
+                                                        class="text-gray-800 text-sm font-medium inline-block mb-2">Sub
+                                                        Category</label>
+                                                    <select name="sub_category_id" id="sub_category_id" class="form-input">
                                                         @isset($sub_categories)
                                                             @foreach ($sub_categories as $sub_category)
-                                                                <option value="{{ $sub_category->id }}">{{ $sub_category->name }}
+                                                                <option value="{{ $sub_category->id }}">
+                                                                    {{ $sub_category->name }}
                                                                 </option>
                                                             @endforeach
                                                         @endisset
 
                                                     </select>
+                                                    @error('sub_category_id')
+                                                        <div class=" text-danger">{{ $message }}</div>
+                                                    @enderror
+                                                @else
+                                                    <div class="card p-6">
+                                                        <p class="text-warning pb-1">You Have Not Any Sub Category</p>
+                                                        <p class="text-primary pb-4">Please Create Sub Category</p>
 
-                                                @endisset
+                                                        <a href="{{ route('sub-category') }}"
+                                                            class="btn bg-success/20 text-sm font-medium text-success hover:text-white hover:bg-success"
+                                                            data-fc-type="modal" data-fc-target="createCategory"><i
+                                                                class="mgc_add_circle_line me-3"></i>
+                                                            Add
+                                                            Sub Category</a>
+
+                                                    </div>
+                                                @endif
+
 
                                             </div>
-                                            @isset($course_durations)
+
+                                            @if ($course_durations->isNotEmpty())
                                                 <div class="card p-6">
                                                     <label for="course_duration_id"
                                                         class="text-gray-800 text-sm font-medium inline-block mb-2">Course
@@ -108,8 +134,25 @@
                                                         @endisset
 
                                                     </select>
+                                                    @error('course_duration_id')
+                                                        <div class=" text-danger">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
-                                            @endisset
+                                            @else
+                                                <div class="card p-6">
+                                                    <p class="text-warning pb-1">You Have Not Any Course Duration</p>
+                                                    <p class="text-primary pb-4">Please Create Course Duration</p>
+
+                                                    <a href="{{ route('course-duration') }}"
+                                                        class="btn bg-success/20 text-sm font-medium text-success hover:text-white hover:bg-success"
+                                                        data-fc-type="modal" data-fc-target="createCategory"><i
+                                                            class="mgc_add_circle_line me-3"></i>
+                                                        Add
+                                                        Course Duration</a>
+
+                                                </div>
+                                            @endif
+
 
 
                                             <div class="card p-6">
@@ -119,6 +162,9 @@
                                                 <textarea id="meta_keywords" name="meta_keywords" class="form-input" rows="3">
                                                   
                                                 </textarea>
+                                                @error('meta_keywords')
+                                                    <div class=" text-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
 
                                             <div class="card p-6">
@@ -127,6 +173,9 @@
                                                 <textarea id="meta_description" name="meta_description" class="form-input" rows="3">
                                                  
                                                 </textarea>
+                                                @error('meta_description')
+                                                    <div class=" text-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
@@ -138,14 +187,22 @@
                                                     <div class="">
                                                         <label for="name"
                                                             class="text-gray-800 text-sm font-medium inline-block mb-2">Name</label>
-                                                        <input type="text" class="form-input" value="{{ old('name') }}"
-                                                            name="name" id="name" placeholder="Enter Name">
+                                                        <input type="text" class="form-input"
+                                                            value="{{ old('name') }}" name="name" id="name"
+                                                            placeholder="Enter Name">
+                                                        @error('name')
+                                                            <div class=" text-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                     <div class="">
                                                         <label for="slug"
                                                             class="text-gray-800 text-sm font-medium inline-block mb-2">Slug</label>
-                                                        <input type="text" class="form-input" value="{{ old('slug') }}"
-                                                            name="slug" id="slug" placeholder="Enter Slug">
+                                                        <input type="text" class="form-input"
+                                                            value="{{ old('slug') }}" name="slug" id="slug"
+                                                            placeholder="Enter Slug">
+                                                        @error('slug')
+                                                            <div class=" text-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                     <div class="">
                                                         <label for="semester"
@@ -153,6 +210,9 @@
                                                         <input type="text" class="form-input"
                                                             value="{{ old('semester') }}" name="semester" id="semester"
                                                             placeholder="Enter semester">
+                                                        @error('semester')
+                                                            <div class=" text-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
                                                     <div class="">
                                                         <label for="credit"
@@ -160,6 +220,9 @@
                                                         <input type="text" class="form-input"
                                                             value="{{ old('credit') }}" name="credit" id="credit"
                                                             placeholder="Enter credit">
+                                                        @error('credit')
+                                                            <div class=" text-danger">{{ $message }}</div>
+                                                        @enderror
                                                     </div>
 
                                                 </div>
@@ -216,7 +279,7 @@
 
                                     <td
                                         class="whitespace-nowrap px-3 py-4 pe-3 text-sm  font-medium text-gray-900 dark:text-gray-200">
-                                        {{ $item->name }}
+                                        {{ $item->name }} (<b>{{ $item->sub_category->name }}</b>)
                                     </td>
                                     <td
                                         class="whitespace-nowrap py-4 pe-3 text-sm font-medium text-gray-900 dark:text-gray-200">
@@ -280,32 +343,29 @@
 
                                                                 <div class="grid lg:grid-cols-4 gap-6">
                                                                     <div class="col-span-1 flex flex-col gap-6">
-                                                                        @isset($item->sub_category_id)
-                                                                            <div class="card p-6">
 
+                                                                        <div class="card p-6">
+
+                                                                            <label for="sub_category_id"
+                                                                                class="text-gray-800 text-sm font-medium inline-block mb-2">Sub
+                                                                                Category</label>
+                                                                            <select name="sub_category_id"
+                                                                                id="sub_category_id" class="form-input">
                                                                                 @isset($sub_categories)
-                                                                                    <label for="course_duration_id"
-                                                                                        class="text-gray-800 text-sm font-medium inline-block mb-2">Course
-                                                                                        Duration</label>
-                                                                                    <select name="course_duration_id"
-                                                                                        id="course_duration_id" class="form-input">
-                                                                                        @isset($item->sub_category_id)
-                                                                                            <option value="{{ $item->sub_category_id }}">
-                                                                                                {{ $item->sub_category->name }}</option>
-                                                                                        @endisset
-                                                                                        @isset($sub_categories)
-                                                                                            @foreach ($sub_categories as $sub_category)
-                                                                                                <option value="{{ $sub_category->id }}">
-                                                                                                    {{ $sub_category->name }}
-                                                                                                </option>
-                                                                                            @endforeach
-                                                                                        @endisset
-
-                                                                                    </select>
+                                                                                    @foreach ($sub_categories as $sub_category)
+                                                                                        <option value="{{ $sub_category->id }}">
+                                                                                            {{ $sub_category->name }}
+                                                                                        </option>
+                                                                                    @endforeach
                                                                                 @endisset
 
-                                                                            </div>
-                                                                        @endisset
+                                                                            </select>
+                                                                            @error('sub_category_id')
+                                                                                <div class=" text-danger">{{ $message }}
+                                                                                </div>
+                                                                            @enderror
+
+                                                                        </div>
 
                                                                         @isset($item->course_duration_id)
                                                                             <div class="card p-6">
@@ -317,7 +377,8 @@
                                                                                     @isset($item->course_duration_id)
                                                                                         <option
                                                                                             value="{{ $item->course_duration_id }}">
-                                                                                            {{ $item->course_duration->name }}</option>
+                                                                                            {{ $item->course_duration->name }}
+                                                                                        </option>
                                                                                     @endisset
                                                                                     @isset($course_durations)
                                                                                         @foreach ($course_durations as $course_duration)
@@ -329,6 +390,10 @@
                                                                                     @endisset
 
                                                                                 </select>
+                                                                                @error('course_duration_id')
+                                                                                    <div class=" text-danger">{{ $message }}
+                                                                                    </div>
+                                                                                @enderror
                                                                             </div>
                                                                         @endisset
 
@@ -336,12 +401,17 @@
                                                                         <div class="card p-6">
                                                                             <label for="meta_keywords" class="mb-2 block">Meta
                                                                                 Keywords
-                                                                                <span class="text-red-500 text-xs">Please Write
+                                                                                <span class="text-red-500 text-xs">Please
+                                                                                    Write
                                                                                     With Coma [Example:
                                                                                     keywords1,keywords2,keywords3]</span></label>
                                                                             <textarea id="meta_keywords" name="meta_keywords" class="form-input" rows="3">
-                                                                              
-                                                                            </textarea>
+                                    
+                                  </textarea>
+                                                                            @error('meta_keywords')
+                                                                                <div class=" text-danger">{{ $message }}
+                                                                                </div>
+                                                                            @enderror
                                                                         </div>
 
                                                                         <div class="card p-6">
@@ -349,8 +419,12 @@
                                                                                 class="mb-2 block">Meta Description
                                                                             </label>
                                                                             <textarea id="meta_description" name="meta_description" class="form-input" rows="3">
-                                                                             
-                                                                            </textarea>
+                                   
+                                  </textarea>
+                                                                            @error('meta_description')
+                                                                                <div class=" text-danger">{{ $message }}
+                                                                                </div>
+                                                                            @enderror
                                                                         </div>
                                                                     </div>
 
@@ -366,6 +440,10 @@
                                                                                         value="{{ $item->name }}"
                                                                                         name="name" id="name"
                                                                                         placeholder="Enter Name">
+                                                                                    @error('name')
+                                                                                        <div class=" text-danger">
+                                                                                            {{ $message }}</div>
+                                                                                    @enderror
                                                                                 </div>
                                                                                 <div class="">
                                                                                     <label for="slug"
@@ -374,6 +452,10 @@
                                                                                         value="{{ $item->slug }}"
                                                                                         name="slug" id="slug"
                                                                                         placeholder="Enter Slug">
+                                                                                    @error('slug')
+                                                                                        <div class=" text-danger">
+                                                                                            {{ $message }}</div>
+                                                                                    @enderror
                                                                                 </div>
                                                                                 <div class="">
                                                                                     <label for="semester"
@@ -382,6 +464,10 @@
                                                                                         value="{{ $item->semester }}"
                                                                                         name="semester" id="semester"
                                                                                         placeholder="Enter semester">
+                                                                                    @error('semester')
+                                                                                        <div class=" text-danger">
+                                                                                            {{ $message }}</div>
+                                                                                    @enderror
                                                                                 </div>
                                                                                 <div class="">
                                                                                     <label for="credit"
@@ -390,6 +476,10 @@
                                                                                         value="{{ $item->credit }}"
                                                                                         name="credit" id="credit"
                                                                                         placeholder="Enter credit">
+                                                                                    @error('credit')
+                                                                                        <div class=" text-danger">
+                                                                                            {{ $message }}</div>
+                                                                                    @enderror
                                                                                 </div>
 
                                                                             </div>
@@ -456,6 +546,9 @@
                                 </tr>
                             @endforeach
                         @endisset
+
+
+
 
 
 

@@ -3,10 +3,14 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function(){
 
     Route::get('/roles', 'RoleController@index')->name('role');
-
+    
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+    
 // category
 Route::get('/category', 'CategoryController@index')->name('category');
 Route::post('/create-category', 'CategoryController@CreateCategory')->name('create-category');
@@ -70,6 +74,21 @@ Route::get('/delete-college/{id}', 'CollegeController@DeteleCollege')->name('del
 //settings
 Route::get('/settings', 'SettingsController@index')->name('settings');
 Route::post('/update-settings/{id}', 'SettingsController@UpdateSettings')->name('update-settings');
+
+//User
+Route::get('/users', 'UserController@index')->name('users');
+Route::post('/create-users', 'UserController@CreateUser')->name('create-users');
+Route::post('/update-users/{id}', 'UserController@UpdateUser')->name('update-users');
+Route::get('/delete-users/{id}', 'UserController@DeteleUser')->name('delete-users');
+
+
+//Role
+Route::get('/role', 'RoleController@index')->name('role');
+Route::post('/create-role', 'RoleController@CreateRole')->name('create-role');
+Route::get('/edit-role/{id}', 'RoleController@EditRole')->name('edit-role');
+Route::post('/update-role/{id}', 'RoleController@UpdateRole')->name('update-role');
+Route::get('/delete-role/{id}', 'RoleController@DeteleRole')->name('delete-role');
+
 
    
 });

@@ -3,7 +3,15 @@
 @section('content')
     @isset($blog->title)
         <h2 class="bg-primary text-white p-3 text-center text-lg">Update {{ $blog->title }}</h2>
-
+        @if ($errors->any())
+            <div class="bg-danger/25 text-danger  text-sm rounded-md p-4" role="alert">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
         <form id="createblog" action="{{ route('update-blog', $blog->id) }}" method="post" enctype="multipart/form-data">
             @csrf <main class="flex-grow p-6 ">
@@ -31,6 +39,9 @@
                                     value="{{ $blog->blog_image }}">
                                 <img id="blog_imagePreview" src="#" alt="Preview"
                                     style="display:none; max-width: 100%; max-height: 100px;">
+                                @error('blog_image')
+                                    <div class=" text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
 
@@ -62,6 +73,9 @@
 
 
                                     </select>
+                                    @error('category_id')
+                                        <div class=" text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
 
@@ -76,6 +90,9 @@
                             <textarea id="meta_keywords" name="meta_keywords" class="form-input" rows="3">
                            {{ $blog->meta_keywords }}
                         </textarea>
+                            @error('meta_keywords')
+                                <div class=" text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div class="card p-6">
@@ -84,6 +101,9 @@
                             <textarea id="meta_description" name="meta_description" class="form-input" rows="3">
                            {{ $blog->meta_description }}
                         </textarea>
+                            @error('meta_description')
+                                <div class=" text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
 
@@ -97,12 +117,18 @@
                                             class="text-red-500">*</span></label>
                                     <input type="text" id="title" name="title" value="{{ $blog->title }}"
                                         class="form-input" placeholder="Enter Title" aria-describedby="input-helper-text">
+                                    @error('title')
+                                        <div class=" text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="">
                                     <label for="slug" class="mb-2 block">Blog Slug <span
                                             class="text-red-500">*</span></label>
                                     <input type="text" id="slug" name="slug" value="{{ $blog->slug }}"
                                         class="form-input" placeholder="Enter Slug" aria-describedby="input-helper-text">
+                                    @error('slug')
+                                        <div class=" text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="">
                                     <label for="summary" class="mb-2 block">Blog Summary
@@ -111,10 +137,16 @@
                                                 {{ $blog->summary }}
 
                 </textarea>
+                                    @error('summary')
+                                        <div class=" text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="">
                                     <label for="content" class="mb-2 block">Blog Description
                                         <span class="text-red-500">*</span></label>
+                                    @error('content')
+                                        <div class=" text-danger">{{ $message }}</div>
+                                    @enderror
                                     <div id="editor" style="height: 300px;">{!! $blog->content !!}
                                     </div>
                                     <input type="hidden" name="content" id="content">

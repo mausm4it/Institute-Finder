@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
-use App\Models\Category;
+use App\Models\BlogCategory;
 use Illuminate\Support\Facades\Storage;
 
 class BlogController extends Controller
 {
    public function index(){
     $blogs = Blog::all();
-    $categories = Category::all();
+    $categories = BlogCategory::all();
     return view('admin.blogs.index', compact('blogs','categories'));
    }
 
@@ -35,7 +35,11 @@ class BlogController extends Controller
         
      $request->validate([
         'blog_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'slug' => 'required',
+        'summary' => 'required',
+        'title' => 'required|string|max:255',
       ]);
+    
      $blog = new Blog();
      if ($request->hasFile('blog_image')) {
           
@@ -56,7 +60,7 @@ class BlogController extends Controller
         $blog->meta_keywords = $request->meta_keywords;
         $blog->meta_description = $request->meta_description;
         $blog->content = $request->input('content');
-        $blog->category_id = $request->category_id;
+        $blog->blog_category_id = $request->blog_category_id;
       
         $blog->save();
       
@@ -68,6 +72,9 @@ class BlogController extends Controller
         
         $request->validate([
            'blog_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+           'slug' => 'required',
+           'summary' => 'required',
+           'title' => 'required|string|max:255',
          ]);
         $blog =  Blog::find($id);
         if ($request->hasFile('blog_image')) {
@@ -89,7 +96,7 @@ class BlogController extends Controller
            $blog->meta_keywords = $request->meta_keywords;
            $blog->meta_description = $request->meta_description;
            $blog->content = $request->input('content');
-           $blog->category_id = $request->category_id;
+           $blog->blog_category_id = $request->blog_category_id;
          
            $blog->save();
          
@@ -112,6 +119,12 @@ class BlogController extends Controller
    }
 
    public function CreateCategory(Request $request){
+
+    $request->validate([
+
+        'slug' => 'required',
+         'name' => 'required|string|max:255',
+      ]);
       $category = new BlogCategory();
 
       $category->name = $request->name;
@@ -125,6 +138,11 @@ class BlogController extends Controller
 
 
   public function UpdateCategory(Request $request , $id){
+    $request->validate([
+
+        'slug' => 'required',
+         'name' => 'required|string|max:255',
+      ]);
    $category =  BlogCategory::find($id);
 
 

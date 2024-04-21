@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class TypeOfCollege extends Model
 {
     use HasFactory;
-    public function colleges()
+    public function college()
     {
-        return $this->belongsToMany(College::class);
+        return $this->belongsTo(College::class);
     }
 }

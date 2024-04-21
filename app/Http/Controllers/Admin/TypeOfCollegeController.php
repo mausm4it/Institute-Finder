@@ -16,6 +16,10 @@ class TypeOfCollegeController extends Controller
 
 
     public function CreateTypeOfCollege(Request $request){
+        $request->validate([
+            'slug' => 'required',
+            'name' => 'required|string|max:255',
+          ]);
         $college_type = new TypeOfCollege();
 
         $college_type->name = $request->name;
@@ -30,6 +34,10 @@ class TypeOfCollegeController extends Controller
 
 
     public function UpdateTypeOfCollege(Request $request , $id){
+        $request->validate([
+            'slug' => 'required',
+            'name' => 'required|string|max:255',
+          ]);
         $college_type =  TypeOfCollege::find($id);
 
  

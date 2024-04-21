@@ -43,6 +43,7 @@
         <div class="page-content">
 
             @include('layouts.header')
+            @include('alert.index')
 
             <main class="flex-grow p-6">
                 @yield('content')

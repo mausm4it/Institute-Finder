@@ -44,6 +44,15 @@
                                 <span class="material-symbols-rounded">close</span>
                             </button>
                         </div>
+                        @if ($errors->any())
+                            <div class="bg-danger/25 text-danger  text-sm rounded-md p-4" role="alert">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <div class="px-4 py-8 overflow-y-auto">
                             <form action="{{ route('create-campus') }}" method="POST">
                                 @csrf
@@ -52,13 +61,18 @@
                                         class="text-gray-800 text-sm font-medium inline-block mb-2">Name</label>
                                     <input type="text" class="form-input" value="{{ old('name') }}" name="name"
                                         id="name" placeholder="Enter Name">
-
+                                    @error('name')
+                                        <div class=" text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="slug"
                                         class="text-gray-800 text-sm font-medium inline-block mb-2">Slug</label>
                                     <input type="text" class="form-input" value="{{ old('slug') }}" name="slug"
                                         id="slug" placeholder="Enter Slug">
+                                    @error('slug')
+                                        <div class=" text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="flex justify-end items-center gap-4 p-4 ">
                                     <button
@@ -138,6 +152,16 @@
                                                             <span class="material-symbols-rounded">close</span>
                                                         </button>
                                                     </div>
+                                                    @if ($errors->any())
+                                                        <div class="bg-danger/25 text-danger  text-sm rounded-md p-4"
+                                                            role="alert">
+                                                            <ul>
+                                                                @foreach ($errors->all() as $error)
+                                                                    <li>{{ $error }}</li>
+                                                                @endforeach
+                                                            </ul>
+                                                        </div>
+                                                    @endif
                                                     <div class="px-4 py-8 overflow-y-auto">
                                                         <form action="{{ route('update-campus', $item->id) }}" method="POST">
                                                             @csrf
@@ -147,14 +171,20 @@
                                                                 <input type="text" class="form-input"
                                                                     value="{{ $item->name }}" name="name" id="name"
                                                                     placeholder="Enter Name">
+                                                                @error('name')
+                                                                    <div class=" text-danger">{{ $message }}</div>
+                                                                @enderror
 
                                                             </div>
                                                             <div class="mb-3">
                                                                 <label for="slug"
                                                                     class="text-gray-800 text-sm font-medium inline-block mb-2">Slug</label>
                                                                 <input type="text" class="form-input"
-                                                                    value="{{ $item->slug }}" name="slug" id="slug"
-                                                                    placeholder="Enter Slug">
+                                                                    value="{{ $item->slug }}" name="slug"
+                                                                    id="slug" placeholder="Enter Slug">
+                                                                @error('slug')
+                                                                    <div class=" text-danger">{{ $message }}</div>
+                                                                @enderror
                                                             </div>
                                                             <div class="flex justify-end items-center gap-4 p-4 ">
                                                                 <button

@@ -45,6 +45,15 @@
                                 <span class="material-symbols-rounded">close</span>
                             </button>
                         </div>
+                        @if ($errors->any())
+                            <div class="bg-danger/25 text-danger  text-sm rounded-md p-4" role="alert">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <div class="px-4 py-8 overflow-y-auto">
                             <form action="{{ route('create-sub-category') }}" method="POST">
                                 @csrf
@@ -53,6 +62,9 @@
                                         class="text-gray-800 text-sm font-medium inline-block mb-2">Name</label>
                                     <input type="text" class="form-input" value="{{ old('name') }}" name="name"
                                         id="name" placeholder="Enter Name">
+                                    @error('name')
+                                        <div class=" text-danger">{{ $message }}</div>
+                                    @enderror
 
                                 </div>
 
@@ -62,23 +74,50 @@
                                         class="text-gray-800 text-sm font-medium inline-block mb-2">Slug</label>
                                     <input type="text" class="form-input" value="{{ old('slug') }}" name="slug"
                                         id="slug" placeholder="Enter Slug">
+                                    @error('slug')
+                                        <div class=" text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
 
-                                <div class="mb-3">
+                                @if ($categories->isNotEmpty())
+                                    <div class="mb-3">
 
-                                    <label for="category_id"
-                                        class="text-gray-800 text-sm font-medium inline-block mb-2">Parent Category</label>
-                                    <select class="form-select" name="category_id">
-                                        @if (!empty($categories))
+                                        <label for="category_id"
+                                            class="text-gray-800 text-sm font-medium inline-block mb-2">Parent
+                                            Category</label>
+                                        <select class="form-select" name="category_id">
+
                                             @foreach ($categories as $category)
                                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                                             @endforeach
-                                        @endif
-                                    </select>
+
+                                        </select>
+
+                                        @error('category_id')
+                                            <div class=" text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                @else
+                                    <div class="card p-6">
+                                        <p class="text-warning pb-1">You Have Not Any Category</p>
+                                        <p class="text-primary pb-4">Please Create Category</p>
+
+                                        <a href="{{ route('category') }}"
+                                            class="btn bg-success/20 text-sm font-medium text-success hover:text-white hover:bg-success"></i>
+                                            Add
+                                            Category</a>
+
+                                    </div>
+                                @endif
 
 
-                                </div>
+
+
+
+
+
+
                                 <div class="flex justify-end items-center gap-4 p-4 ">
                                     <button
                                         class="py-2 px-5 inline-flex justify-center items-center gap-2 rounded dark:text-gray-200 border dark:border-slate-700 font-medium hover:bg-slate-100 hover:dark:bg-slate-700 transition-all"
@@ -103,7 +142,8 @@
                         class="bg-slate-300 bg-opacity-20 border-t dark:bg-slate-800 divide-gray-300 dark:border-gray-700">
                         <tr>
                             <th scope="col"
-                                class="py-3.5 ps-4 pe-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">ID
+                                class="py-3.5 ps-4 pe-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">
+                                ID
                             </th>
                             <th scope="col"
                                 class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">
@@ -165,6 +205,16 @@
                                                             <span class="material-symbols-rounded">close</span>
                                                         </button>
                                                     </div>
+                                                    @if ($errors->any())
+                                                        <div class="bg-danger/25 text-danger  text-sm rounded-md p-4"
+                                                            role="alert">
+                                                            <ul>
+                                                                @foreach ($errors->all() as $error)
+                                                                    <li>{{ $error }}</li>
+                                                                @endforeach
+                                                            </ul>
+                                                        </div>
+                                                    @endif
                                                     <div class="px-4 py-8 overflow-y-auto">
                                                         <form action="{{ route('update-sub-category', $item->id) }}"
                                                             method="POST">
@@ -173,8 +223,11 @@
                                                                 <label for="name"
                                                                     class="text-gray-800 text-sm font-medium inline-block mb-2">Name</label>
                                                                 <input type="text" class="form-input"
-                                                                    value="{{ $item->name }}" name="name" id="name"
-                                                                    placeholder="Enter Name">
+                                                                    value="{{ $item->name }}" name="name"
+                                                                    id="name" placeholder="Enter Name">
+                                                                @error('name')
+                                                                    <div class=" text-danger">{{ $message }}</div>
+                                                                @enderror
 
                                                             </div>
                                                             <div class="mb-3">
@@ -183,6 +236,9 @@
                                                                 <input type="text" class="form-input"
                                                                     value="{{ $item->slug }}" name="slug"
                                                                     id="slug" placeholder="Enter Slug">
+                                                                @error('slug')
+                                                                    <div class=" text-danger">{{ $message }}</div>
+                                                                @enderror
                                                             </div>
 
                                                             <div class="mb-3">
@@ -200,6 +256,9 @@
                                                                         @endforeach
                                                                     @endif
                                                                 </select>
+                                                                @error('category_id')
+                                                                    <div class=" text-danger">{{ $message }}</div>
+                                                                @enderror
 
 
                                                             </div>
