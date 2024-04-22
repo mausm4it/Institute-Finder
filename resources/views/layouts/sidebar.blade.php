@@ -2,7 +2,7 @@
      <div class="app-menu">
 
          <!-- Sidenav Brand Logo -->
-         <a href="{{ route('dashboard') }}" class="logo-box">
+         <a href="{{ route('admin.dashboard') }}" class="logo-box">
              <!-- Light Brand Logo -->
              <div class="logo-light">
                  <img src="{{ asset('storage/app/' . $settings->logo) }}" class="logo-lg h-6" alt="Light logo">
@@ -29,7 +29,7 @@
                  <li class="menu-title">Menu</li>
 
                  <li class="menu-item">
-                     <a href="{{ route('dashboard') }}" class="menu-link">
+                     <a href="{{ route('admin.dashboard') }}" class="menu-link">
                          <span class="menu-icon"><i class="mgc_home_3_line"></i></span>
                          <span class="menu-text"> Dashboard </span>
                      </a>

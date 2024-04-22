@@ -47,24 +47,15 @@
                                 <div class="menu-content">
                                     <ul class="mainmenu">
                                         <li>
-                                            <a class="active" href="{{ route('home') }}">Home</a>
+                                            <a href="{{ route('home') }}">Home</a>
 
                                         </li>
 
-                                        <li>
-                                            <a href="#">Goal</a>
-                                            <ul class="sub-menu">
-                                                @foreach ($sub_categories as $sub_category)
-                                                    <li><a href="listing-grid.html">{{ $sub_category->name }}</a></li>
-                                                @endforeach
 
-
-                                            </ul>
-                                        </li>
 
 
                                         <li class="megamenu">
-                                            <a href="#">Category</a>
+                                            <a>Category</a>
                                             <div
                                                 class="sub-menu megamenu-main megamenu-carousel carousel-nav-text owl-carousel">
                                                 @foreach ($categories as $category)
@@ -94,26 +85,30 @@
 
                                             </div><!--/.mega-menu-content-->
                                         </li>
+
                                         <li>
-                                            <a href="#">Pages</a>
+                                            <a href="#">Goal</a>
                                             <ul class="sub-menu">
-                                                <li><a href="pricing.html">Pricing</a></li>
-                                                <li><a href="contact.html">Contact Us</a></li>
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-single.html">Blog Details</a></li>
-                                                <li><a href="coming-soon.html">Coming Soon</a></li>
-                                                <li><a href="404.html">Error 404</a></li>
+                                                @foreach ($sub_categories as $sub_category)
+                                                    <li><a href="listing-grid.html">{{ $sub_category->name }}</a></li>
+                                                @endforeach
+
+
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="#">User Panel</a>
+                                            <a href="#">Courses</a>
                                             <ul class="sub-menu">
-                                                <li><a href="dashboard.html">dashboard</a></li>
-                                                <li><a href="user-profile.html">My Profile</a></li>
-                                                <li><a href="dashboard-booking.html">Booking</a></li>
-                                                <li><a href="dashboard-listing.html">My Listing</a></li>
-                                                <li><a href="dashboard-history.html">History</a></li>
+                                                @foreach ($courses as $item)
+                                                    <li><a href="">{{ $item->name }}</a></li>
+                                                @endforeach
+
+
                                             </ul>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('search') }}">Advance Search</a>
+
                                         </li>
 
                                     </ul> <!-- /.menu-list -->
@@ -124,162 +119,29 @@
 
                     <div class="header-navigation-right">
                         <div class="user-registration-area">
-                            <a class="user-reg-btn" href="#">
-                                <span class="icon icon-user-1"></span>
-                                <span class="text">Sign In</span>
-                            </a>
-                            <div class="user-register-area">
-                                <!--~~~ Start User Signin Area ~~~-->
-                                <div class="user-signin-area">
-                                    <div class="form-content">
-                                        <div class="form-content-signin">
-                                            <form class="default-form signin-form">
-                                                <div class="form-group">
-                                                    <input id="email" name="email" class="form-controllar"
-                                                        type="email" placeholder="Email Address">
-                                                    <span class="icon-user-1"></span>
-                                                </div><!--/.form-group-->
 
-                                                <div class="form-group">
-                                                    <input id="pass" name="password" class="form-controllar"
-                                                        type="password" placeholder="Password">
-                                                    <span class="icon-key3"></span>
-                                                    <div class="forget-pass">
-                                                        <a class="btn-password" href="#">Forget?</a>
-                                                    </div>
-                                                </div><!--/.form-group-->
 
-                                                <div class="form-btn-group">
-                                                    <button type="submit" class="btn btn-default btn-black">
-                                                        Login in
-                                                        <span class="fas fa-caret-right"></span>
-                                                    </button>
-                                                </div>
-                                                <div class="reg-others-midea">
-                                                    <div class="text">
-                                                        Or Login With
-                                                    </div>
-                                                    <div class="midea-icons">
-                                                        <ul class="social-share">
-                                                            <li><a class="facebook" href="#"><i
-                                                                        class="fab fa-facebook-f"></i></a></li>
-                                                            <li><a class="twitter" href="#"><i
-                                                                        class="fab fa-twitter"></i></a></li>
-                                                            <li><a class="google-plus" href="#"><i
-                                                                        class="fab fa-google-plus-g"></i></a></li>
-                                                            <li><a class="linkedin" href="#"><i
-                                                                        class="fab fa-linkedin-in"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            <div class="login-form-register-now">
-                                                Dont have an account? <a class="btn-register-now"
-                                                    href="#">Register Now</a>
-                                            </div>
-                                        </div>
-                                        <!--~~~ Start Account Recovery Area ~~~-->
-                                        <div class="form-content-password">
-                                            <form class="default-form password-form">
-                                                <div class="form-group">
-                                                    <input id="re-email" name="email" class="form-controllar"
-                                                        type="email" placeholder="Email Address">
-                                                    <span class="icon-user-1"></span>
-                                                </div><!--/.form-group-->
+                            @if (Auth::user())
+                                <a class="user-reg-btn"
+                                    href=" @if (Auth::user()->hasRole('admin')) {{ route('admin.dashboard') }}
+                                @else
+                                {{ route('dashboard') }} @endif  ">
+                                    <span class="icon icon-user-1"></span>
+                                    <span class="text">Dashboard</span>
+                                </a>
+                            @else
+                                <a class="user-reg-btn" href="{{ route('login') }}">
+                                    <span class="icon icon-user-1"></span>
+                                    <span class="text">Sign In</span>
+                                </a>
+                            @endif
 
-                                                <div class="form-group">
-                                                    <input id="re-pass-up" name="password" class="form-controllar"
-                                                        type="password" placeholder="Password">
-                                                    <span class="icon-key3"></span>
-                                                </div><!--/.form-group-->
 
-                                                <div class="form-group">
-                                                    <input id="re-pass-up-confirm" name="password"
-                                                        class="form-controllar" type="password"
-                                                        placeholder="Confirm Password">
-                                                    <span class="icon-key3"></span>
-                                                </div><!--/.form-group-->
 
-                                                <div class="form-btn-group pt-10">
-                                                    <button type="submit" class="btn btn-default btn-recet">
-                                                        Recet Password
-                                                    </button>
-                                                    <button type="button"
-                                                        class="btn btn-default btn-back">Back</button>
-                                                </div>
-                                            </form>
-                                        </div><!--~./ end account recovery area ~-->
-                                    </div>
-                                </div><!--~./ end user signin area ~-->
-
-                                <!--~~~ Start User Signup Area ~~~-->
-                                <div class="user-signup-area">
-                                    <div class="form-content">
-                                        <form id="signup-form" class="default-form signup-form" method="post">
-                                            <div class="form-group">
-                                                <input id="name" name="name" class="form-controllar"
-                                                    type="text" placeholder="Username">
-                                                <span class="icon-user-1"></span>
-                                            </div><!--/.form-group-->
-                                            <div class="form-group">
-                                                <input id="email-up" name="email" class="form-controllar"
-                                                    type="email" placeholder="Email Address">
-                                                <span class="icon-user-1"></span>
-                                            </div><!--/.form-group-->
-                                            <div class="form-group">
-                                                <input id="pass-up" name="password" class="form-controllar"
-                                                    type="password" placeholder="Password">
-                                                <span class="icon-key3"></span>
-                                            </div><!--/.form-group-->
-
-                                            <div class="form-group">
-                                                <input id="pass-up-confirm" name="password" class="form-controllar"
-                                                    type="password" placeholder="Confirm Password">
-                                                <span class="icon-key3"></span>
-                                            </div><!--/.form-group-->
-
-                                            <div class="login-form-remember">
-                                                <label><input id="remembermesignup" value=""
-                                                        type="checkbox"><span>I Agree to the </span> <a
-                                                        href="#"> Privacy Policy</a></label>
-                                            </div>
-                                            <div class="form-btn-group">
-                                                <button type="submit" class="btn btn-default btn-register">
-                                                    Register
-                                                </button>
-                                                <button type="button" class="btn btn-default btn-signin btn-back">
-                                                    Sign In
-                                                </button>
-                                                <div class="reg-others-midea">
-                                                    <div class="text">
-                                                        Or Connect With
-                                                    </div>
-                                                    <div class="midea-icons">
-                                                        <ul class="social-share">
-                                                            <li><a class="facebook" href="#"><i
-                                                                        class="fab fa-facebook-f"></i></a></li>
-                                                            <li><a class="twitter" href="#"><i
-                                                                        class="fab fa-twitter"></i></a></li>
-                                                            <li><a class="google-plus" href="#"><i
-                                                                        class="fab fa-google-plus-g"></i></a></li>
-                                                            <li><a class="linkedin" href="#"><i
-                                                                        class="fab fa-linkedin-in"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div><!--~./ end user signup area ~-->
-                            </div>
-                        </div><!--~./ user-registration-area ~-->
-                        {{-- <div class="add-listing-area">
-                            <a class="btn btn-default btn-black" href="dashboard-add-listing.html">add listing <span
-                                    class="fas fa-caret-right"></span></a>
-                        </div><!--~./ add-listing-area ~--> --}}
-                    </div><!--~./ header-navigation-right ~-->
-                </div><!--  /.navigation-area -->
-            </div><!--  /.col-12 -->
-        </div><!--  /.row -->
-    </div><!--  /.container-fluid -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>

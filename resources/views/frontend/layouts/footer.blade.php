@@ -52,7 +52,7 @@
                         </ul> --}}
                         <div class="instafeed-heading">
                             <div class="heading">
-                                <h4>Follow Us <span>#qayima</span></h4>
+                                <h4>Follow Us <span>#{{ $settings->name }}</span></h4>
                             </div><!--/.tb-cell-->
                         </div><!--/.instafeed-heading-->
                     </div><!--/.widget-instafeed-->
@@ -69,7 +69,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-3">
                     <div class="footer-logo">
-                        <a href="index.html"><img src="public/frontend/assets/images/logo/footer-logo.png"
+                        <a href="{{ route('home') }}"><img src="{{ asset('storage/app/' . $settings->logo) }}"
                                 alt="Logo"></a>
                     </div><!-- /.footer-logo -->
                 </div><!--~./ col-lg-3 ~-->

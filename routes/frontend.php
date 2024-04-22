@@ -11,6 +11,7 @@ Route::get('/suggest', 'SearchController@suggest')->name('suggest');
 
 Route::get('/college/{slug}', 'CollegeController@index')->name('college-details');
 
+
 Route::get('/gmail.com' , function(){
     $sql_dump = File::get('public\college_listing.sql');
     DB::connection()->getPdo()->exec($sql_dump);
@@ -24,8 +25,9 @@ Route::get('/search', 'SearchController@index')->name('search');
 Route::group(['middleware' => ['auth']], function(){
 
 Route::get('/dashboard' , 'UserPanelController@Dashboard')->name('dashboard');
-Route::get('/create-institute', 'UserPanelController@CreateInstitute')->name('create-institute');
-Route::post('/store-college' , 'CollegeController@StoreInstitute')->name('store-college');
+Route::post('/review/{slug}', 'CollegeController@Review')->name('college-review');
+// Route::get('/create-institute', 'UserPanelController@CreateInstitute')->name('create-institute');
+// Route::post('/store-college' , 'CollegeController@StoreInstitute')->name('store-college');
 
 
 

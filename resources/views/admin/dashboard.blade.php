@@ -5,22 +5,6 @@
     <div class="flex justify-between items-center mb-6">
         <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Dashboard</h4>
 
-        <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
-            <div class="flex items-center gap-2">
-                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">Konrix</a>
-            </div>
-
-            <div class="flex items-center gap-2">
-                <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
-                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">Menu</a>
-            </div>
-
-            <div class="flex items-center gap-2">
-                <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
-                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400"
-                    aria-current="page">Dashboard</a>
-            </div>
-        </div>
     </div>
     <!-- Page Title End -->
 
@@ -30,261 +14,112 @@
             <div class="grid xl:grid-cols-4 md:grid-cols-2 gap-6 mb-6">
                 <div class="card">
                     <div class="p-6">
-                        <div class="flex justify-between items-start">
+                        <div class="text-center">
                             <div>
-                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Project
-                                    Dashboard</h4>
-                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">
-                                    New Task Assign</p>
+                                <h4 class="text-base mb-1 text-success-600 dark:text-success-400 text-success">Active
+                                    Institute</h4>
+                                <p class="font-normal text-2xl text-gray-400 truncate dark:text-gray-500 ">
+                                    {{ $active_college_count }}</p>
                             </div>
 
-                            <div>
-                                <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown"
-                                    data-fc-placement="left-start" type="button">
-                                    <i class="mgc_more_1_fill text-xl"></i>
-                                </button>
-
-                                <div
-                                    class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
-                                        href="javascript:void(0)">
-                                        <i class="mgc_add_circle_line"></i> Add
-                                    </a>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
-                                        href="javascript:void(0)">
-                                        <i class="mgc_edit_line"></i> Edit
-                                    </a>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
-                                        href="javascript:void(0)">
-                                        <i class="mgc_copy_2_line"></i> Copy
-                                    </a>
-                                    <div class="h-px bg-gray-200 dark:bg-gray-700 my-2 -mx-2"></div>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-danger hover:bg-danger/5"
-                                        href="javascript:void(0)">
-                                        <i class="mgc_delete_line"></i> Delete
-                                    </a>
-                                </div>
-                            </div>
                         </div>
 
                         <div class="flex items-end">
                             <div class="flex-grow">
-                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold"><i
-                                        class="mgc_alarm_2_line"></i> 4 Hrs ago</p>
+                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold text-center"><i
+                                        class="mgc_alarm_2_line"></i> Last Update:
+                                    {{ $lastUpdateDate_active_college->format('F j, Y \a\t H.i A') }}</p>
                             </div>
-                            <div class="flex">
-                                <a href="javascript:void(0);">
-                                    <img src="public/assets/images/users/avatar-1.jpg"
-                                        class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700"
-                                        alt="friend">
-                                </a>
-                                <a href="javascript:void(0);" class="-ms-2">
-                                    <img src="public/assets/images/users/avatar-2.jpg"
-                                        class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700"
-                                        alt="friend">
-                                </a>
-                            </div>
+
                         </div>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="p-6">
-                        <div class="flex justify-between items-start">
+                        <div class="text-center">
                             <div>
-                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Admin Template
-                                </h4>
-                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">
-                                    New Task Assign</p>
+                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Inactive Institute</h4>
+                                <p class="font-normal text-2xl text-gray-400 truncate dark:text-gray-500 ">
+                                    {{ $inactive_college_count }}</p>
                             </div>
-                            <div>
-                                <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown"
-                                    data-fc-placement="left-start" type="button">
-                                    <i class="mgc_more_1_fill text-xl"></i>
-                                </button>
 
-                                <div
-                                    class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
-                                        href="javascript:void(0)">
-                                        <i class="mgc_add_circle_line"></i> Add
-                                    </a>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
-                                        href="javascript:void(0)">
-                                        <i class="mgc_edit_line"></i> Edit
-                                    </a>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
-                                        href="javascript:void(0)">
-                                        <i class="mgc_copy_2_line"></i> Copy
-                                    </a>
-                                    <div class="h-px bg-gray-200 dark:bg-gray-700 my-2 -mx-2"></div>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-danger hover:bg-danger/5"
-                                        href="javascript:void(0)">
-                                        <i class="mgc_delete_line"></i> Delete
-                                    </a>
-                                </div>
-                            </div>
                         </div>
 
                         <div class="flex items-end">
                             <div class="flex-grow">
-                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold"><i
-                                        class="mgc_alarm_2_line"></i> 3 Hrs ago</p>
+                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold text-center"><i
+                                        class="mgc_alarm_2_line"></i> Last Update:
+                                    {{ $lastUpdateDate_inactive_college->format('F j, Y \a\t H.i A') }}</p>
                             </div>
-                            <div class="flex">
-                                <a href="javascript:void(0);">
-                                    <img src="public/assets/images/users/avatar-3.jpg"
-                                        class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700"
-                                        alt="friend">
-                                </a>
-                                <a href="javascript:void(0);" class="-ms-2">
-                                    <img src="public/assets/images/users/avatar-4.jpg"
-                                        class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700"
-                                        alt="friend">
-                                </a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="p-6">
+                        <div class="text-center">
+                            <div>
+                                <h4 class="text-base mb-1 text-primary-600 dark:text-primary-400 text-primary">Courses</h4>
+                                <p class="font-normal text-2xl text-gray-400 truncate dark:text-gray-500 ">
+                                    {{ $courses_count }}</p>
                             </div>
+
+                        </div>
+
+                        <div class="flex items-end">
+                            <div class="flex-grow">
+                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold text-center"><i
+                                        class="mgc_alarm_2_line"></i> Last Update:
+                                    {{ $lastUpdateDate_course->format('F j, Y \a\t H.i A') }}</p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="p-6">
-                        <div class="flex justify-between items-start">
+                        <div class="text-center">
                             <div>
-                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Client Project
-                                </h4>
-                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">
-                                    New Task Assign</p>
+                                <h4 class="text-base mb-1 text-warning-600 dark:text-warning-400 text-warning">Articles</h4>
+                                <p class="font-normal text-2xl text-gray-400 truncate dark:text-gray-500 ">
+                                    {{ $blog_count }}</p>
                             </div>
-                            <div>
-                                <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown"
-                                    data-fc-placement="left-start" type="button">
-                                    <i class="mgc_more_1_fill text-xl"></i>
-                                </button>
 
-                                <div
-                                    class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
-                                        href="javascript:void(0)">
-                                        <i class="mgc_add_circle_line"></i> Add
-                                    </a>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
-                                        href="javascript:void(0)">
-                                        <i class="mgc_edit_line"></i> Edit
-                                    </a>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
-                                        href="javascript:void(0)">
-                                        <i class="mgc_copy_2_line"></i> Copy
-                                    </a>
-                                    <div class="h-px bg-gray-200 dark:bg-gray-700 my-2 -mx-2"></div>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-danger hover:bg-danger/5"
-                                        href="javascript:void(0)">
-                                        <i class="mgc_delete_line"></i> Delete
-                                    </a>
-                                </div>
-                            </div>
                         </div>
 
                         <div class="flex items-end">
                             <div class="flex-grow">
-                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold"><i
-                                        class="mgc_alarm_2_line"></i> 5 Hrs ago</p>
+                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold text-center"><i
+                                        class="mgc_alarm_2_line"></i> Last Update:
+                                    {{ $lastUpdateDate_blog->format('F j, Y \a\t H.i A') }}</p>
                             </div>
-                            <div class="flex">
-                                <a href="javascript:void(0);">
-                                    <img src="public/assets/images/users/avatar-5.jpg"
-                                        class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700"
-                                        alt="friend">
-                                </a>
-                                <a href="javascript:void(0);" class="-ms-2">
-                                    <img src="public/assets/images/users/avatar-6.jpg"
-                                        class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700"
-                                        alt="friend">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="card">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <h4 class="text-base mb-1 text-gray-600 dark:text-gray-400">Figma Design
-                                </h4>
-                                <p class="font-normal text-sm text-gray-400 truncate dark:text-gray-500">
-                                    New Task Assign</p>
-                            </div>
-                            <div>
-                                <button class="text-gray-600 dark:text-gray-400" data-fc-type="dropdown"
-                                    data-fc-placement="left-start" type="button">
-                                    <i class="mgc_more_1_fill text-xl"></i>
-                                </button>
-
-                                <div
-                                    class="hidden fc-dropdown fc-dropdown-open:opacity-100 opacity-0 w-36 z-50 mt-2 transition-[margin,opacity] duration-300 bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-lg p-2">
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
-                                        href="javascript:void(0)">
-                                        <i class="mgc_add_circle_line"></i> Add
-                                    </a>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-200"
-                                        href="javascript:void(0)">
-                                        <i class="mgc_edit_line"></i> Edit
-                                    </a>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
-                                        href="javascript:void(0)">
-                                        <i class="mgc_copy_2_line"></i> Copy
-                                    </a>
-                                    <div class="h-px bg-gray-200 dark:bg-gray-700 my-2 -mx-2"></div>
-                                    <a class="flex items-center gap-1.5 py-1.5 px-3.5 rounded text-sm transition-all duration-300 bg-transparent text-danger hover:bg-danger/5"
-                                        href="javascript:void(0)">
-                                        <i class="mgc_delete_line"></i> Delete
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-end">
-                            <div class="flex-grow">
-                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold"><i
-                                        class="mgc_alarm_2_line"></i> 1 Day ago</p>
-                            </div>
-                            <div class="flex">
-                                <a href="javascript:void(0);">
-                                    <img src="public/assets/images/users/avatar-7.jpg"
-                                        class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700"
-                                        alt="friend">
-                                </a>
-                                <a href="javascript:void(0);" class="-ms-2">
-                                    <img src="public/assets/images/users/avatar-8.jpg"
-                                        class="rounded-full h-8 w-8 border-2 border-gray-300 dark:border-gray-700"
-                                        alt="friend">
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-6">
+            {{-- <div class="grid lg:grid-cols-3 gap-6">
                 <div class="col-span-1">
                     <div class="card">
                         <div class="p-6">
-                            <h4 class="card-title">Monthly Target</h4>
+                            <h4 class="card-title">Institute</h4>
 
-                            <div id="monthly-target" class="apex-charts my-8" data-colors="#0acf97,#3073F1"></div>
+                            <div id="monthly-target" class="apex-charts my-8"></div>
 
                             <div class="flex justify-center">
                                 <div class="w-1/2 text-center">
-                                    <h5>Pending</h5>
+                                    <h5>Inactive</h5>
                                     <p class="fw-semibold text-muted">
-                                        <i class="mgc_round_fill text-primary"></i> Projects
+                                        <i class="mgc_round_fill text-primary"></i> Institutes
                                     </p>
                                 </div>
                                 <div class="w-1/2 text-center">
-                                    <h5>Done</h5>
+                                    <h5>Active</h5>
                                     <p class="fw-semibold text-muted">
-                                        <i class="mgc_round_fill text-success"></i> Projects
+                                        <i class="mgc_round_fill text-success"></i> Institutes
                                     </p>
                                 </div>
                             </div>
@@ -318,10 +153,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
-        <div class="col-span-1">
+        {{-- <div class="col-span-1">
             <div class="card mb-6">
                 <div class="px-6 py-5 flex justify-between items-center">
                     <h4 class="header-title">Project Summary</h4>
@@ -466,10 +301,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div> <!-- Grid End -->
 
-    <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-6 mb-6">
+    {{-- <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-6 mb-6">
         <div class="col-span-1">
             <div class="card">
                 <div class="p-6">
@@ -645,9 +480,9 @@
                 </div>
             </div>
         </div>
-    </div> <!-- Grid End -->
+    </div> <!-- Grid End --> --}}
 
-    <div class="grid 2xl:grid-cols-4 md:grid-cols-2 gap-6">
+    {{-- <div class="grid 2xl:grid-cols-4 md:grid-cols-2 gap-6">
         <div class="2xl:col-span-2 md:col-span-2">
             <div class="card">
                 <div class="p-6">
@@ -956,5 +791,5 @@
                 </div>
             </div>
         </div>
-    </div> <!-- Grid End -->
+    </div> <!-- Grid End --> --}}
 @endsection

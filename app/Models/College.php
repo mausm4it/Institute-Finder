@@ -35,4 +35,11 @@ class College extends Model
     {
         return $this->belongsToMany(Country::class);
     }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+  
 }

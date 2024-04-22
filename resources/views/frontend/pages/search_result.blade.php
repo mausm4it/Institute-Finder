@@ -107,58 +107,68 @@
                         <div class="col-lg-8">
                             @if ('name' != '')
                                 @foreach ($colleges as $college)
-                                    <div class="todo-item todo-item-list">
-                                        <div class="todo-thumbnail-area">
-                                            <figure class="item-thumb">
-                                                <img src="{{ asset('storage/app/' . $college->thumbline) }}"
-                                                    alt="Thmubnail">
-                                            </figure><!--./ item-thumb -->
-                                            <div class="todo-overlay-info">
-                                                <div class="todo-type-cat">
-                                                    @if ($college->type_of_college_id != null && $college->type_of_college_id != '')
-                                                        <a href="#"
-                                                            class="offer">{{ $college->type_of_college->name }}</a>
-                                                    @endif
-                                                    <a href="#" class="nightlife">Nightlife</a>
-                                                </div><!--./ todo-type-cat -->
-                                                <div class="todo-meta-bottom">
-                                                    <div class="todo-rating">
-                                                        <span>4.8</span>19 Ratings
-                                                    </div><!--./ todo-rating -->
-                                                    <div class="save">
-                                                        <a href="#" class="">
-                                                            <i class="fa fa-heart"></i>
-                                                        </a>
-                                                    </div><!--./ save -->
-                                                </div><!--./ todo-meta-bottom -->
-                                            </div><!--./ section-header -->
-                                        </div><!--./ todo-overlay-info -->
-                                        <div class="todo-content">
-                                            <h3 class="title"><a
-                                                    href="{{ route('college-details', $college->slug) }}">{{ $college->name }}</a>
-                                            </h3>
-                                            <div class="todo-price-status">
-                                                <div class="todo-price">$12 - $33</div>
-                                                <div class="todo-status">Open Now</div>
-                                            </div><!--./ todo-footer -->
-                                            <div class="todo-meta">
-                                                <div class="todo-location">
-                                                    <span class="icon-location"></span>
-                                                    Saint Mario, Brokelyn, New York, US
-                                                </div><!--./ todo-location -->
-                                                <div class="todo-number">
-                                                    <span class="icon-phone"></span>
-                                                    +1 2 334458887
-                                                </div><!--./ todo-number -->
-                                            </div><!--./ todo-meta -->
-                                            <div class="todo-summary">
-                                                <p>The path of the righteous man is beset on allave side by the iniquities.
-                                                    Nam
-                                                    in
-                                                    mauris quis liberos sod eleifend spectra online.</p>
-                                            </div><!--./ todo-summary -->
-                                        </div><!--./ todo-content -->
-                                    </div>
+                                    @if ($college->publish === 1)
+                                        @php
+
+                                            $total_rating = $college->reviews->sum('rating_number');
+                                            $total_count = $college->reviews->count();
+                                            $avarage_rating = $total_count > 0 ? $total_rating / $total_count : 0;
+
+                                        @endphp
+                                        <div class="todo-item todo-item-list">
+                                            <div class="todo-thumbnail-area">
+                                                <figure class="item-thumb">
+                                                    <img src="{{ asset('storage/app/' . $college->thumbline) }}"
+                                                        alt="Thmubnail">
+                                                </figure><!--./ item-thumb -->
+                                                <div class="todo-overlay-info">
+                                                    <div class="todo-type-cat">
+                                                        @if ($college->type_of_college_id != null && $college->type_of_college_id != '')
+                                                            <a href="#"
+                                                                class="offer">{{ $college->type_of_college->name }}</a>
+                                                        @endif
+                                                        <a href="#" class="nightlife">Rank:
+                                                            {{ $college->ranking_number }}</a>
+                                                    </div><!--./ todo-type-cat -->
+                                                    <div class="todo-meta-bottom">
+                                                        <div class="todo-rating">
+                                                            <span>{{ $avarage_rating }}</span>{{ $total_count }} Ratings
+                                                        </div><!--./ todo-rating -->
+                                                        <div class="save">
+                                                            <a href="#" class="">
+                                                                <i style="font-size:24px" class="fa">&#xf079;</i>
+                                                            </a>
+                                                        </div><!--./ save -->
+                                                    </div><!--./ todo-meta-bottom -->
+                                                </div><!--./ section-header -->
+                                            </div><!--./ todo-overlay-info -->
+                                            <div class="todo-content">
+                                                <h3 class="title"><a
+                                                        href="{{ route('college-details', $college->slug) }}">{{ $college->name }}</a>
+                                                </h3>
+                                                <div class="todo-price-status">
+
+                                                    <div class="todo-status">Open Now</div>
+                                                </div><!--./ todo-footer -->
+                                                <div class="todo-meta">
+                                                    <div class="todo-location">
+                                                        <span class="icon-location"></span>
+                                                        @foreach ($college->campuses as $item)
+                                                            {{ $item->name }} ,
+                                                        @endforeach
+                                                    </div><!--./ todo-location -->
+
+                                                </div><!--./ todo-meta -->
+                                                <div class="todo-summary">
+                                                    <p>The path of the righteous man is beset on allave side by the
+                                                        iniquities.
+                                                        Nam
+                                                        in
+                                                        mauris quis liberos sod eleifend spectra online.</p>
+                                                </div><!--./ todo-summary -->
+                                            </div><!--./ todo-content -->
+                                        </div>
+                                    @endif
                                 @endforeach
                             @endif
                             <!--~./ end todo item ~-->
@@ -257,7 +267,7 @@
                                 </aside><!--~./ end widget todo categories ~-->
 
                                 <!--~~~~ Start Recent View Todo Widget ~~~~-->
-                                <aside class="widget widget_recent_view_todo">
+                                {{-- <aside class="widget widget_recent_view_todo">
                                     <h4 class="widget-title">Recent Viewed Lisitng</h4>
                                     <div class="widget-content">
                                         <!--~~~~~ Start Todo Item ~~~~~-->
@@ -367,7 +377,7 @@
                                             </div><!--./ todo-content -->
                                         </div><!--~./ end todo item ~-->
                                     </div>
-                                </aside><!--~./ end recent view todo widget ~-->
+                                </aside><!--~./ end recent view todo widget ~--> --}}
                             </div>
                         </div><!--~./ end sidebar ~-->
                     </div><!--./ row -->

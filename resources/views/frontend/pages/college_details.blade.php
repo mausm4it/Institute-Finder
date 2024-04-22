@@ -35,49 +35,24 @@
                                                 @foreach ($college->campuses as $item)
                                                     {{ $item->name }} ,
                                                 @endforeach
-                                            </div><!--./ todo-location -->
-                                            {{-- <div class="todo-number">
-                                                <span class="icon-phone"></span>
-                                                +1 2 334458887
-                                            </div><!--./ todo-number --> --}}
+                                            </div>
                                         </div><!--./ todo-meta -->
                                     </div><!--./ info-left -->
 
                                     <div class="info-right">
-                                        {{-- <div class="todo-price"> Courses:
-                                            @foreach ($college->courses as $item)
-                                                {{ $item->name }} ,
-                                            @endforeach
-                                        </div> --}}
+
                                         <div class="todo-rating">
-                                            <span>4.8</span>19 Ratings
+                                            {{ $college->reviews->count() }} Ratings
                                         </div>
-                                        <div class="listing-todo-feature-list">
-                                            <a href="#" class="single-list">
-                                                <span class="text">Share</span>
-                                                <span class="icon-share1"></span>
-                                            </a>
-                                            <a href="#" class="single-list">
-                                                <span class="text">Submit Review</span>
-                                                <span class="icon-chat"></span>
-                                            </a>
-                                            <a href="#" class="single-list">
-                                                <span class="text">Save</span>
-                                                <span class="icon-bookmark1"></span>
-                                            </a>
-                                            <a href="#" class="single-list">
-                                                <span class="text">Report</span>
-                                                <span class="icon-flag1"></span>
-                                            </a>
-                                        </div><!--~~./ listing-todo-feature-list ~~-->
-                                    </div><!--./ info-right -->
-                                </div><!--./ listing-todo-header-info -->
-                            </div><!--./ listing-todo-header -->
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div><!--./ listing-todo-header-content -->
-        </div><!--~./ listing todo thumbnail Area ~-->
+            </div>
+        </div>
         <div class="todo-details-menu">
             <div class="container">
                 <div class="row">
@@ -204,273 +179,183 @@
                             </div>
 
 
-                            <!--~~~~~ Start Listing Reviews ~~~~~-->
-                            <div class="listing-reviews-area" id="reviews">
-                                <div class="small-title">
-                                    <h3 class="heading">Reviews</h3>
-                                </div>
-                                <div class="listing-average-rating">
+                            @if ($college->reviews)
+                                <div class="listing-reviews-area" id="reviews">
+                                    <div class="small-title">
+                                        <h3 class="heading">Reviews</h3>
+                                    </div>
+                                    <div class="listing-average-rating">
 
-                                    <div class="box-inner-content">
-                                        <div class="rating-overview">
-                                            <div class="rating-overview-left">
-                                                <div class="rating-overview-average">
-                                                    <div class="rating-no">4.8</div>
-                                                    <div class="listing-rating">
-                                                        <span class="rating">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fas fa-star-half-alt"></i>
-                                                        </span>
-                                                        <a href="#">35 Rating</a>
+                                        <div class="box-inner-content">
+                                            <div class="rating-overview">
+                                                <div class="rating-overview-left">
+                                                    <div class="rating-overview-average">
+
+                                                        <div class="rating-no">{{ number_format($avarage_rating, 1) }}
+                                                        </div>
+                                                        <div class="listing-rating">
+                                                            <span class="rating">
+                                                                @for ($i = 1; $i <= 5; $i++)
+                                                                    @if ($i <= $avarage_rating)
+                                                                        <i class="fa fa-star checked"></i>
+                                                                    @else
+                                                                        <i class="far fa-star"></i>
+                                                                    @endif
+                                                                @endfor
+                                                            </span>
+                                                            <a href="#">{{ $total_count }} Rating</a>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div><!--~./ rating-overview-left ~-->
-                                            <div class="rating-overview-right">
-                                                <div class="single-progress-bar">
-                                                    <div class="progress-type">Quality</div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" style="width: 85%;"
-                                                            aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <div class="progress-percent">25</div>
-                                                </div><!--~./ single-progress-bar ~-->
-                                                <div class="single-progress-bar">
-                                                    <div class="progress-type">Space</div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" style="width: 60%;"
-                                                            aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <div class="progress-percent">13</div>
-                                                </div><!--~./ single-progress-bar ~-->
-                                                <div class="single-progress-bar">
-                                                    <div class="progress-type">Price</div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" style="width: 25%;"
-                                                            aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <div class="progress-percent">4</div>
-                                                </div><!--~./ single-progress-bar ~-->
-                                                <div class="single-progress-bar">
-                                                    <div class="progress-type">Service</div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" style="width: 50%;"
-                                                            aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <div class="progress-percent">7</div>
-                                                </div><!--~./ single-progress-bar ~-->
-                                                <div class="single-progress-bar">
-                                                    <div class="progress-type">Location</div>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" style="width: 35%;"
-                                                            aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <div class="progress-percent">5</div>
-                                                </div><!--~./ single-progress-bar ~-->
+                                                </div><!--~./ rating-overview-left ~-->
+
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!--~./ small-title ~-->
-                                <div class="box-inner-content">
-                                    <ol class="comment-list">
-                                        <li id="comment-1" class="comment even thread-even depth-1 parent">
-                                            <article class="comment-body">
-                                                <div class="comment-author vcard">
-                                                    <img alt="card" src="assets/images/todo/review/1.png"
-                                                        class="avatar photo">
-                                                    <b class="author-name">
-                                                        <a href="#" rel="external nofollow"
-                                                            class="url">Fatma</a>
-                                                    </b>
-                                                    <div class="reviews-no">
-                                                        <span class="number"><i class="fa fa-star"></i>14</span>
-                                                        <span class="text">Reviews</span>
-                                                    </div>
-                                                </div><!-- .comment-author -->
-                                                <div class="comment-info">
-                                                    <div class="comment-info-inner">
-                                                        <div class="info-title-header">
-                                                            <h3 class="title">So Fresh and Cooked to perfection</h3>
-                                                            <div class="comment-metadata">
-                                                                <a href="#">
-                                                                    <span>December 14, 2019 at 20.15 pm</span>
-                                                                </a>
-                                                            </div><!-- .comment-metadata -->
-                                                        </div><!-- .info-title-header -->
-                                                        <div class="comment-rating">
-                                                            <span class="rating">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="far fa-star"></i>
-                                                            </span>
-                                                        </div><!-- .comment-rating -->
-                                                    </div><!-- .comment-content -->
-                                                    <div class="comment-content">
-                                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                                            accusantium laudanti reminds eaque ipsa quae ab illo inventore
-                                                            veritatis.</p>
-                                                    </div><!-- .comment-content -->
-                                                    <div class="comment-meta">
-                                                        <div class="comment-meta-inner">
-                                                            <div class="like">
-                                                                <a class="comment-link" href="#"><span
-                                                                        class="icon-thumb-up"></span> Like</a>
-                                                            </div>
-                                                            <div class="dislike">
-                                                                <a class="comment-dislink" href="#"><span
-                                                                        class="icon-dislike-thumb"></span> Dislike</a>
-                                                            </div>
-                                                            <div class="love">
-                                                                <a class="comment-love" href="#"><span
-                                                                        class="icon-like1"></span> Love</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="reply">
-                                                            <a class="comment-reply" href="#"><span
-                                                                    class="icon-reply1"></span> Reply</a>
-                                                        </div>
-                                                    </div><!-- .comment-meta -->
-                                                </div>
-                                            </article><!-- .comment-body -->
-                                            <ol class="children">
-                                                <li id="comment-3" class="comment odd alt depth-2">
-                                                    <article class="comment-body">
-                                                        <div class="comment-author vcard">
-                                                            <img alt="card" src="assets/images/todo/review/2.png"
-                                                                class="avatar photo">
-                                                            <b class="author-name">
-                                                                <a href="#" rel="external nofollow"
-                                                                    class="url">Arafa</a>
-                                                            </b>
-                                                            <div class="reviews-no">
-                                                                <span class="number"><i class="fa fa-star"></i>14</span>
-                                                                <span class="text">Reviews</span>
-                                                            </div>
-                                                        </div><!-- .comment-author -->
-                                                        <div class="comment-info">
-                                                            <div class="comment-info-inner">
-                                                                <div class="info-title-header">
-                                                                    <h3 class="title">I think I will refer my friend</h3>
-                                                                    <div class="comment-metadata">
-                                                                        <a href="#">
-                                                                            <span>December 14, 2019 at 20.15 pm</span>
-                                                                        </a>
-                                                                    </div><!-- .comment-metadata -->
-                                                                </div><!-- .info-title-header -->
-                                                                <div class="comment-rating">
-                                                                    <span class="rating">
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="fa fa-star"></i>
-                                                                        <i class="far fa-star"></i>
-                                                                    </span>
-                                                                </div><!-- .comment-rating -->
-                                                            </div><!-- .comment-content -->
-                                                            <div class="comment-content">
-                                                                <p>Sed ut perspiciatis unde omnis iste natus error sit
-                                                                    voluptatem accusantium laudanti reminds eaque ipsa quae
-                                                                    ab illo inventore veritatis.</p>
-                                                            </div><!-- .comment-content -->
-                                                            <div class="comment-meta">
-                                                                <div class="comment-meta-inner">
-                                                                    <div class="like">
-                                                                        <a class="comment-link" href="#"><span
-                                                                                class="icon-thumb-up"></span> Like</a>
-                                                                    </div>
-                                                                    <div class="dislike">
-                                                                        <a class="comment-dislink" href="#"><span
-                                                                                class="icon-dislike-thumb"></span>
-                                                                            Dislike</a>
-                                                                    </div>
-                                                                    <div class="love">
-                                                                        <a class="comment-love" href="#"><span
-                                                                                class="icon-like1"></span> Love</a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="reply">
-                                                                    <a class="comment-reply" href="#"><span
-                                                                            class="icon-reply1"></span> Reply</a>
-                                                                </div>
-                                                            </div><!-- .comment-meta -->
-                                                        </div>
-                                                    </article><!-- .comment-body -->
-                                                </li><!-- #comment -->
-                                            </ol><!-- .children -->
-                                        </li><!-- #comment-## -->
-                                    </ol>
-                                </div>
-                            </div><!--~./ end listing reviews ~-->
+                                    <!--~./ small-title ~-->
+                                    <div class="box-inner-content">
+                                        <ol class="comment-list">
+                                            @if ($college->reviews->isNotEmpty())
+                                                @foreach ($college->reviews as $review)
+                                                    <li class="comment even thread-even depth-1 parent">
+                                                        <article class="comment-body">
+                                                            <div class="comment-author vcard">
+                                                                <img alt="card"
+                                                                    src="{{ asset('storage\app\user_profile\user.png') }}"
+                                                                    class="avatar photo">
 
-                            <!--~~~~~ Start Listing Leave Review ~~~~~-->
+                                                                <div class="reviews-no">
+
+                                                                    <span class="text">{{ $review->user->name }}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="comment-info">
+                                                                <div class="comment-info-inner">
+
+                                                                    <div class="comment-rating">
+                                                                        <span class="rating">
+                                                                            @php
+                                                                                $rating = $review->rating_number;
+                                                                            @endphp
+                                                                            @for ($i = 1; $i <= 5; $i++)
+                                                                                @if ($i <= $rating)
+                                                                                    <i class="fa fa-star checked"></i>
+                                                                                @else
+                                                                                    <i class="far fa-star"></i>
+                                                                                @endif
+                                                                            @endfor
+                                                                        </span>
+                                                                    </div><!-- .comment-rating -->
+                                                                </div><!-- .comment-content -->
+                                                                <div class="comment-content">
+                                                                    <p>{!! $review->comment !!}</p>
+                                                                    <div class="comment-metadata">
+
+                                                                        <span
+                                                                            class="text-primary">{{ $review->updated_at->format('F j, Y \a\t H.i A') }}</span>
+
+                                                                    </div>
+                                                                </div>
+                                                                <!-- .comment-content -->
+                                                                <div class="comment-meta">
+                                                                    <div class="comment-meta-inner">
+                                                                        <div class="like">
+                                                                            <a class="comment-link" href="#"><span
+                                                                                    class="icon-thumb-up"></span> Like</a>
+                                                                        </div>
+                                                                        <div class="dislike">
+                                                                            <a class="comment-dislink"
+                                                                                href="#"><span
+                                                                                    class="icon-dislike-thumb"></span>
+                                                                                Dislike</a>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div><!-- .comment-meta -->
+                                                            </div>
+                                                        </article>
+
+                                                    </li>
+                                                @endforeach
+                                            @endif
+
+
+                                        </ol>
+                                    </div>
+                                </div>
+                            @endif
+
+
+
                             <div class="listing-leave-review">
                                 <div class="small-title">
                                     <h3 class="heading">Leave a Review</h3>
                                 </div><!--~./ small-title ~-->
                                 <div class="box-inner-content">
                                     <div class="leave-review-content">
-                                        <form name="reviewForm" id='review_form' method="post" action='#'>
+                                        <form method="POST" action="{{ route('college-review', $college->id) }}">
+                                            @csrf
                                             <div class="review-box">
-                                                <ul class="list-review">
-                                                    <li>
-                                                        <span class="text">Location</span>
-                                                        <div class="review-rating"></div>
-                                                    </li>
-                                                    <li>
-                                                        <span class="text">Quality</span>
-                                                        <div class="review-rating"></div>
-                                                    </li>
-                                                    <li>
-                                                        <span class="text">Space</span>
-                                                        <div class="review-rating"></div>
-                                                    </li>
-                                                    <li>
-                                                        <span class="text">Service</span>
-                                                        <div class="review-rating"></div>
-                                                    </li>
-                                                    <li>
-                                                        <span class="text">Price</span>
-                                                        <div class="review-rating"></div>
-                                                    </li>
-                                                </ul>
+
+                                                <style>
+                                                    .star {
+                                                        font-size: 50px;
+                                                        cursor: pointer;
+                                                        color: orangered;
+                                                    }
+                                                </style>
+                                                <div class="star-rating">
+                                                    <span class="star" data-rating="1">☆</span>
+                                                    <span class="star" data-rating="2">☆</span>
+                                                    <span class="star" data-rating="3">☆</span>
+                                                    <span class="star" data-rating="4">☆</span>
+                                                    <span class="star" data-rating="5">☆</span>
+                                                </div>
+                                                <input type="hidden" name="rating_number" class="rating-value"
+                                                    value="0">
+
+                                                <script>
+                                                    const stars = document.querySelectorAll('.star');
+                                                    const ratingValue = document.querySelector('.rating-value');
+
+                                                    stars.forEach(star => {
+                                                        star.addEventListener('click', function() {
+                                                            const rating = this.dataset.rating;
+                                                            ratingValue.value = rating;
+
+                                                            // Update UI to reflect the selected rating
+                                                            stars.forEach(s => {
+                                                                if (s.dataset.rating <= rating) {
+                                                                    s.textContent = '★';
+                                                                } else {
+                                                                    s.textContent = '☆';
+                                                                }
+                                                            });
+                                                        });
+                                                    });
+                                                </script>
                                             </div>
                                             <div class="row">
-                                                <div class="col-lg-6">
-                                                    <input type='text' name='name' id='username'
-                                                        class="form-controllar" aria-required="true"
-                                                        placeholder="Full Name">
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <input type='text' name='email' id='email-comments'
-                                                        class="form-controllar" aria-required="true"
-                                                        placeholder="Email Address">
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <input type='text' name='title' class="form-controllar"
-                                                        aria-required="true" placeholder="Review Title">
-                                                </div>
+
                                                 <div class="col-12">
-                                                    <textarea name='message' id='message' class="form-controllar" aria-required="true" placeholder="Your Review"></textarea>
+                                                    <label for="comment">Write Review</label>
+                                                    <textarea name='comment' id='comment' class="form-control" aria-required="true" placeholder="Your Review"></textarea>
                                                 </div>
-                                                <div class="col-12">
+                                                {{-- <div class="col-12">
                                                     <div class="input-file">
-                                                        <input type='file' id='upload_file'>
+                                                        <input name="image" type='file' id='upload_file'>
                                                         <label for="upload_file"> <span class="icon-photo-camera"></span>
                                                             add Photos</label>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                                 <div class="col-lg-12">
                                                     <div class="input-check">
-                                                        <input type='checkbox' id="agree">
+                                                        <input type='checkbox' name="agree" id="agree">
                                                         <label for="agree">Save my name, email, and website in this
                                                             browser for the next time I comment</label>
                                                     </div>
                                                 </div>
+                                                <input type="hidden" name="college_id" value="{{ $college->id }}">
                                                 <div class="col-12">
                                                     <div class="form-submit">
                                                         <button class="btn btn-default btn-black" type="submit">Submit
@@ -509,63 +394,19 @@
                                 </div>
                             </aside>
 
-                            {{-- <aside class="widget online-reservation-widget">
-                                <h4 class="widget-title">Online Reservation</h4>
-                                <div class="widget-content">
-                                    <form name="reservationForm" id='reservation_form' method="post" action='#'>
-                                        <div class="res-group">
-                                            <span class="icon-user-1"></span>
-                                            <input id="res_name" placeholder="Full Name" type="text"
-                                                class="form-controllar">
-                                        </div>
-                                        <div class="res-group">
-                                            <span class="icon-email"></span>
-                                            <input id="res_email" placeholder="Email" type="email"
-                                                class="form-controllar">
-                                        </div>
-                                        <div class="res-group">
-                                            <span class="icon-call"></span>
-                                            <input id="res_phone" placeholder="Phone Number" type="text"
-                                                class="form-controllar">
-                                        </div>
-                                        <div class="res-group">
-                                            <span class="icon-user-1"></span>
-                                            <select class="select-custom">
-                                                <option>Persons No.</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                                <option>6</option>
-                                            </select>
-                                        </div>
-                                        <div class="res-group">
-                                            <span class="icon-calendar1"></span>
-                                            <input type='text' name='date' id='res_date' class="form-controllar"
-                                                placeholder="Date & Time">
-                                        </div>
-                                        <div class="form-submit">
-                                            <button class="btn btn-default">Submit Now</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </aside> --}}
 
-                            <aside class="widget bt-business-info-widget">
-                                <h4 class="widget-title">Institute Information</h4>
+
+                            <aside class="widget statistic-widget">
+                                <h4 class="widget-title">Statistic</h4>
                                 <div class="widget-content">
-                                    <ul class="info-list">
-                                        <li><a href="#"><span class="icon-location3"></span>1900 Pico Blvd Santa
-                                                Monica, CA</a></li>
-                                        <li><a href="#"><span class="icon-phone2"></span>02 001 021 258 963</a></li>
-                                        <li><a href="mailto:arafawy@backyard.biz"><span
-                                                    class="icon-email"></span>arafawy@backyard.biz</a></li>
-                                        <li><a href="#"><span class="icon-broken-link"></span>thebackyard.biz</a>
-                                        </li>
-                                    </ul>
+                                    <div class="statistic-list">
+                                        <div class="statistic-item">
+                                            <span class="icon-compass1">{{ $college->views }}</span>Views
+                                        </div>
+
+                                    </div>
                                 </div>
-                            </aside><!--~./ end business info widget ~-->
+                            </aside>
                             <aside class="widget bookmark-widget">
                                 <div class="widget-content">
                                     <div class="bookmark-btn-area">
@@ -575,105 +416,10 @@
                                     </div>
                                 </div>
                             </aside>
-                            <!--~~~ Start Open Hours Widget ~~~-->
-                            <aside class="widget open-hours-widget">
-                                <h4 class="widget-title">Open Hours</h4>
-                                <div class="widget-content">
-                                    <div class="listing-hours-list">
-                                        <div class="listing-day">
-                                            <div class="day">Monday</div>
-                                            <div class="time-items">
-                                                <span class="time">07:00 AM - 09:00 PM</span>
-                                            </div>
-                                        </div><!--./ listing-day -->
-                                        <div class="listing-day">
-                                            <div class="day">Tuesday</div>
-                                            <div class="time-items">
-                                                <span class="time">07:00 AM - 09:00 PM</span>
-                                            </div>
-                                        </div><!--./ listing-day -->
-                                        <div class="listing-day">
-                                            <div class="day">Wednesday</div>
-                                            <div class="time-items">
-                                                <span class="time">07:00 AM - 09:00 PM</span>
-                                            </div>
-                                        </div><!--./ listing-day -->
-                                        <div class="listing-day">
-                                            <div class="day">Thursday</div>
-                                            <div class="time-items">
-                                                <span class="time">07:00 AM - 09:00 PM</span>
-                                            </div>
-                                        </div><!--./ listing-day -->
-                                        <div class="listing-day">
-                                            <div class="day">Friday</div>
-                                            <div class="time-items">
-                                                <span class="time">07:00 AM - 09:00 PM</span>
-                                            </div>
-                                        </div><!--./ listing-day -->
-                                        <div class="listing-day">
-                                            <div class="day">Saturday</div>
-                                            <div class="time-items">
-                                                <span class="time">07:00 AM - 09:00 PM</span>
-                                            </div>
-                                        </div><!--./ listing-day -->
-                                        <div class="listing-day closed">
-                                            <div class="day">Sunday</div>
-                                            <div class="time-items">
-                                                <span class="time">Closed</span>
-                                            </div>
-                                        </div><!--./ listing-day -->
-                                    </div>
-                                </div>
-                            </aside><!--~./ end open hours widget ~-->
 
-                            <!--~~~ Start Statistic Widget ~~~-->
-                            <aside class="widget statistic-widget">
-                                <h4 class="widget-title">Statistic</h4>
-                                <div class="widget-content">
-                                    <div class="statistic-list">
-                                        <div class="statistic-item">
-                                            <span class="icon-compass1"></span>Views
-                                        </div>
-                                        <div class="statistic-item">
-                                            <span class="icon-review-1"></span>2 Ratings
-                                        </div>
-                                        <div class="statistic-item">
-                                            <span class="icon-bookmark1"></span>Favorite
-                                        </div>
-                                        <div class="statistic-item">
-                                            <span class="icon-share1"></span>65 Share
-                                        </div>
-                                    </div>
-                                </div>
-                            </aside><!--~./ end statistic widget ~-->
 
-                            <!--~~~~~ Start About Us Widget ~~~~~-->
-                            <aside class="widget bt-about-us-widget">
-                                <h4 class="widget-title">Added By</h4>
-                                <div class="widget-content">
-                                    <div class="about-info">
-                                        <div class="thumb">
-                                            <img src="assets/images/widget/author.png" alt="img">
-                                        </div>
-                                        <div class="info">
-                                            <h3 class="name">Fatma Mohamed</h3>
-                                            <p>Member Since Ocotber 2015</p>
-                                        </div>
-                                    </div>
-                                    <ul class="info-list list">
-                                        <li><a href="#"><span class="icon-phone2"></span>02 001 021 258 963</a></li>
-                                        <li><a href="mailto:arafawy@backyard.biz"><span
-                                                    class="icon-email"></span>arafawy@backyard.biz</a></li>
-                                        <li><a href="#"><span class="icon-facebook2"></span>CreativeWebDesigner</a>
-                                        </li>
-                                        <li><a href="#"><span class="icon-instagram"></span>#EeveryDayDesign</a>
-                                        </li>
-                                        <li><a href="#"><span class="icon-dribbble"></span>CreativeDesign</a></li>
-                                    </ul>
-                                </div>
-                            </aside><!--~./ end about us widget ~-->
-                            <!--~~~ Start Bookmark Widget ~~~-->
-                            <!--~./ end bookmark widget ~-->
+
+
                         </div>
                     </div><!--~./ end sidebar ~-->
                 </div>

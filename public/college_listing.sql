@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2024 at 02:12 AM
+-- Generation Time: Apr 21, 2024 at 06:56 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -46,11 +46,11 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`id`, `title`, `slug`, `summary`, `content`, `blog_image`, `meta_keywords`, `meta_description`, `blog_category_id`, `created_at`, `updated_at`) VALUES
-(1, 'Navigating Higher Ed: A Comprehensive Guide to College Applications', 'navigating-higher-ed-college-applications', 'Learn the ins and outs of the college application process,\n         from selecting the right schools to crafting compelling essays', 'This blog series will break down each step of applying to college, \n        offering practical tips and advice to help students successfully navigate this important journey', 'blog_image/blog1.jpg', 'This blog series will break down each step of applying to college, \n        offering practical tips and advice to help students successfully navigate this important journey', 'This blog series will break down each step of applying to college, \n        offering practical tips and advice to help students successfully navigate this important journey', 1, '2024-04-13 18:07:46', '2024-04-13 18:07:46'),
-(2, 'Decoding Financial Aid: Understanding Your Options for College Funding', 'decoding-financial-aid-college-funding', 'Unravel the complexities of financial aid, \n        scholarships, and grants to make college more affordable.', 'This series will provide clarity on the various forms of financial assistance available to students,\n         empowering them to make informed decisions about financing their college education.', 'blog_image/blog2.jpg', 'This series will provide clarity on the various forms of financial assistance available to students, \n        empowering them to make informed decisions about financing their college education.', 'This series will provide clarity on the various forms of financial assistance available to students,\n        empowering them to make informed decisions about financing their college education.', 1, '2024-04-13 18:07:46', '2024-04-13 18:07:46'),
-(3, 'College Life Unplugged: A Student\'s Guide to Thriving on Campus', 'college-life-unplugged-campus-guide', 'Discover strategies for academic success, \n        social integration, and personal well-being in the college environment.', 'From time management tips to campus resources, this blog series will equip students\n         with the knowledge and skills they need to thrive both academically and personally during their college years.', 'blog_image/blog3.jpg', 'From time management tips to campus resources, this blog series will equip students with the knowledge and \n        skills they need to thrive both academically and personally during their college years.', 'From time management tips to campus resources, this blog series will equip students with the knowledge and \n        skills they need to thrive both academically and personally during their college years.', 2, '2024-04-13 18:07:46', '2024-04-13 18:07:46'),
-(4, 'Beyond the Classroom: Exploring Experiential Learning Opportunities in College', 'beyond-classroom-experiential-learning-college', ' Explore internship programs, study abroad opportunities, \n        and other hands-on experiences to enrich your college education.', 'This series will highlight the value of experiential learning in college and provide guidance on how students can leverage these opportunities to \n        enhance their skills, broaden their perspectives, and prepare for their future careers.', 'blog_image/blog4.jpg', 'This series will highlight the value of experiential learning in college and provide guidance on how students can leverage these opportunities to \n        enhance their skills, broaden their perspectives, and prepare for their future careers.', 'This series will highlight the value of experiential learning in college and provide guidance on how students can leverage these opportunities to \n        enhance their skills, broaden their perspectives, and prepare for their future careers.', 2, '2024-04-13 18:07:46', '2024-04-13 18:07:46'),
-(5, 'College Survival Guide: Tips and Tricks for Navigating Freshman Year', 'college-survival-guide-freshman-year', 'Get practical advice on making a smooth transition to college life and overcoming common challenges faced by incoming freshmen.', 'From adjusting to dormitory living to managing academic expectations, this blog series will offer valuable insights and \n        actionable tips to help freshmen navigate their first year of college with confidence.', 'blog_image/blog5.jpg', 'From adjusting to dormitory living to managing academic expectations, this blog series will offer valuable insights \n        and actionable tips to help freshmen navigate their first year of college with confidence.', 'From adjusting to dormitory living to managing academic expectations, this blog series will offer valuable insights and \n        actionable tips to help freshmen navigate their first year of college with confidence.', 3, '2024-04-13 18:07:46', '2024-04-13 18:07:46');
+(1, 'Navigating Higher Ed: A Comprehensive Guide to College Applications', 'navigating-higher-ed-college-applications', 'Learn the ins and outs of the college application process,\n         from selecting the right schools to crafting compelling essays', 'This blog series will break down each step of applying to college, \n        offering practical tips and advice to help students successfully navigate this important journey', 'blog_image/blog1.jpg', 'This blog series will break down each step of applying to college, \n        offering practical tips and advice to help students successfully navigate this important journey', 'This blog series will break down each step of applying to college, \n        offering practical tips and advice to help students successfully navigate this important journey', 1, '2024-04-21 10:43:38', '2024-04-21 10:43:38'),
+(2, 'Decoding Financial Aid: Understanding Your Options for College Funding', 'decoding-financial-aid-college-funding', 'Unravel the complexities of financial aid, \n        scholarships, and grants to make college more affordable.', 'This series will provide clarity on the various forms of financial assistance available to students,\n         empowering them to make informed decisions about financing their college education.', 'blog_image/blog2.jpg', 'This series will provide clarity on the various forms of financial assistance available to students, \n        empowering them to make informed decisions about financing their college education.', 'This series will provide clarity on the various forms of financial assistance available to students,\n        empowering them to make informed decisions about financing their college education.', 1, '2024-04-21 10:43:38', '2024-04-21 10:43:38'),
+(3, 'College Life Unplugged: A Student\'s Guide to Thriving on Campus', 'college-life-unplugged-campus-guide', 'Discover strategies for academic success, \n        social integration, and personal well-being in the college environment.', 'From time management tips to campus resources, this blog series will equip students\n         with the knowledge and skills they need to thrive both academically and personally during their college years.', 'blog_image/blog3.jpg', 'From time management tips to campus resources, this blog series will equip students with the knowledge and \n        skills they need to thrive both academically and personally during their college years.', 'From time management tips to campus resources, this blog series will equip students with the knowledge and \n        skills they need to thrive both academically and personally during their college years.', 2, '2024-04-21 10:43:38', '2024-04-21 10:43:38'),
+(4, 'Beyond the Classroom: Exploring Experiential Learning Opportunities in College', 'beyond-classroom-experiential-learning-college', ' Explore internship programs, study abroad opportunities, \n        and other hands-on experiences to enrich your college education.', 'This series will highlight the value of experiential learning in college and provide guidance on how students can leverage these opportunities to \n        enhance their skills, broaden their perspectives, and prepare for their future careers.', 'blog_image/blog4.jpg', 'This series will highlight the value of experiential learning in college and provide guidance on how students can leverage these opportunities to \n        enhance their skills, broaden their perspectives, and prepare for their future careers.', 'This series will highlight the value of experiential learning in college and provide guidance on how students can leverage these opportunities to \n        enhance their skills, broaden their perspectives, and prepare for their future careers.', 2, '2024-04-21 10:43:38', '2024-04-21 10:43:38'),
+(5, 'College Survival Guide: Tips and Tricks for Navigating Freshman Year', 'college-survival-guide-freshman-year', 'Get practical advice on making a smooth transition to college life and overcoming common challenges faced by incoming freshmen.', 'From adjusting to dormitory living to managing academic expectations, this blog series will offer valuable insights and \n        actionable tips to help freshmen navigate their first year of college with confidence.', 'blog_image/blog5.jpg', 'From adjusting to dormitory living to managing academic expectations, this blog series will offer valuable insights \n        and actionable tips to help freshmen navigate their first year of college with confidence.', 'From adjusting to dormitory living to managing academic expectations, this blog series will offer valuable insights and \n        actionable tips to help freshmen navigate their first year of college with confidence.', 3, '2024-04-21 10:43:38', '2024-04-21 10:43:38');
 
 -- --------------------------------------------------------
 
@@ -71,9 +71,9 @@ CREATE TABLE `blog_categories` (
 --
 
 INSERT INTO `blog_categories` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'Engineering', 'engineering', '2024-04-13 18:07:46', '2024-04-13 18:07:46'),
-(2, 'Business Studies', 'business-studies', '2024-04-13 18:07:46', '2024-04-13 18:07:46'),
-(3, 'Arts', 'arts', '2024-04-13 18:07:46', '2024-04-13 18:07:46');
+(1, 'Engineering', 'engineering', '2024-04-21 10:43:38', '2024-04-21 10:43:38'),
+(2, 'Business Studies', 'business-studies', '2024-04-21 10:43:38', '2024-04-21 10:43:38'),
+(3, 'Arts', 'arts', '2024-04-21 10:43:38', '2024-04-21 10:43:38');
 
 -- --------------------------------------------------------
 
@@ -118,13 +118,29 @@ CREATE TABLE `campus_college` (
 
 INSERT INTO `campus_college` (`id`, `campus_id`, `college_id`) VALUES
 (1, 1, 9),
-(2, 5, 6),
-(3, 1, 9),
-(4, 5, 6),
-(5, 2, 1),
-(6, 5, 9),
-(7, 2, 1),
-(8, 5, 9);
+(2, 2, 9),
+(3, 3, 9),
+(4, 4, 9),
+(5, 5, 9),
+(6, 1, 1),
+(7, 3, 1),
+(8, 4, 1),
+(9, 3, 2),
+(10, 4, 2),
+(11, 1, 3),
+(12, 2, 3),
+(13, 3, 3),
+(14, 4, 3),
+(15, 5, 3),
+(16, 2, 4),
+(17, 4, 4),
+(18, 1, 5),
+(19, 4, 5),
+(20, 5, 5),
+(21, 1, 6),
+(22, 5, 7),
+(23, 1, 8),
+(24, 4, 8);
 
 -- --------------------------------------------------------
 
@@ -146,9 +162,9 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `category_icon`, `created_at`, `updated_at`) VALUES
-(1, 'Engineering', 'engineering', 'category_icon/engineering.jpg', '2024-04-13 18:07:46', '2024-04-13 18:07:46'),
-(2, 'Business Studies', 'business-studies', 'category_icon/business-studies.jpg', '2024-04-13 18:07:46', '2024-04-13 18:07:46'),
-(3, 'Arts', 'arts', 'category_icon/arts.jpg', '2024-04-13 18:07:46', '2024-04-13 18:07:46');
+(1, 'Engineering', 'engineering', 'category_icon/engineering.jpg', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(2, 'Business Studies', 'business-studies', 'category_icon/business-studies.jpg', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(3, 'Arts', 'arts', 'category_icon/arts.jpg', '2024-04-21 10:43:37', '2024-04-21 10:43:37');
 
 -- --------------------------------------------------------
 
@@ -192,6 +208,7 @@ CREATE TABLE `colleges` (
   `views` int(11) NOT NULL DEFAULT 0,
   `meta_keywords` varchar(255) DEFAULT NULL,
   `meta_description` varchar(255) DEFAULT NULL,
+  `publish` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -200,16 +217,16 @@ CREATE TABLE `colleges` (
 -- Dumping data for table `colleges`
 --
 
-INSERT INTO `colleges` (`id`, `name`, `slug`, `summary`, `video_link`, `about_college`, `admisstion_current_time`, `schollership`, `faculty`, `hostel`, `thumbline`, `gallery`, `brochuri`, `placement`, `ranking_number`, `type_of_college_id`, `views`, `meta_keywords`, `meta_description`, `created_at`, `updated_at`) VALUES
-(1, 'Liberty University', 'liberty-university', ' Liberty University is a private Christian university located in Lynchburg, \n        Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \n        and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', 'Liberty University offers a vibrant campus life with numerous student \n        organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic\n         excellence and provides a supportive environment for students to pursue their\n          passions and achieve their goals', 'Prospective students can apply online through the\n         university website. Admission requirements vary by program, but all applicants are encouraged \n        to submit their transcripts, standardized test scores, and letters of recommendation.', 'Liberty University offers a range of scholarships and financial aid options \n        to eligible students based on academic achievement, extracurricular involvement, and financial need.', 'The faculty at Liberty University are experts in their respective fields and are dedicated\n         to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.', 'On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style\n         living. The university also offers dining facilities, study lounges, and recreational amenities.', 'college_thumbline/college1.jpg', 'college_gallery/college2.jpg', NULL, 'Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university\'s\n        Career Center provides resources and support to students throughout their job search process.', '5', '1', 0, 'Liberty University, Christian university, undergraduate programs, \n        graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\n         graduate programs in a supportive and vibrant campus environment.', '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(2, 'Evergreen University', 'evergreen-university', ' Liberty University is a private Christian university located in Lynchburg, \n        Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \n        and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', 'Liberty University offers a vibrant campus life with numerous student \n        organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic\n         excellence and provides a supportive environment for students to pursue their\n          passions and achieve their goals', 'Prospective students can apply online through the\n         university website. Admission requirements vary by program, but all applicants are encouraged \n        to submit their transcripts, standardized test scores, and letters of recommendation.', 'Liberty University offers a range of scholarships and financial aid options \n        to eligible students based on academic achievement, extracurricular involvement, and financial need.', 'The faculty at Liberty University are experts in their respective fields and are dedicated\n         to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.', 'On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style\n         living. The university also offers dining facilities, study lounges, and recreational amenities.', 'college_thumbline/college2.jpg', 'college_gallery/college3.jpg', NULL, 'Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university\'s\n        Career Center provides resources and support to students throughout their job search process.', '6', '1', 0, 'Liberty University, Christian university, undergraduate programs, \n        graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\n         graduate programs in a supportive and vibrant campus environment.', '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(3, 'Pacific Shores College', 'pacific-shores-college', ' Liberty University is a private Christian university located in Lynchburg, \n        Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \n        and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', 'Liberty University offers a vibrant campus life with numerous student \n        organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic\n         excellence and provides a supportive environment for students to pursue their\n          passions and achieve their goals', 'Prospective students can apply online through the\n         university website. Admission requirements vary by program, but all applicants are encouraged \n        to submit their transcripts, standardized test scores, and letters of recommendation.', 'Liberty University offers a range of scholarships and financial aid options \n        to eligible students based on academic achievement, extracurricular involvement, and financial need.', 'The faculty at Liberty University are experts in their respective fields and are dedicated\n         to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.', 'On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style\n         living. The university also offers dining facilities, study lounges, and recreational amenities.', 'college_thumbline/college3.jpg', 'college_gallery/college4.jpg', NULL, 'Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university\'s\n        Career Center provides resources and support to students throughout their job search process.', '7', '1', 0, 'Liberty University, Christian university, undergraduate programs, \n        graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\n         graduate programs in a supportive and vibrant campus environment.', '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(4, 'Mountainview State University', 'mountainview-state-university', ' Liberty University is a private Christian university located in Lynchburg, \n        Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \n        and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', 'Liberty University offers a vibrant campus life with numerous student \n        organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic\n         excellence and provides a supportive environment for students to pursue their\n          passions and achieve their goals', 'Prospective students can apply online through the\n         university website. Admission requirements vary by program, but all applicants are encouraged \n        to submit their transcripts, standardized test scores, and letters of recommendation.', 'Liberty University offers a range of scholarships and financial aid options \n        to eligible students based on academic achievement, extracurricular involvement, and financial need.', 'The faculty at Liberty University are experts in their respective fields and are dedicated\n         to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.', 'On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style\n         living. The university also offers dining facilities, study lounges, and recreational amenities.', 'college_thumbline/college4.jpg', 'college_gallery/college5.jpg', NULL, 'Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university\'s\n        Career Center provides resources and support to students throughout their job search process.', '8', '2', 0, 'Liberty University, Christian university, undergraduate programs, \n        graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\n         graduate programs in a supportive and vibrant campus environment.', '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(5, 'Harborview College', 'harborview-college', ' Liberty University is a private Christian university located in Lynchburg, \n        Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \n        and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', 'Liberty University offers a vibrant campus life with numerous student \n        organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic\n         excellence and provides a supportive environment for students to pursue their\n          passions and achieve their goals', 'Prospective students can apply online through the\n         university website. Admission requirements vary by program, but all applicants are encouraged \n        to submit their transcripts, standardized test scores, and letters of recommendation.', 'Liberty University offers a range of scholarships and financial aid options \n        to eligible students based on academic achievement, extracurricular involvement, and financial need.', 'The faculty at Liberty University are experts in their respective fields and are dedicated\n         to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.', 'On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style\n         living. The university also offers dining facilities, study lounges, and recreational amenities.', 'college_thumbline/college5.jpg', 'college_gallery/college6.jpg', NULL, 'Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university\'s\n        Career Center provides resources and support to students throughout their job search process.', '1', '2', 0, 'Liberty University, Christian university, undergraduate programs, \n        graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\n         graduate programs in a supportive and vibrant campus environment.', '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(6, 'Golden Valley Institute', 'golden-valley-institute', ' Liberty University is a private Christian university located in Lynchburg, \n        Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \n        and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', 'Liberty University offers a vibrant campus life with numerous student \n        organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic\n         excellence and provides a supportive environment for students to pursue their\n          passions and achieve their goals', 'Prospective students can apply online through the\n         university website. Admission requirements vary by program, but all applicants are encouraged \n        to submit their transcripts, standardized test scores, and letters of recommendation.', 'Liberty University offers a range of scholarships and financial aid options \n        to eligible students based on academic achievement, extracurricular involvement, and financial need.', 'The faculty at Liberty University are experts in their respective fields and are dedicated\n         to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.', 'On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style\n         living. The university also offers dining facilities, study lounges, and recreational amenities.', 'college_thumbline/college6.jpg', 'college_gallery/college7.jpg', NULL, 'Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university\'s\n        Career Center provides resources and support to students throughout their job search process.', '2', '2', 0, 'Liberty University, Christian university, undergraduate programs, \n        graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\n         graduate programs in a supportive and vibrant campus environment.', '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(7, 'Sunset Hills University', 'sunset-hills-university', ' Liberty University is a private Christian university located in Lynchburg, \n        Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \n        and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', 'Liberty University offers a vibrant campus life with numerous student \n        organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic\n         excellence and provides a supportive environment for students to pursue their\n          passions and achieve their goals', 'Prospective students can apply online through the\n         university website. Admission requirements vary by program, but all applicants are encouraged \n        to submit their transcripts, standardized test scores, and letters of recommendation.', 'Liberty University offers a range of scholarships and financial aid options \n        to eligible students based on academic achievement, extracurricular involvement, and financial need.', 'The faculty at Liberty University are experts in their respective fields and are dedicated\n         to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.', 'On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style\n         living. The university also offers dining facilities, study lounges, and recreational amenities.', 'college_thumbline/college7.jpg', 'college_gallery/college8.jpg', NULL, 'Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university\'s\n        Career Center provides resources and support to students throughout their job search process.', '3', '2', 0, 'Liberty University, Christian university, undergraduate programs, \n        graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\n         graduate programs in a supportive and vibrant campus environment.', '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(8, 'Lakefront Academy', 'lakefront-academy', ' Liberty University is a private Christian university located in Lynchburg, \n         Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \n         and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', 'Liberty University offers a vibrant campus life with numerous student \n         organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic\n          excellence and provides a supportive environment for students to pursue their\n           passions and achieve their goals', 'Prospective students can apply online through the\n          university website. Admission requirements vary by program, but all applicants are encouraged \n         to submit their transcripts, standardized test scores, and letters of recommendation.', 'Liberty University offers a range of scholarships and financial aid options \n         to eligible students based on academic achievement, extracurricular involvement, and financial need.', 'The faculty at Liberty University are experts in their respective fields and are dedicated\n          to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.', 'On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style\n          living. The university also offers dining facilities, study lounges, and recreational amenities.', 'college_thumbline/college8.jpg', 'college_gallery/college9.jpg', NULL, 'Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university\'s\n         Career Center provides resources and support to students throughout their job search process.', '4', '2', 0, 'Liberty University, Christian university, undergraduate programs, \n         graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\n          graduate programs in a supportive and vibrant campus environment.', '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(9, 'Cedarwood College', 'cedarwood-college', ' Liberty University is a private Christian university located in Lynchburg, \n          Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \n          and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', 'Liberty University offers a vibrant campus life with numerous student \n          organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic\n           excellence and provides a supportive environment for students to pursue their\n            passions and achieve their goals', 'Prospective students can apply online through the\n           university website. Admission requirements vary by program, but all applicants are encouraged \n          to submit their transcripts, standardized test scores, and letters of recommendation.', 'Liberty University offers a range of scholarships and financial aid options \n          to eligible students based on academic achievement, extracurricular involvement, and financial need.', 'The faculty at Liberty University are experts in their respective fields and are dedicated\n           to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.', 'On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style\n           living. The university also offers dining facilities, study lounges, and recreational amenities.', 'college_thumbline/college9.jpg', 'college_gallery/college1.jpg', NULL, 'Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university\'s\n          Career Center provides resources and support to students throughout their job search process.', '9', '2', 0, 'Liberty University, Christian university, undergraduate programs, \n          graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\n           graduate programs in a supportive and vibrant campus environment.', '2024-04-13 18:07:47', '2024-04-13 18:07:47');
+INSERT INTO `colleges` (`id`, `name`, `slug`, `summary`, `video_link`, `about_college`, `admisstion_current_time`, `schollership`, `faculty`, `hostel`, `thumbline`, `gallery`, `brochuri`, `placement`, `ranking_number`, `type_of_college_id`, `views`, `meta_keywords`, `meta_description`, `publish`, `created_at`, `updated_at`) VALUES
+(1, 'Liberty University', 'liberty-university', 'Liberty University is a private Christian university located in Lynchburg, \r\n        Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \r\n        and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', '<p>Liberty University offers a vibrant campus life with numerous student organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic excellence and provides a supportive environment for students to pursue their passions and achieve their goals</p>', '<p>Prospective students can apply online through the university website. Admission requirements vary by program, but all applicants are encouraged to submit their transcripts, standardized test scores, and letters of recommendation.</p>', '<p>Liberty University offers a range of scholarships and financial aid options to eligible students based on academic achievement, extracurricular involvement, and financial need.</p>', '<p>The faculty at Liberty University are experts in their respective fields and are dedicated to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.</p>', '<p>On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style living. The university also offers dining facilities, study lounges, and recreational amenities.</p>', 'college_thumbline/college1.jpg', 'college_gallery/college2.jpg', NULL, '<p>Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university&#39;s Career Center provides resources and support to students throughout their job search process.</p>', '5', NULL, 4010, 'Liberty University, Christian university, undergraduate programs, \r\n        graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\r\n         graduate programs in a supportive and vibrant campus environment.', 1, '2024-04-21 10:43:38', '2024-04-21 10:52:35'),
+(2, 'Evergreen University', 'evergreen-university', 'Liberty University is a private Christian university located in Lynchburg, \r\n        Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \r\n        and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', '<p>Liberty University offers a vibrant campus life with numerous student organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic excellence and provides a supportive environment for students to pursue their passions and achieve their goals</p>', '<p>Prospective students can apply online through the university website. Admission requirements vary by program, but all applicants are encouraged to submit their transcripts, standardized test scores, and letters of recommendation.</p>', '<p>Liberty University offers a range of scholarships and financial aid options to eligible students based on academic achievement, extracurricular involvement, and financial need.</p>', '<p>The faculty at Liberty University are experts in their respective fields and are dedicated to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.</p>', '<p>On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style living. The university also offers dining facilities, study lounges, and recreational amenities.</p>', 'college_thumbline/college2.jpg', 'college_gallery/college3.jpg', NULL, '<p>Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university&#39;s Career Center provides resources and support to students throughout their job search process.</p>', '6', NULL, 125, 'Liberty University, Christian university, undergraduate programs, \r\n        graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\r\n         graduate programs in a supportive and vibrant campus environment.', 1, '2024-04-21 10:43:38', '2024-04-21 10:53:04'),
+(3, 'Pacific Shores College', 'pacific-shores-college', 'Liberty University is a private Christian university located in Lynchburg, \r\n        Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \r\n        and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', '<p>Liberty University offers a vibrant campus life with numerous student organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic excellence and provides a supportive environment for students to pursue their passions and achieve their goals</p>', '<p>Prospective students can apply online through the university website. Admission requirements vary by program, but all applicants are encouraged to submit their transcripts, standardized test scores, and letters of recommendation.</p>', '<p>Liberty University offers a range of scholarships and financial aid options to eligible students based on academic achievement, extracurricular involvement, and financial need.</p>', '<p>The faculty at Liberty University are experts in their respective fields and are dedicated to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.</p>', '<p>On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style living. The university also offers dining facilities, study lounges, and recreational amenities.</p>', 'college_thumbline/college3.jpg', 'college_gallery/college4.jpg', NULL, '<p>Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university&#39;s Career Center provides resources and support to students throughout their job search process.</p>', '7', NULL, 4713, 'Liberty University, Christian university, undergraduate programs, \r\n        graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\r\n         graduate programs in a supportive and vibrant campus environment.', 1, '2024-04-21 10:43:38', '2024-04-21 10:53:27'),
+(4, 'Mountainview State University', 'mountainview-state-university', 'Liberty University is a private Christian university located in Lynchburg, \r\n        Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \r\n        and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', '<p>Liberty University offers a vibrant campus life with numerous student organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic excellence and provides a supportive environment for students to pursue their passions and achieve their goals</p>', '<p>Prospective students can apply online through the university website. Admission requirements vary by program, but all applicants are encouraged to submit their transcripts, standardized test scores, and letters of recommendation.</p>', '<p>Liberty University offers a range of scholarships and financial aid options to eligible students based on academic achievement, extracurricular involvement, and financial need.</p>', '<p>The faculty at Liberty University are experts in their respective fields and are dedicated to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.</p>', '<p>On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style living. The university also offers dining facilities, study lounges, and recreational amenities.</p>', 'college_thumbline/college4.jpg', 'college_gallery/college5.jpg', NULL, '<p>Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university&#39;s Career Center provides resources and support to students throughout their job search process.</p>', '8', NULL, 2324, 'Liberty University, Christian university, undergraduate programs, \r\n        graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\r\n         graduate programs in a supportive and vibrant campus environment.', 1, '2024-04-21 10:43:38', '2024-04-21 10:53:48'),
+(5, 'Harborview College', 'harborview-college', 'Liberty University is a private Christian university located in Lynchburg, \r\n        Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \r\n        and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', '<p>Liberty University offers a vibrant campus life with numerous student organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic excellence and provides a supportive environment for students to pursue their passions and achieve their goals</p>', '<p>Prospective students can apply online through the university website. Admission requirements vary by program, but all applicants are encouraged to submit their transcripts, standardized test scores, and letters of recommendation.</p>', '<p>Liberty University offers a range of scholarships and financial aid options to eligible students based on academic achievement, extracurricular involvement, and financial need.</p>', '<p>The faculty at Liberty University are experts in their respective fields and are dedicated to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.</p>', '<p>On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style living. The university also offers dining facilities, study lounges, and recreational amenities.</p>', 'college_thumbline/college5.jpg', 'college_gallery/college6.jpg', NULL, '<p>Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university&#39;s Career Center provides resources and support to students throughout their job search process.</p>', '1', NULL, 2947, 'Liberty University, Christian university, undergraduate programs, \r\n        graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\r\n         graduate programs in a supportive and vibrant campus environment.', 1, '2024-04-21 10:43:38', '2024-04-21 10:54:06'),
+(6, 'Golden Valley Institute', 'golden-valley-institute', 'Liberty University is a private Christian university located in Lynchburg, \r\n        Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \r\n        and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', '<p>Liberty University offers a vibrant campus life with numerous student organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic excellence and provides a supportive environment for students to pursue their passions and achieve their goals</p>', '<p>Prospective students can apply online through the university website. Admission requirements vary by program, but all applicants are encouraged to submit their transcripts, standardized test scores, and letters of recommendation.</p>', '<p>Liberty University offers a range of scholarships and financial aid options to eligible students based on academic achievement, extracurricular involvement, and financial need.</p>', '<p>The faculty at Liberty University are experts in their respective fields and are dedicated to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.</p>', '<p>On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style living. The university also offers dining facilities, study lounges, and recreational amenities.</p>', 'college_thumbline/college6.jpg', 'college_gallery/college7.jpg', NULL, '<p>Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university&#39;s Career Center provides resources and support to students throughout their job search process.</p>', '2', NULL, 3809, 'Liberty University, Christian university, undergraduate programs, \r\n        graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\r\n         graduate programs in a supportive and vibrant campus environment.', 1, '2024-04-21 10:43:38', '2024-04-21 10:54:24'),
+(7, 'Sunset Hills University', 'sunset-hills-university', 'Liberty University is a private Christian university located in Lynchburg, \r\n        Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \r\n        and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', '<p>Liberty University offers a vibrant campus life with numerous student organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic excellence and provides a supportive environment for students to pursue their passions and achieve their goals</p>', '<p>Prospective students can apply online through the university website. Admission requirements vary by program, but all applicants are encouraged to submit their transcripts, standardized test scores, and letters of recommendation.</p>', '<p>Liberty University offers a range of scholarships and financial aid options to eligible students based on academic achievement, extracurricular involvement, and financial need.</p>', '<p>The faculty at Liberty University are experts in their respective fields and are dedicated to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.</p>', '<p>On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style living. The university also offers dining facilities, study lounges, and recreational amenities.</p>', 'college_thumbline/college7.jpg', 'college_gallery/college8.jpg', NULL, '<p>Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university&#39;s Career Center provides resources and support to students throughout their job search process.</p>', '3', NULL, 3675, 'Liberty University, Christian university, undergraduate programs, \r\n        graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\r\n         graduate programs in a supportive and vibrant campus environment.', 1, '2024-04-21 10:43:38', '2024-04-21 10:54:44'),
+(8, 'Lakefront Academy', 'lakefront-academy', 'Liberty University is a private Christian university located in Lynchburg, \r\n         Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \r\n         and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', '<p>Liberty University offers a vibrant campus life with numerous student organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic excellence and provides a supportive environment for students to pursue their passions and achieve their goals</p>', '<p>Prospective students can apply online through the university website. Admission requirements vary by program, but all applicants are encouraged to submit their transcripts, standardized test scores, and letters of recommendation.</p>', '<p>Liberty University offers a range of scholarships and financial aid options to eligible students based on academic achievement, extracurricular involvement, and financial need.</p>', '<p>The faculty at Liberty University are experts in their respective fields and are dedicated to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.</p>', '<p>On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style living. The university also offers dining facilities, study lounges, and recreational amenities.</p>', 'college_thumbline/college8.jpg', 'college_gallery/college9.jpg', NULL, '<p>Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university&#39;s Career Center provides resources and support to students throughout their job search process.</p>', '4', NULL, 586, 'Liberty University, Christian university, undergraduate programs, \r\n         graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\r\n          graduate programs in a supportive and vibrant campus environment.', 1, '2024-04-21 10:43:38', '2024-04-21 10:55:07'),
+(9, 'Cedarwood College', 'cedarwood-college', 'Liberty University is a private Christian university located in Lynchburg, \r\n          Virginia. Known for its commitment to Christian values, Liberty offers a wide range of undergraduate \r\n          and graduate programs.', 'https://www.youtube.com/watch?v=1234567890', '<p>Liberty University offers a vibrant campus life with numerous student organizations, athletic teams, and spiritual growth opportunities. The university emphasizes academic excellence and provides a supportive environment for students to pursue their passions and achieve their goals</p>', '<p>Prospective students can apply online through the university website. Admission requirements vary by program, but all applicants are encouraged to submit their transcripts, standardized test scores, and letters of recommendation.</p>', '<p>Liberty University offers a range of scholarships and financial aid options to eligible students based on academic achievement, extracurricular involvement, and financial need.</p>', '<p>The faculty at Liberty University are experts in their respective fields and are dedicated to providing students with a high-quality education. They are committed to mentoring students both academically and spiritually.</p>', '<p>On-campus housing is available for students, with options ranging from traditional dormitories to apartment-style living. The university also offers dining facilities, study lounges, and recreational amenities.</p>', 'college_thumbline/thumbline20240421165219.jpg', 'college_gallery/college1.jpg', NULL, '<p>Liberty University has a strong track record of helping students secure internships and job placements in their chosen fields. The university&#39;s Career Center provides resources and support to students throughout their job search process.</p>', '9', NULL, 3472, 'Liberty University, Christian university, undergraduate programs, \r\n          graduate programs, Lynchburg, Virginia, academic excellence, scholarships, faculty, placement.', 'Explore Liberty University, a leading Christian university in Lynchburg, Virginia, offering undergraduate and\r\n           graduate programs in a supportive and vibrant campus environment.', 1, '2024-04-21 10:43:38', '2024-04-21 10:52:19');
 
 -- --------------------------------------------------------
 
@@ -229,9 +246,14 @@ CREATE TABLE `college_country` (
 
 INSERT INTO `college_country` (`id`, `college_id`, `country_id`) VALUES
 (1, 9, 1),
-(2, 1, 2),
-(3, 9, 1),
-(4, 1, 2);
+(2, 1, 1),
+(3, 2, 1),
+(4, 3, 1),
+(5, 4, 1),
+(6, 5, 1),
+(7, 6, 1),
+(8, 7, 1),
+(9, 8, 1);
 
 -- --------------------------------------------------------
 
@@ -250,18 +272,26 @@ CREATE TABLE `college_course` (
 --
 
 INSERT INTO `college_course` (`id`, `college_id`, `course_id`) VALUES
-(1, 6, 1),
-(2, 5, 1),
-(3, 6, 1),
-(4, 5, 1),
-(5, 8, 3),
-(6, 5, 3),
-(7, 8, 3),
-(8, 5, 3),
-(9, 8, 2),
-(10, 8, 1),
-(11, 8, 2),
-(12, 8, 1);
+(1, 9, 1),
+(2, 9, 2),
+(3, 9, 3),
+(4, 1, 1),
+(5, 1, 2),
+(6, 1, 3),
+(7, 2, 2),
+(8, 3, 2),
+(9, 3, 3),
+(10, 4, 1),
+(11, 4, 2),
+(12, 5, 1),
+(13, 5, 2),
+(14, 5, 3),
+(15, 6, 1),
+(16, 6, 2),
+(17, 6, 3),
+(18, 7, 3),
+(19, 8, 2),
+(20, 8, 3);
 
 -- --------------------------------------------------------
 
@@ -283,252 +313,8 @@ CREATE TABLE `countries` (
 --
 
 INSERT INTO `countries` (`id`, `name`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'afghanistan', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(2, 'albania', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(3, 'algeria', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(4, 'american samoa', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(5, 'andorra', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(6, 'angola', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(7, 'anguilla', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(8, 'antarctica', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(9, 'antigua and barbuda', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(10, 'argentina', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(11, 'armenia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(12, 'aruba', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(13, 'australia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(14, 'austria', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(15, 'azerbaijan', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(16, 'bahamas the', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(17, 'bahrain', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(18, 'bangladesh', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(19, 'barbados', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(20, 'belarus', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(21, 'belgium', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(22, 'belize', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(23, 'benin', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(24, 'bermuda', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(25, 'bhutan', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(26, 'bolivia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(27, 'bosnia and herzegovina', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(28, 'botswana', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(29, 'bouvet island', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(30, 'brazil', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(31, 'british indian ocean territory', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(32, 'brunei', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(33, 'bulgaria', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(34, 'burkina faso', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(35, 'burundi', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(36, 'cambodia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(37, 'cameroon', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(38, 'canada', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(39, 'cape verde', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(40, 'cayman islands', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(41, 'central african republic', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(42, 'chad', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(43, 'chile', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(44, 'china', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(45, 'christmas island', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(46, 'cocos (keeling) islands', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(47, 'colombia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(48, 'comoros', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(49, 'congo', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(50, 'congo the democratic republic of the', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(51, 'cook islands', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(52, 'costa rica', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(53, 'cote d\'ivoire (ivory coast)', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(54, 'croatia (hrvatska)', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(55, 'cuba', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(56, 'cyprus', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(57, 'czech republic', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(58, 'denmark', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(59, 'djibouti', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(60, 'dominica', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(61, 'dominican republic', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(62, 'east timor', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(63, 'ecuador', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(64, 'egypt', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(65, 'el salvador', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(66, 'equatorial guinea', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(67, 'eritrea', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(68, 'estonia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(69, 'ethiopia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(70, 'external territories of australia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(71, 'falkland islands', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(72, 'faroe islands', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(73, 'fiji islands', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(74, 'finland', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(75, 'france', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(76, 'french guiana', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(77, 'french polynesia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(78, 'french southern territories', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(79, 'gabon', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(80, 'gambia the', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(81, 'georgia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(82, 'germany', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(83, 'ghana', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(84, 'gibraltar', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(85, 'greece', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(86, 'greenland', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(87, 'grenada', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(88, 'guadeloupe', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(89, 'guam', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(90, 'guatemala', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(91, 'guernsey and alderney', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(92, 'guinea', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(93, 'guinea-bissau', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(94, 'guyana', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(95, 'haiti', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(96, 'heard and mcdonald islands', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(97, 'honduras', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(98, 'hong kong s.a.r.', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(99, 'hungary', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(100, 'iceland', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(101, 'india', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(102, 'indonesia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(103, 'iran', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(104, 'iraq', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(105, 'ireland', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(106, 'israel', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(107, 'italy', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(108, 'jamaica', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(109, 'japan', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(110, 'jersey', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(111, 'jordan', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(112, 'kazakhstan', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(113, 'kenya', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(114, 'kiribati', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(115, 'korea north', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(116, 'korea south', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(117, 'kuwait', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(118, 'kyrgyzstan', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(119, 'laos', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(120, 'latvia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(121, 'lebanon', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(122, 'lesotho', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(123, 'liberia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(124, 'libya', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(125, 'liechtenstein', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(126, 'lithuania', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(127, 'luxembourg', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(128, 'macau s.a.r.', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(129, 'macedonia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(130, 'madagascar', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(131, 'malawi', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(132, 'malaysia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(133, 'maldives', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(134, 'mali', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(135, 'malta', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(136, 'man (isle of)', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(137, 'marshall islands', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(138, 'martinique', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(139, 'mauritania', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(140, 'mauritius', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(141, 'mayotte', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(142, 'mexico', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(143, 'micronesia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(144, 'moldova', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(145, 'monaco', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(146, 'mongolia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(147, 'montserrat', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(148, 'morocco', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(149, 'mozambique', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(150, 'myanmar', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(151, 'namibia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(152, 'nauru', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(153, 'nepal', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(154, 'netherlands antilles', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(155, 'netherlands the', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(156, 'new caledonia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(157, 'new zealand', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(158, 'nicaragua', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(159, 'niger', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(160, 'nigeria', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(161, 'niue', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(162, 'norfolk island', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(163, 'northern mariana islands', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(164, 'norway', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(165, 'oman', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(166, 'pakistan', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(167, 'palau', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(168, 'palestinian territory occupied', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(169, 'panama', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(170, 'papua new guinea', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(171, 'paraguay', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(172, 'peru', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(173, 'philippines', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(174, 'pitcairn island', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(175, 'poland', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(176, 'portugal', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(177, 'puerto rico', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(178, 'qatar', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(179, 'reunion', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(180, 'romania', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(181, 'russia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(182, 'rwanda', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(183, 'saint helena', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(184, 'saint kitts and nevis', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(185, 'saint lucia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(186, 'saint pierre and miquelon', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(187, 'saint vincent and the grenadines', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(188, 'samoa', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(189, 'san marino', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(190, 'sao tome and principe', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(191, 'saudi arabia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(192, 'senegal', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(193, 'serbia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(194, 'seychelles', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(195, 'sierra leone', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(196, 'singapore', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(197, 'slovakia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(198, 'slovenia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(199, 'smaller territories of the uk', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(200, 'solomon islands', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(201, 'somalia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(202, 'south africa', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(203, 'south georgia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(204, 'south sudan', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(205, 'spain', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(206, 'sri lanka', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(207, 'sudan', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(208, 'suriname', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(209, 'svalbard and jan mayen islands', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(210, 'swaziland', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(211, 'sweden', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(212, 'switzerland', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(213, 'syria', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(214, 'taiwan', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(215, 'tajikistan', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(216, 'tanzania', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(217, 'thailand', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(218, 'togo', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(219, 'tokelau', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(220, 'tonga', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(221, 'trinidad and tobago', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(222, 'tunisia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(223, 'turkey', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(224, 'turkmenistan', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(225, 'turks and caicos islands', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(226, 'tuvalu', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(227, 'uganda', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(228, 'ukraine', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(229, 'united arab emirates', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(230, 'united kingdom', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(231, 'united states', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(232, 'united states minor outlying islands', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(233, 'uruguay', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(234, 'uzbekistan', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(235, 'vanuatu', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(236, 'vatican city state (holy see)', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(237, 'venezuela', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(238, 'vietnam', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(239, 'virgin islands (british)', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(240, 'virgin islands (us)', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(241, 'wallis and futuna islands', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(242, 'western sahara', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(243, 'yemen', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(244, 'yugoslavia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(245, 'zambia', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL),
-(246, 'zimbabwe', 'active', '2024-04-14 00:07:50', '2024-04-14 00:07:50', NULL);
+(1, 'india', 'active', '2024-04-21 16:43:38', '2024-04-21 16:43:38', NULL),
+(2, 'bangladesh', 'active', '2024-04-21 16:43:38', '2024-04-21 16:43:38', NULL);
 
 -- --------------------------------------------------------
 
@@ -555,9 +341,9 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`id`, `name`, `slug`, `semester`, `credit`, `meta_keywords`, `meta_description`, `course_duration_id`, `sub_category_id`, `created_at`, `updated_at`) VALUES
-(1, 'Data Science Fundamentals', 'data-science-essentials', '10', '160', 'data science, machine learning, Python, statistics, data analysis', 'Dive into the core concepts of data science, covering topics such as machine learning algorithms, statistical analysis, data manipulation with Python, and practical data analysis techniques to extract insights from complex datasets.', 1, 1, '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(2, 'Financial Management for Entrepreneurs', 'financial-management-for-entrepreneurs', '8', '140', 'financial management, entrepreneurship, budgeting, accounting, investment', 'Gain a comprehensive understanding of financial management principles tailored for entrepreneurs, covering topics such as budgeting, accounting basics, financial analysis, and investment strategies to support business growth and sustainability', 2, 2, '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(3, 'Introduction to Artificial Intelligence', 'introduction-to-artificial-intelligence', '8', '145', 'artificial intelligence, machine learning, neural networks, AI applications', 'Explore the fascinating world of artificial intelligence and machine learning in this introductory course, where you\'ll learn about neural networks, AI algorithms, and real-world applications of AI technology across various industries.', 2, 3, '2024-04-13 18:07:47', '2024-04-13 18:07:47');
+(1, 'Data Science Fundamentals', 'data-science-essentials', '10', '160', 'data science, machine learning, Python, statistics, data analysis', 'Dive into the core concepts of data science, covering topics such as machine learning algorithms, statistical analysis, data manipulation with Python, and practical data analysis techniques to extract insights from complex datasets.', 1, 1, '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(2, 'Financial Management for Entrepreneurs', 'financial-management-for-entrepreneurs', '8', '140', 'financial management, entrepreneurship, budgeting, accounting, investment', 'Gain a comprehensive understanding of financial management principles tailored for entrepreneurs, covering topics such as budgeting, accounting basics, financial analysis, and investment strategies to support business growth and sustainability', 2, 2, '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(3, 'Introduction to Artificial Intelligence', 'introduction-to-artificial-intelligence', '8', '145', 'artificial intelligence, machine learning, neural networks, AI applications', 'Explore the fascinating world of artificial intelligence and machine learning in this introductory course, where you\'ll learn about neural networks, AI algorithms, and real-world applications of AI technology across various industries.', 2, 3, '2024-04-21 10:43:37', '2024-04-21 10:43:37');
 
 -- --------------------------------------------------------
 
@@ -570,16 +356,6 @@ CREATE TABLE `course_college` (
   `course_id` bigint(20) UNSIGNED NOT NULL,
   `college_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `course_college`
---
-
-INSERT INTO `course_college` (`id`, `course_id`, `college_id`) VALUES
-(1, 2, 8),
-(2, 2, 8),
-(3, 2, 8),
-(4, 2, 8);
 
 -- --------------------------------------------------------
 
@@ -600,13 +376,13 @@ CREATE TABLE `course_durations` (
 --
 
 INSERT INTO `course_durations` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, '4 Year', '4-year', '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(2, '3 Year', '3-year', '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(3, '2 Year', '2-year', '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(4, '1 Year', '1-year', '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(5, '6 Month', '6-month', '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(6, '2 Month', '2-month', '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(7, '1 Month', '1-month', '2024-04-13 18:07:47', '2024-04-13 18:07:47');
+(1, '4 Year', '4-year', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(2, '3 Year', '3-year', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(3, '2 Year', '2-year', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(4, '1 Year', '1-year', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(5, '6 Month', '6-month', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(6, '2 Month', '2-month', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(7, '1 Month', '1-month', '2024-04-21 10:43:37', '2024-04-21 10:43:37');
 
 -- --------------------------------------------------------
 
@@ -724,14 +500,18 @@ CREATE TABLE `permissions` (
 --
 
 INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'user list', 'web', '2024-04-13 18:07:49', '2024-04-13 18:07:49'),
-(2, 'create user', 'web', '2024-04-13 18:07:49', '2024-04-13 18:07:49'),
-(3, 'edit user', 'web', '2024-04-13 18:07:49', '2024-04-13 18:07:49'),
-(4, 'delete user', 'web', '2024-04-13 18:07:49', '2024-04-13 18:07:49'),
-(5, 'role list', 'web', '2024-04-13 18:07:49', '2024-04-13 18:07:49'),
-(6, 'create role', 'web', '2024-04-13 18:07:50', '2024-04-13 18:07:50'),
-(7, 'edit role', 'web', '2024-04-13 18:07:50', '2024-04-13 18:07:50'),
-(8, 'delete role', 'web', '2024-04-13 18:07:50', '2024-04-13 18:07:50');
+(1, 'view user', 'web', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(2, 'create user', 'web', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(3, 'update user', 'web', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(4, 'Delete user', 'web', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(5, 'view role', 'web', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(6, 'create role', 'web', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(7, 'update role', 'web', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(8, 'Delete role', 'web', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(9, 'view permission', 'web', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(10, 'create permission', 'web', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(11, 'update permission', 'web', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(12, 'Delete permission', 'web', '2024-04-21 10:43:37', '2024-04-21 10:43:37');
 
 -- --------------------------------------------------------
 
@@ -771,7 +551,9 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'web', '2024-04-13 18:07:49', '2024-04-13 18:07:49');
+(1, 'admin', 'web', '2024-04-21 10:43:36', '2024-04-21 10:43:36'),
+(2, 'writer', 'web', '2024-04-21 10:43:36', '2024-04-21 10:43:36'),
+(3, 'user', 'web', '2024-04-21 10:43:36', '2024-04-21 10:43:36');
 
 -- --------------------------------------------------------
 
@@ -783,20 +565,6 @@ CREATE TABLE `role_has_permissions` (
   `permission_id` bigint(20) UNSIGNED NOT NULL,
   `role_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `role_has_permissions`
---
-
-INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
-(1, 1),
-(2, 1),
-(3, 1),
-(4, 1),
-(5, 1),
-(6, 1),
-(7, 1),
-(8, 1);
 
 -- --------------------------------------------------------
 
@@ -824,7 +592,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `icon`, `logo`, `name`, `address`, `about`, `email`, `phone`, `meta_keywords`, `meta_description`, `created_at`, `updated_at`) VALUES
-(1, 'site_icon/favicon.svg', 'site_logo/logo.svg', 'College Listing', '134, Khonikaloy, Sabujbag 4th Len, Patuakhali sadar, Patuakhali', 'How Many College in Bangladesh', 'masum4it@gmail.com', '+880 17898 08879', 'college listing, universities, higher education, academic programs, campus life, faculty, student resources, admissions, college search, higher ed institutions', 'Discover top colleges and universities around the world. Compare programs, faculty, campus life, and more to find the perfect fit for your academic and career goals.', '2024-04-13 18:07:46', '2024-04-13 18:07:46');
+(1, 'site_icon/favicon.svg', 'site_logo/logo.svg', 'College Listing', '134, Khonikaloy, Sabujbag 4th Len, Patuakhali sadar, Patuakhali', 'How Many College in Bangladesh', 'masum4it@gmail.com', '+880 17898 08879', 'college listing, universities, higher education, academic programs, campus life, faculty, student resources, admissions, college search, higher ed institutions', 'Discover top colleges and universities around the world. Compare programs, faculty, campus life, and more to find the perfect fit for your academic and career goals.', '2024-04-21 10:43:36', '2024-04-21 10:43:36');
 
 -- --------------------------------------------------------
 
@@ -862,10 +630,10 @@ CREATE TABLE `sub_categories` (
 --
 
 INSERT INTO `sub_categories` (`id`, `name`, `slug`, `category_id`, `created_at`, `updated_at`) VALUES
-(1, 'Diploma', 'diploma', 1, '2024-04-13 18:07:46', '2024-04-13 18:07:46'),
-(2, 'B.Sc', 'b-sc', 1, '2024-04-13 18:07:46', '2024-04-13 18:07:46'),
-(3, 'M.Sc', 'm-sc', 1, '2024-04-13 18:07:46', '2024-04-13 18:07:46'),
-(7, 'Inter', 'inter-arts', 3, '2024-04-13 18:07:46', '2024-04-13 18:07:46');
+(1, 'Diploma', 'diploma', 1, '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(2, 'B.Sc', 'b-sc', 1, '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(3, 'M.Sc', 'm-sc', 1, '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(7, 'Inter', 'inter-arts', 3, '2024-04-21 10:43:37', '2024-04-21 10:43:37');
 
 -- --------------------------------------------------------
 
@@ -886,8 +654,8 @@ CREATE TABLE `type_of_colleges` (
 --
 
 INSERT INTO `type_of_colleges` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'Private', 'private', '2024-04-13 18:07:47', '2024-04-13 18:07:47'),
-(2, 'Goverment', 'goverment', '2024-04-13 18:07:47', '2024-04-13 18:07:47');
+(1, 'Private', 'private', '2024-04-21 10:43:37', '2024-04-21 10:43:37'),
+(2, 'Goverment', 'goverment', '2024-04-21 10:43:37', '2024-04-21 10:43:37');
 
 -- --------------------------------------------------------
 
@@ -901,6 +669,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) NOT NULL,
+  `profile_picture` varchar(255) DEFAULT NULL,
   `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -910,8 +679,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Md Shofiq', 'admin@codetechbd.com', NULL, '$2y$12$6NOp7tKBk8Yq6wlDJrhoLesq4szKgm8sajgHyUtr3YqTK88golTXa', NULL, '2024-04-13 18:07:47', '2024-04-13 18:07:47');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `profile_picture`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Md Shofiq', 'admin@codetechbd.com', NULL, '$2y$12$Io9LEtskXxhooBdn6H.EaeanjIlQuXLxmRqEsjtcuMRc/z46DOBO6', NULL, NULL, '2024-04-21 10:43:37', '2024-04-21 10:43:37');
 
 --
 -- Indexes for dumped tables
@@ -1126,7 +895,7 @@ ALTER TABLE `campuses`
 -- AUTO_INCREMENT for table `campus_college`
 --
 ALTER TABLE `campus_college`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -1150,19 +919,19 @@ ALTER TABLE `colleges`
 -- AUTO_INCREMENT for table `college_country`
 --
 ALTER TABLE `college_country`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `college_course`
 --
 ALTER TABLE `college_course`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=247;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `courses`
@@ -1174,7 +943,7 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `course_college`
 --
 ALTER TABLE `course_college`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `course_durations`
@@ -1198,7 +967,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -1210,7 +979,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `settings`

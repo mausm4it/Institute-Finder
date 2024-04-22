@@ -9,7 +9,7 @@
      </button>
 
      <!-- Topbar Brand Logo -->
-     <a href="{{ route('dashboard') }}" class="logo-box">
+     <a href="{{ route('admin.dashboard') }}" class="logo-box">
          <!-- Light Brand Logo -->
          <div class="logo-light">
              <img src="{{ asset('storage/app/' . $settings->logo) }}" class="logo-lg h-6" alt="Light logo">
@@ -32,7 +32,7 @@
      </button>
 
      <!-- Language Dropdown Button -->
-     <div class="relative">
+     {{-- <div class="relative">
          <button data-fc-type="dropdown" data-fc-placement="bottom-end" type="button" class="nav-link p-2 fc-dropdown">
              <span class="flex items-center justify-center h-6 w-6">
                  <img src="public/assets/images/flags/us.jpg" alt="user-image" class="h-4 w-6">
@@ -68,7 +68,7 @@
                  <span class="align-middle">Russian</span>
              </a>
          </div>
-     </div>
+     </div> --}}
 
      <!-- Fullscreen Toggle Button -->
      <div class="md:flex hidden">
@@ -81,7 +81,7 @@
      </div>
 
      <!-- Notification Bell Button -->
-     <div class="relative md:flex hidden">
+     {{-- <div class="relative md:flex hidden">
          <button data-fc-type="dropdown" data-fc-placement="bottom-end" type="button" class="nav-link p-2">
              <span class="sr-only">View notifications</span>
              <span class="flex items-center justify-center h-6 w-6">
@@ -199,7 +199,7 @@
                  View All
              </a>
          </div>
-     </div>
+     </div> --}}
 
      <!-- Light/Dark Toggle Button -->
      <div class="flex">
@@ -216,27 +216,14 @@
      <!-- Profile Dropdown Button -->
      <div class="relative">
          <button data-fc-type="dropdown" data-fc-placement="bottom-end" type="button" class="nav-link">
-             <img src="{{ asset('storage/app/' . Auth::user()->profile_picture) }}" alt="user-image"
-                 class="rounded-full h-10">
+             {{-- <img src="{{ asset('storage/app/' . Auth::user()->profile_picture) }}" alt="user-image"
+                 class="rounded-full h-10"> --}}
+             <h4>Admin: {{ Auth::user()->name }}</h4>
          </button>
 
          <div
              class="fc-dropdown fc-dropdown-open:opacity-100 hidden opacity-0 w-44 z-50 transition-[margin,opacity] duration-300 mt-2 bg-white shadow-lg border rounded-lg p-2 border-gray-200 dark:border-gray-700 dark:bg-gray-800">
-             <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
-                 href="pages-gallery.html">
-                 <i class="mgc_pic_2_line  me-2"></i>
-                 <span>Gallery</span>
-             </a>
-             <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
-                 href="apps-kanban.html">
-                 <i class="mgc_task_2_line  me-2"></i>
-                 <span>Kanban</span>
-             </a>
-             <a class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
-                 href="auth-login.html">
-                 <i class="mgc_lock_line  me-2"></i>
-                 <span>Lock Screen</span>
-             </a>
+
              <hr class="my-2 -mx-2 border-gray-200 dark:border-gray-700">
 
              <form method="POST" action="{{ route('logout') }}">

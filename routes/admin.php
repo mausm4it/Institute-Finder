@@ -7,9 +7,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], func
 
     Route::get('/roles', 'RoleController@index')->name('role');
     
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
+    Route::get('/dashboard', 'DashboardController@index')->name('admin.dashboard');
     
 // category
 Route::get('/category', 'CategoryController@index')->name('category');

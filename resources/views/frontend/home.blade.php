@@ -119,6 +119,60 @@
         </div>
     @endif
 
+    @if (!$sub_categories->isEmpty())
+        <div class="testimonial-block bg-snow ptb-100">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-9">
+                        <div class="section-title">
+
+                            <h2 class="title-main">Courses</h2>
+                            <div class="divider">
+                                <span class="icon-star-full"></span>
+                                <span class="icon-star-full"></span>
+                                <span class="icon-star-full"></span>
+                                <span class="icon-star-full"></span>
+                                <span class="icon-star-full"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="carousel-nav-text nav-right">
+                            <button class="btn-links btn-prev">
+                                <span>prev</span>
+                            </button>
+                            <button class="btn-links btn-next">
+                                <span>next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="testimonial-carousel owl-carousel">
+
+                            @foreach ($courses as $course)
+                                <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+
+                                    <div class="card-body">
+
+                                        <h4 class="card-text text-center">{{ $course->name }}</h4>
+
+                                    </div>
+                                </div>
+                            @endforeach
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
 
 
     <div class="todos-block bg-snow ptb-100">
@@ -142,6 +196,13 @@
 
             <div class="row">
                 @foreach ($colleges as $college)
+                    @php
+
+                        $total_rating = $college->reviews->sum('rating_number');
+                        $total_count = $college->reviews->count();
+                        $avarage_rating = $total_count > 0 ? $total_rating / $total_count : 0;
+
+                    @endphp
                     <div class="col-lg-4 col-md-6">
                         <div class="todo-item">
                             <div class="todo-thumbnail-area">
@@ -150,12 +211,13 @@
                                 </figure><!--./ item-thumb -->
                                 <div class="todo-overlay-info">
                                     <div class="todo-type-cat">
-                                        <a href="#" class="offer">hot offer</a>
-                                        <a href="#" class="nightlife">Evening Shift</a>
+                                        <a href="#" class="offer">{{ $college->type_of_college->name }}</a>
+                                        <a href="#" class="nightlife">Rank:
+                                            {{ $college->ranking_number }}</a>
                                     </div><!--./ todo-type-cat -->
                                     <div class="todo-meta-bottom">
                                         <div class="todo-rating">
-                                            <span>4.8</span>19 Ratings
+                                            <span>{{ $avarage_rating }}</span>{{ $total_count }} Ratings
                                         </div><!--./ todo-rating -->
                                         <div class="save">
                                             <a href="#" class="">
@@ -167,7 +229,8 @@
                             </div><!--./ todo-overlay-info -->
                             <div class="todo-content">
                                 <h3 class="title"><a
-                                        href="{{ route('college-details', $college->slug) }}">{{ $college->name }}</a></h3>
+                                        href="{{ route('college-details', $college->slug) }}">{{ $college->name }}</a>
+                                </h3>
                                 <div class="todo-price-status">
                                     <div class="todo-price">
                                         @if ($college->type_of_college != null && $college->type_of_college != '')
