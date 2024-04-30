@@ -8,6 +8,8 @@
          </span>
      </button>
 
+
+
      <!-- Topbar Brand Logo -->
      <a href="{{ route('admin.dashboard') }}" class="logo-box">
          <!-- Light Brand Logo -->
@@ -216,16 +218,20 @@
      <!-- Profile Dropdown Button -->
      <div class="relative">
          <button data-fc-type="dropdown" data-fc-placement="bottom-end" type="button" class="nav-link">
-             {{-- <img src="{{ asset('storage/app/' . Auth::user()->profile_picture) }}" alt="user-image"
-                 class="rounded-full h-10"> --}}
-             <h4>Admin: {{ Auth::user()->name }}</h4>
+             <img src="{{ asset('storage/app/' . Auth::user()->user_profile) }}" alt="user-image"
+                 class="rounded-full h-10">
+
          </button>
 
          <div
              class="fc-dropdown fc-dropdown-open:opacity-100 hidden opacity-0 w-44 z-50 transition-[margin,opacity] duration-300 mt-2 bg-white shadow-lg border rounded-lg p-2 border-gray-200 dark:border-gray-700 dark:bg-gray-800">
 
              <hr class="my-2 -mx-2 border-gray-200 dark:border-gray-700">
-
+             <a href="{{ route('user_update_view') }}"
+                 class="flex items-center py-2 px-3 rounded-md text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 cursor-pointer">
+                 <i class="mgc_edit_fill  me-2"></i>
+                 <span>{{ __('Update Profile') }}</span>
+             </a>
              <form method="POST" action="{{ route('logout') }}">
                  @csrf
 

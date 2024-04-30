@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('summary');
             $table->longText('content')->nullable();
             $table->string('blog_image')->nullable();
+            $table->integer('views')->default(0);
+            $table->integer('publish')->default(0);
             $table->text('meta_keywords')->nullable();
             $table->text('meta_description')->nullable();
             $table->unsignedBigInteger('blog_category_id')->nullable();

@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Models\Setting;
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\Page;
 use App\Models\SubCategory;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
@@ -40,6 +41,10 @@ class AppServiceProvider extends ServiceProvider
 
         if(Schema::hasTable('courses')){
             View::share('courses', Course::take(8)->get());
+        }
+
+        if(Schema::hasTable('pages')){
+            View::share('pages', Page::take(5)->get());
         }
        
     }

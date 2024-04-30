@@ -12,13 +12,15 @@ class Blog extends Model
         'slug',
         'summary',
         'content',
+        'views',
+        'publish',
         'blog_image',
-        'category_id'
+        'blog_category_id'
        
     ];
     use HasFactory;
-    public function category()
+    public function blog_category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(BlogCategory::class);
     }
 }

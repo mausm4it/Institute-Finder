@@ -7,19 +7,27 @@
 <div class="dashboard-menu-main tse-scrollable">
     <div class="tse-content">
         <ul class="dashboard-menu">
-            <li><a class="active" href="dashboard.html">
+            <li><a class="active" href="{{ route('dashboard') }}">
                     <span class="icon icon-params"></span>
                     <span>Dashboard</span>
                 </a></li>
-            <li><a href="{{ route('search') }}">
-                    <span class="icon icon-star"></span>
-                    <span>Add Review</span>
-                </a></li>
-            <li><a href="dashboard-listing.html">
-                    <span class="fas fa-star-half-alt"></span>
 
-                    <span> My Reviews </span>
-                    <span class="fas fa-star-half-alt"> </span>
+
+            <li><a href="{{ route('apply_institute_list') }}">
+                    <span class="icon-list1 mr-2"></span>
+                    <span>My Applies</span>
+                </a></li>
+
+
+            <li><a href="{{ route('save_list') }}">
+                    <span class="icon-heart2 mr-2"></span>
+                    <span>Save List</span>
+                </a></li>
+
+            <li><a href="{{ route('compare') }}">
+                    <span class="icon-arrows-1 mr-2"></span>
+
+                    <span>Compare</span>
                 </a></li>
 
 
@@ -32,7 +40,7 @@
 </div><!--~./ dashboard-menu-main ~-->
 <div class="dashboard-menu-bottom">
     <ul class="dashboard-menu">
-        <li><a href="dashboard-setting.html">
+        <li><a href="{{ route('settings-view') }}">
                 <span class="icon icon-settings4"></span>
                 <span>Setting</span>
             </a></li>

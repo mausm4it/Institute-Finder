@@ -23,12 +23,23 @@ class BlogController extends Controller
 
    public function UpdateBlogView($id){
       $blog =  Blog::find($id);
-      $categories = Category::all();
+      $categories = BlogCategory::all();
       return view('admin.blogs.update', compact('blog','categories'));
      }
 
 
+     public function Publish_Blog(Request $request, $id){
+        $blog = Blog::find($id);
+        $value = $request->input('publish') ? 1 : 0;
+        $blog->publish = $value;
+        $blog->save();
 
+        if($blog->publish == 1){
+            return back()->with('success', 'Institute Publish Successfully');
+        }else{
+            return back()->with('warning', 'Institute Unpublish Successfully');
+        }
+    }
 
 
    public function CreateBlog(Request $request){

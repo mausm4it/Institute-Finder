@@ -24,15 +24,15 @@
     <div class="card mb-5">
         <div class="card-header">
             <div class="flex justify-between items-center">
-                <img width="100" src="{{ asset('storage/app/' . $settings->icon) }}" alt="work-thumbnail"
+                <img width="100" src="{{ asset('storage/app/' . $settings->icon) }}" alt="{{ $settings->name }}"
                     class="rounded-lg">
                 <h5 class="card-title">{{ $settings->name }}</h5>
-                <img width="100" src="{{ asset('storage/app/' . $settings->logo) }}" alt="work-thumbnail"
+                <img width="100" src="{{ asset('storage/app/' . $settings->home_search_background_image) }}"
+                    alt="{{ $settings->name }}" class="rounded-lg">
+                <img width="100" src="{{ asset('storage/app/' . $settings->logo) }}" alt="{{ $settings->name }}"
                     class="rounded-lg">
 
-                {{-- <div class="bg-success text-xs text-white rounded-md py-1 px-1.5 font-medium" role="alert">
-                    <span>Complated</span>
-                </div> --}}
+
             </div>
         </div>
         <div class="flex justify-between items-center">
@@ -87,19 +87,30 @@
                     </div>
                 </div>
                 <div>
+                    <label for="home_search_background_image" class="text-gray-800 text-sm font-medium inline-block mb-2">Home
+                        Search Background
+                        Image</label>
+                    <div class="">
+                        <input onchange="BgImage(event)" class="form-control" type="file" name="home_search_background_image"
+                            value="{{ $settings->home_search_background_image }}">
+                        <img id="bgPreview" src="#" alt="Preview"
+                            style="display:none; max-width: 100%; max-height: 100px;">
+                    </div>
+                </div>
+                <div>
                     <label for="inputAddress2" class="text-gray-800 text-sm font-medium inline-block mb-2">Site Name</label>
                     <input type="text" name="name" value="{{ $settings->name }}" class="form-input" id="inputAddress2"
                         placeholder="Enter name">
                 </div>
                 <div>
                     <label for="inputAddress2" class="text-gray-800 text-sm font-medium inline-block mb-2">Site About</label>
-                    <input type="text" name="about" value="{{ $settings->about }}" class="form-input" id="inputAddress2"
-                        placeholder="Enter about">
+                    <input type="text" name="about" value="{{ $settings->about }}" class="form-input"
+                        id="inputAddress2" placeholder="Enter about">
                 </div>
                 <div class="lg:col-span-2">
                     <label for="inputAddress" class="text-gray-800 text-sm font-medium inline-block mb-2">Site Address</label>
-                    <input type="text" value="{{ $settings->address }}" class="form-input" name="address" id="inputAddress"
-                        placeholder="1234 Main St">
+                    <input type="text" value="{{ $settings->address }}" class="form-input" name="address"
+                        id="inputAddress" placeholder="1234 Main St">
                 </div>
 
 
@@ -113,6 +124,33 @@
                     <label for="phone" class="text-gray-800 text-sm font-medium inline-block mb-2">Phone</label>
                     <input type="text" class="form-input" value="{{ $settings->phone }}" id="phone" name="phone">
                 </div>
+                <div>
+                    <h1 class="text-green-600 mb-2 text-2xl">Social Links</h1>
+                    <hr>
+                    <div>
+                        <label for="facebook" class="text-gray-800 text-sm font-medium inline-block mb-2">Facebook</label>
+                        <input type="text" value="{{ $settings->facebook }}" name="facebook" class="form-input"
+                            id="facebook">
+                    </div>
+                    <div>
+                        <label for="twitter" class="text-gray-800 text-sm font-medium inline-block mb-2">Twitter</label>
+                        <input type="text" value="{{ $settings->twitter }}" name="twitter" class="form-input"
+                            id="twitter">
+                    </div>
+                    <div>
+                        <label for="instagram" class="text-gray-800 text-sm font-medium inline-block mb-2">Instagram</label>
+                        <input type="text" value="{{ $settings->instagram }}" name="instagram" class="form-input"
+                            id="instagram">
+                    </div>
+                    <div>
+                        <label for="linkedin" class="text-gray-800 text-sm font-medium inline-block mb-2">Linkedin</label>
+                        <input type="text" value="{{ $settings->linkedin }}" name="linkedin" class="form-input"
+                            id="linkedin">
+                    </div>
+
+
+                </div>
+
 
                 <div class="lg:col-span-2">
                     <label for="inputAddress" class="text-gray-800 text-sm font-medium inline-block mb-2">Meta Keywords<span

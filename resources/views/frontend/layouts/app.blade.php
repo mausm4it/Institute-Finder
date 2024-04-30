@@ -5,13 +5,7 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Qayima is a modern presentation HTML5 Listing & Directory Template.">
-    <meta name="keywords" content="HTML5, Template, Design, Listing, Directory, Listing Template" />
-    <meta name="author" content="creative-wp">
-
+    @yield('meta_tag')
 
     <title>{{ $settings->name }}</title>
 
@@ -42,6 +36,9 @@
     {{-- external Css --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="{{ asset('public/frontend/masum4it/masum4it_css.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 
 
     {{-- external css end --}}
@@ -50,7 +47,8 @@
 
 <body>
     <div class="site-content">
-        @include('frontend.layouts.header')
+        {{-- @include('frontend.layouts.header') --}}
+        @yield('header')
         <div id="sticky-header" class="sticky-header-one"></div>
         @yield('content')
         @include('frontend.layouts.footer')
@@ -136,6 +134,20 @@
             });
         });
     </script>
+    <script>
+        @if (session()->has('success'))
+
+            toastr.success('{{ session('success') }}');
+        @endif
+    </script>
+    <script>
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right"
+        }
+    </script>
+
 
     {{-- external js end --}}
 
@@ -146,15 +158,3 @@
 
 
 </html>
-{{-- <select id="filterByPrice">
-    <option value="">Filter By Price</option>
-    <option value="0-50">$0 - $50</option>
-    <option value="50-100">$50 - $100</option>
-    <option value="100-200">$100 - $200</option>
-    <option value="200-">Above $200</option>
-</select>
-
-<select id="filterByCategory">
-    <option value="">Filter By Category</option>
-    <!-- Populate with your category options -->
-</select> --}}

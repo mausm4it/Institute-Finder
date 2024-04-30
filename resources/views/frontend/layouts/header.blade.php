@@ -1,4 +1,4 @@
-<header class="site-header header-style-one">
+<header class="site-header header-style-one mb-5">
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-12">
@@ -17,7 +17,7 @@
                                     <span class="icon-search32"></span>
                                 </div>
                                 <div class="search-form">
-                                    <form action="#">
+                                    <form action="{{ route('search') }}" method="GET">@csrf
                                         <input type="search" placeholder="Search">
                                         <button type="submit"><span class="icon-search32"></span></button>
                                     </form>
@@ -59,7 +59,8 @@
                                             <div
                                                 class="sub-menu megamenu-main megamenu-carousel carousel-nav-text owl-carousel">
                                                 @foreach ($categories as $category)
-                                                    <a href="#" class="cat-item cat-nightlife">
+                                                    <a href="{{ route('category-list', $category->slug) }}"
+                                                        class="cat-item cat-nightlife">
                                                         <figure class="cat-thumb">
                                                             <img src="{{ asset('storage/app/' . $category->category_icon) }}"
                                                                 alt="Thmubnail">
@@ -90,7 +91,9 @@
                                             <a href="#">Goal</a>
                                             <ul class="sub-menu">
                                                 @foreach ($sub_categories as $sub_category)
-                                                    <li><a href="listing-grid.html">{{ $sub_category->name }}</a></li>
+                                                    <li><a
+                                                            href="{{ route('sub_category-list', $sub_category->slug) }}">{{ $sub_category->name }}</a>
+                                                    </li>
                                                 @endforeach
 
 
@@ -100,8 +103,32 @@
                                             <a href="#">Courses</a>
                                             <ul class="sub-menu">
                                                 @foreach ($courses as $item)
-                                                    <li><a href="">{{ $item->name }}</a></li>
+                                                    <li><a href="{{ route('course-list', $item->slug) }}">{{ $item->name }}
+                                                            ({{ $item->sub_category->name }})
+                                                        </a>
+                                                    </li>
                                                 @endforeach
+
+
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{ route('all_blogs') }}">Blogs</a>
+
+                                        </li>
+
+                                        <li>
+                                            <a href="#">Pages</a>
+                                            <ul class="sub-menu">
+                                                @foreach ($pages as $item)
+                                                    <li><a href="{{ route('single_page', $item->slug) }}">{{ $item->title }}
+                                                        </a>
+                                                    </li>
+                                                @endforeach
+                                                <li><a href="{{ route('contact') }}">Contact Us
+                                                    </a>
+                                                </li>
 
 
                                             </ul>

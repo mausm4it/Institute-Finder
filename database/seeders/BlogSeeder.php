@@ -20,6 +20,7 @@ class BlogSeeder extends Seeder
         $blog->slug = "navigating-higher-ed-college-applications";
         $blog->blog_image = "blog_image/blog1.jpg";
         $blog->blog_category_id = "1";
+        $blog->publish = "1";
         $blog->summary = "Learn the ins and outs of the college application process,
          from selecting the right schools to crafting compelling essays";
         $blog->content = "This blog series will break down each step of applying to college, 
@@ -37,6 +38,7 @@ class BlogSeeder extends Seeder
         $blog->title = "Decoding Financial Aid: Understanding Your Options for College Funding";
         $blog->slug = "decoding-financial-aid-college-funding";
         $blog->blog_image = "blog_image/blog2.jpg";
+        $blog->publish = "1";
         $blog->blog_category_id = "1";
         $blog->summary = "Unravel the complexities of financial aid, 
         scholarships, and grants to make college more affordable.";
@@ -56,6 +58,7 @@ class BlogSeeder extends Seeder
         $blog->slug = "college-life-unplugged-campus-guide";
         $blog->blog_image = "blog_image/blog3.jpg";
         $blog->blog_category_id = "2";
+        $blog->publish = "1";
         $blog->summary = "Discover strategies for academic success, 
         social integration, and personal well-being in the college environment.";
         $blog->content = "From time management tips to campus resources, this blog series will equip students
@@ -75,6 +78,7 @@ class BlogSeeder extends Seeder
         $blog->slug = "beyond-classroom-experiential-learning-college";
         $blog->blog_image = "blog_image/blog4.jpg";
         $blog->blog_category_id = "2";
+        $blog->publish = "1";
         $blog->summary = " Explore internship programs, study abroad opportunities, 
         and other hands-on experiences to enrich your college education.";
         $blog->content = "This series will highlight the value of experiential learning in college and provide guidance on how students can leverage these opportunities to 
@@ -93,6 +97,7 @@ class BlogSeeder extends Seeder
         $blog->slug = "college-survival-guide-freshman-year";
         $blog->blog_image = "blog_image/blog5.jpg";
         $blog->blog_category_id = "3";
+        $blog->publish = "1";
         $blog->summary = "Get practical advice on making a smooth transition to college life and overcoming common challenges faced by incoming freshmen.";
         $blog->content = "From adjusting to dormitory living to managing academic expectations, this blog series will offer valuable insights and 
         actionable tips to help freshmen navigate their first year of college with confidence.";

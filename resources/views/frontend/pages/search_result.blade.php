@@ -1,4 +1,7 @@
 @extends('frontend.layouts.app')
+@section('header')
+    @include('frontend.layouts.header')
+@endsection
 @section('content')
     <div class="page-title-area style-two pd-t-60 pd-b-45 bg-image bg-overlay"
         style="background-image:url('public/frontend/assets/images/bg/hero-bg.jpg')">
@@ -134,8 +137,30 @@
                                                         <div class="todo-rating">
                                                             <span>{{ $avarage_rating }}</span>{{ $total_count }} Ratings
                                                         </div><!--./ todo-rating -->
+                                                        <div style="margin-right: -10px">
+                                                            <form action="{{ route('save_list_post') }}" method="POST">
+                                                                @csrf
+                                                                @if (auth()->user())
+                                                                    <input type="hidden" name="users"
+                                                                        value="{{ auth()->user()->id }}">
+                                                                @endif
+
+                                                                <input type="hidden" value="{{ $college->id }}"
+                                                                    name="colleges">
+                                                                <button type="submit" class="btn btn-primary"
+                                                                    style=" border-radius: 10%;"><i
+                                                                        class="fa fa-heart"></i></button>
+
+
+                                                                </button>
+
+                                                            </form>
+
+
+                                                        </div>
+
                                                         <div class="save">
-                                                            <a href="#" class="">
+                                                            <a href="{{ route('compare') }}" class="">
                                                                 <i style="font-size:24px" class="fa">&#xf079;</i>
                                                             </a>
                                                         </div><!--./ save -->
@@ -160,11 +185,7 @@
 
                                                 </div><!--./ todo-meta -->
                                                 <div class="todo-summary">
-                                                    <p>The path of the righteous man is beset on allave side by the
-                                                        iniquities.
-                                                        Nam
-                                                        in
-                                                        mauris quis liberos sod eleifend spectra online.</p>
+                                                    <p>{{ $college->summary }}</p>
                                                 </div><!--./ todo-summary -->
                                             </div><!--./ todo-content -->
                                         </div>
@@ -173,22 +194,19 @@
                             @endif
                             <!--~./ end todo item ~-->
 
-
+                            {{ $colleges->links('pagination::bootstrap-4') }}
                             <!--~~~~~ Start Paging Navigation ~~~~~-->
-                            <nav class="paging-navigation pagination-center pd-t-70">
+                            {{-- <nav class="paging-navigation pagination-center pd-t-70">
                                 <ul class="nav-links">
                                     <li class="nav-previous"> <!-- disabled class add when no pagination -->
                                         <a href="#">Previous</a>
                                     </li>
-                                    <li><a href="#">1</a></li>
-                                    <li class="active"><a href="#" class="page-numbers">2</a></li>
-                                    <li><a href="#" class="page-numbers">3</a></li>
-                                    <li><a href="#" class="page-numbers">4</a></li>
+                                    
                                     <li class="nav-next">
                                         <a href="#">Next</a>
                                     </li>
                                 </ul>
-                            </nav><!--~./ end paging navigation ~-->
+                            </nav><!--~./ end paging navigation ~--> --}}
                         </div>
 
                         <!--~~~~~ Start sidebar ~~~~~-->

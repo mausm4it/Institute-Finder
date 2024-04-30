@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('brochuri')->nullable(); 
             $table->longText('placement')->nullable();
             $table->string('ranking_number')->nullable();
-            $table->string('type_of_college_id')->nullable();
+            $table->string('type_of_college_id')->default(1);
             $table->integer('views')->default(0);
             $table->string('meta_keywords')->nullable();
             $table->string('meta_description')->nullable();

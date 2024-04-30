@@ -32,5 +32,10 @@ class Country extends Model
     {
         return $this->belongsToMany(College::class);
     }
+
+    public function applies()
+    {
+        return $this->hasMany(Apply::class);
+    }
     
 }

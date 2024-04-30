@@ -36,10 +36,26 @@ class College extends Model
         return $this->belongsToMany(Country::class);
     }
 
+    public function save_lists(): BelongsToMany
+    {
+        return $this->belongsToMany(SaveList::class);
+    }
+
     public function reviews()
     {
         return $this->hasMany(Review::class);
     }
+
+    public function course_fees()
+    {
+        return $this->hasMany(CourseFee::class);
+    }
+
+    public function applies()
+    {
+        return $this->hasMany(Apply::class);
+    }
+
 
   
 }

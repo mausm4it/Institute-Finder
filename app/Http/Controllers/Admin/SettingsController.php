@@ -20,6 +20,7 @@ class SettingsController extends Controller
         $request->validate([
             'icon' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'logo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'home_search_background_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
           ]);
 
           if ($request->hasFile('logo')) {
@@ -49,12 +50,29 @@ class SettingsController extends Controller
            
         }
 
+        if ($request->hasFile('home_search_background_image')) {
+             
+            if ($settings->home_search_background_image) {
+                Storage::delete($settings->home_search_background_image);
+            }
+    
+          
+    
+            $imagePath = $request->file('home_search_background_image')->storeAs('site_home_search_background_image', 'home_search_background_image' . now()->format('YmdHis') . '.' . $request->file('home_search_background_image')->getClientOriginalExtension());
+            $settings->home_search_background_image = $imagePath;
+           
+        }
+
 
         $settings->name = $request->name;
         $settings->about = $request->about;
         $settings->address = $request->address;
         $settings->email = $request->email;
         $settings->phone = $request->phone;
+        $settings->facebook = $request->facebook;
+        $settings->twitter = $request->twitter;
+        $settings->instagram = $request->instagram;
+        $settings->linkedin = $request->linkedin;
         $settings->meta_keywords = $request->meta_keywords;
         $settings->meta_description = $request->meta_description;
         $settings->save();

@@ -4,98 +4,71 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Course;
-use App\Models\College;
-use App\Models\Campus;
-use App\Models\Country;
-use App\Models\TypeOfCollege;
-use App\Models\CourseDuration;
-use App\Models\SubCategory;
+use App\Models\Apply;
+use App\Models\SaveList;
+use App\Models\User;
+use Auth;
+
 
 
 class UserPanelController extends Controller
 {
    public function Dashboard(){
-    return view('frontend.user_panel.dashboard');
-   }
-   public function CreateInstitute(){
-      $courses = Course::all();
-      $campuses = Campus::all();
-      $countries = Country::all();
-      $type_of_collages = TypeOfCollege::all();
-      $course_durations = CourseDuration::all();
-      $sub_categories = SubCategory::all();
-      
-      return view('frontend.user_panel.pages.create', compact('courses','campuses' ,'type_of_collages',
-      'countries' , 'course_durations', 'sub_categories'));
-  }
-   public function StoreInstitute(){
+      $applies = Apply::where('user_id', auth()->user()->id)->get();
 
-      $request->validate([
-         'thumbline' => 'image|mimes:jpeg,png,jpg,gif,svg',
-         'slug' => 'required',
-         'name' => 'required|string|max:255',
-         'country' => 'required',
-         'campuses' => 'required',
-         'courses' => 'required',
-         
-         'brochuri' => 'file|max:10240|mimes:pdf,doc,docx',
-
-       ]);
      
-     $college = new College();
+      $save_lists = SaveList::whereHas('users', function ($query) {
+         $query->where('user_id', auth()->user()->id);
+     })->get();
+     
+
+    return view('frontend.user_panel.dashboard', compact('applies', 'save_lists'));
+   }
+
+
+//settings
+
+public function SettingView(){
+   $user = Auth::user();
+   return view('frontend.user_panel.pages.settings' , compact('user'));
+  }
+
+public function UpdateSettings(Request $request){
+   $user = Auth::user();
+   if ($request->hasFile('user_profile')) {
+             
+      if ($user->user_profile) {
+          Storage::delete($user->user_profile);
+      }
+
+    
+
+      $imagePath = $request->file('user_profile')->storeAs('user_profile', 'user_profile' . now()->format('YmdHis') . '.' . $request->file('user_profile')->getClientOriginalExtension());
+      $user->user_profile = $imagePath;
+     
+  }
+   $user->name = $request->name;
+   $user->email = $request->email;
+   $user->phone = $request->phone;
+   $user->save();
 
    
-     
-      if ($request->hasFile('thumbline')) {
-           
-         if ($college->thumbline) {
-             Storage::delete($college->thumbline);
-         }
- 
-       
- 
-         $imagePath = $request->file('thumbline')->storeAs('college_thumbline', 'thumbline' . now()->format('YmdHis') . '.' . $request->file('thumbline')->getClientOriginalExtension());
-         $college->thumbline = $imagePath;
-        
-     }
-
-     if ($request->hasFile('gallery')) {
-         if ($college->gallery) {
-             Storage::delete($college->gallery);
-         }
-         foreach ($request->file('gallery') as $file) {
-             if ($file) {
-                 $imagePath = $file->storeAs('college_gallery', 'file' . now()->format('YmdHis') . '.' . $file->getClientOriginalExtension());
-                 $college->gallery = $imagePath;
-             }
-         }
-     }
-
-     $college->name = $request->name;
-     $college->slug = $request->slug;
-     $college->summary = $request->summary;
-     $college->about_college = $request->input('about_college');
-     $college->admisstion_current_time = $request->admisstion_current_time;
-     $college->schollership = $request->schollership;
-     $college->faculty = $request->faculty;
-     $college->hostel = $request->hostel;
-     $college->faculty = $request->faculty;
-     $college->brochuri = $request->brochuri;
-     $college->placement = $request->placement;
-     $college->video_link = $request->video_link;
-     $college->type_of_college_id = $request->type_of_college_id;
-     $college->ranking_number = $request->ranking_number;
-     $college->meta_keywords = $request->meta_keywords;
-     $college->meta_description = $request->meta_description;
-     $college->save();
-
-     $college->campuses()->attach($request->campuses);
-     $college->courses()->attach($request->courses);
-     $college->countries()->attach($request->country);
+   return redirect()->back()->with('success', 'User Update Successfully');
+  }
 
 
-     // dd('Ok DOne');
-     return view('frontend.user_panel.pages.list')->with('success', 'Institute Info Updated Successfully');
+
+
+   //apply
+   public function ApplyInstituteList(){
+    $applies = Apply::where('user_id', auth()->user()->id)->get();
+    return view('frontend.user_panel.pages.apply_list' , compact('applies'));
    }
+
+   public function DeleteApplyInstituteList($id){
+      $apply = Apply::find($id);
+      $apply->delete();
+      return redirect()->back()->with('success', 'Item Deleted Successfully');
+     }
+   
 }

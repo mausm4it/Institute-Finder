@@ -21,7 +21,14 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+       
     ];
+    protected $routeMiddleware = [
+       
+        'role.prefix' => \App\Http\Middleware\RoleBasedPrefix::class,
+    ];
+    
+  
 
     /**
      * The application's route middleware groups.
@@ -67,5 +74,16 @@ class Kernel extends HttpKernel
         'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
         'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
         'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
+        'role.prefix' => \App\Http\Middleware\RoleBasedPrefix::class,
+       
+        
     ];
+
+ 
+    
+    
+    
+
+   
+    
 }

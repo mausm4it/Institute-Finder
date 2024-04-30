@@ -3459,14 +3459,12 @@ blockquote cite:before {
   z-index: 1;
 }
 
-.waves-effect.top {
-  top: -1px;
-  height: 185px;
-}
+.waves-effect.top {}
 
 .waves-effect.bottom {
   bottom: -1px;
-  height: 185px;
+  height: 10%;
+  padding: 10px;
 }
 
 /*-------------------------------------------------
@@ -17908,8 +17906,9 @@ input[type="checkbox"]::-ms-check {
   }
 
   .site-footer.footer-default-style .footer-logo {
-    text-align: center;
-    margin-bottom: 25px;
+    /* text-align: center;
+    margin-bottom: 25px; */
+    display: none;
   }
 }
 
@@ -17924,9 +17923,7 @@ input[type="checkbox"]::-ms-check {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .site-footer.footer-style-one .waves-effect.top {
-    top: -30px;
-  }
+  .site-footer.footer-style-one .waves-effect.top {}
 }
 
 @media only screen and (max-width: 991px) {

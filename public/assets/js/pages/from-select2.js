@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded", function (e) { document.querySelectorAll(".selectize2").forEach(function (e) { NiceSelect.bind(e) }) }), document.addEventListener("DOMContentLoaded", function (e) { NiceSelect.bind(document.getElementById("search-select2"), { searchable: !0 }) });

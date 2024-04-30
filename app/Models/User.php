@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class User extends Authenticatable
 {
@@ -21,8 +22,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'profile_picture',
+        'user_profile',
         'password',
+        'user_profile',
+        'phone'
         
     ];
 
@@ -51,4 +54,22 @@ class User extends Authenticatable
     {
         return $this->hasMany(Review::class);
     }
+
+   
+
+    // public function roles()
+    // {
+    //     return $this->hasMany(Role::class);
+    // }
+
+    public function applies()
+    {
+        return $this->hasMany(Apply::class);
+    }
+
+    public function save_lists(): BelongsToMany
+    {
+        return $this->belongsToMany(SaveList::class);
+    }
+    
 }

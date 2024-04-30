@@ -43,10 +43,10 @@
 
 
 
-                        <div class="flex  gap-3">
+                        <div class="gap-3">
                             @foreach ($permissions as $permission)
-                                <div>
-                                    <input name="permissions[]" class="form-checkbox rounded-full text-primary"
+                                <div class="text-xl m-2">
+                                    <input name="permissions[]" class="form-checkbox rounded-full text-primary "
                                         type="checkbox" id="checkBox10" value="{{ $permission->id }}"
                                         @if (in_array($permission->id, $data)) checked @endif>
                                     <label class="ms-1.5" for="checkBox10">{{ $permission->name }}</label>

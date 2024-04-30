@@ -50,7 +50,21 @@
                         @enderror
                     </div>
 
+                    @can('publish institute')
+                        <div class="card p-6">
 
+
+                            <div class="flex items-center ">
+                                <input type="checkbox" id="publish" name="publish" class="form-switch square text-success"
+                                    checked>
+                                <label for="publish" class="ms-2">Publish</label>
+                            </div>
+
+                            @error('publish')
+                                <div class=" text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    @endcan
 
 
                     <div class="card p-6">
@@ -185,7 +199,7 @@
                             </div>
                         </div>
                     @endif
-                    @if ($type_of_collages->isNotEmpty())
+                    @if ($type_of_colleges->isNotEmpty())
                         <div class="card p-6">
                             <div class="flex justify-between items-center mb-4">
                                 <p class="card-title">Type Of Institute <span class="text-red-500">*</span></p>
@@ -199,14 +213,13 @@
                                 <div class="">
                                     <label for="type_of_college_id" class="mb-2 block">Type Of Institute</label>
                                     <select name="type_of_college_id" id="type_of_college_id" class="selectize">
-                                        @foreach ($type_of_collages as $type_of_collage)
-                                            <option value="{{ $type_of_collage->id }}">{{ $type_of_collage->name }}
+                                        @foreach ($type_of_colleges as $type_of_college)
+                                            <option value="{{ $type_of_college->id }}">{{ $type_of_college->name }}
                                             </option>
                                         @endforeach
 
-
                                     </select>
-                                    @error('type_of_collages')
+                                    @error('type_of_colleges')
                                         <div class=" text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
@@ -307,9 +320,8 @@
                                 @error('about_college')
                                     <div class=" text-danger">{{ $message }}</div>
                                 @enderror
-                                <div id="editorQuill" style="height: 300px;">
-                                </div>
-                                <input type="hidden" name="about_college" id="about_college">
+                                <textarea id="about_college" name="about_college" class="form-input" rows="3"> {{ old('about_college') }}</textarea>
+
 
                             </div>
                             <div class="">

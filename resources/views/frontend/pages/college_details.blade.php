@@ -1,5 +1,31 @@
 @extends('frontend.layouts.app')
 
+@section('meta_tag')
+    <meta charset="utf-8">
+    <title>{{ $college->name }}</title>
+    <meta name="description" content="{{ $college->description }}">
+    <!-- Facebook Open Graph tags -->
+    <meta property="og:title" content="{{ $college->name }}">
+    <meta property="og:description" content="{{ $college->meta_description }}">
+    <meta property="og:keywords" content="{{ $college->meta_keywords }}">
+    <meta property="og:image" content="{{ asset('storage/app/' . $college->thumbline) }}">
+    <meta property="og:url" content="{{ route('college-details', $college->slug) }}">
+
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="{{ $college->name }}">
+    <meta name="twitter:site" content="{{ $college->name }}">
+    <meta name="twitter:title" content="{{ $college->name }}">
+    <meta name="twitter:description" content="{{ $college->meta_description }}">
+    <meta name="twitter:keywords" content="{{ $college->meta_keywords }}">
+    <meta name="twitter:image" content="{{ asset('storage/app/' . $college->thumbline) }}">
+    <meta name="twitter:url" content="{{ route('college-details', $college->slug) }}">
+@endsection
+
+
+@section('header')
+    @include('frontend.layouts.header')
+@endsection
 @section('content')
     <div class="single-listing-todo-block style-two pd-b-100">
         <div class="listing-todo-thumbnail-area bg-image"
@@ -46,6 +72,29 @@
                                         </div>
 
                                     </div>
+                                    <div class="post-share-area">
+                                        <h3><span>SHARES</span></h3>
+
+
+
+                                        <div class="share">
+                                            <a class="facebook"
+                                                href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(route('college-details', $college->slug)) }}">
+                                                <span class="fab fa-facebook-f"></span>
+                                                <span class="text">SHARE INSTITUTE</span>
+                                            </a>
+                                            <a class="twitter"
+                                                href="https://twitter.com/intent/tweet?url={{ urlencode(route('college-details', $college->slug)) }}">
+                                                <span class="fab fa-twitter"></span>
+                                                <span class="text">TWEET INSTITUTE</span>
+                                            </a>
+                                            <a class="linkedin"
+                                                href="https://www.linkedin.com/shareArticle?url={{ urlencode(route('college-details', $college->slug)) }}">
+                                                <span class="fab fa-linkedin"></span>
+                                                <span class="text">SHARE INSTITUTE</span>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -60,6 +109,7 @@
                         <ul class="todo-menu">
                             <li><a href="#overview">Overview</a></li>
                             <li><a href="#video">Video</a></li>
+                            <li><a href="#course">Course</a></li>
                             <li><a href="#admisstion">Admisstion</a></li>
                             <li><a href="#schollership">Schollership</a></li>
                             <li><a href="#gallery">Gallery</a></li>
@@ -82,19 +132,27 @@
                             <div class="listing-description" id="overview">
                                 <div class="small-title">
                                     <h3 class="heading">About {{ $college->name }}</h3>
-                                </div><!--~./ small-title ~-->
+                                </div>
                                 <div class="box-inner-content">
                                     <p>{!! $college->about_college !!}</p>
                                 </div>
-                            </div><!--~./ end listing description ~-->
+                            </div>
 
                             <!--~~~~~ Start Listing Video ~~~~~-->
                             <div class="listing-video" id="video">
                                 <div class="small-title">
                                     <h3 class="heading">Video</h3>
-                                </div><!--~./ small-title ~-->
+                                </div>
                                 <div class="box-inner-content">
                                     <div class="listing-video-area">
+
+                                        {{-- <iframe width="560" height="315" src="{{ $embedUrl }}" frameborder="0"
+                                            allowfullscreen></iframe> --}}
+
+
+
+
+
                                         <div class="video-thumb bg-overlay-violet">
                                             <img src="{{ asset('storage/app/' . $college->thumbline) }}" alt="Thmubnail">
                                         </div>
@@ -106,22 +164,140 @@
                                     </div>
                                 </div>
                             </div><!--~./ end listing video ~-->
+                            <div class="listing-amenities" id="course">
+                                <div class="small-title">
+                                    <h3 class="heading">Courses</h3>
+                                </div>
+                                <div class="testimonial-block bg-snow ptb-100">
+                                    <div class="container">
+                                        <div class="row">
 
-                            <!--~~~~~ Start Listing Amenities ~~~~~-->
+                                            <div class="col-lg-9">
+                                                <div class="section-title">
+
+                                                    <h2 class="title-main">Courses With Fee</h2>
+                                                    <div class="divider">
+                                                        <span class="icon-star-full"></span>
+                                                        <span class="icon-star-full"></span>
+                                                        <span class="icon-star-full"></span>
+                                                        <span class="icon-star-full"></span>
+                                                        <span class="icon-star-full"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-3">
+                                                <div class="carousel-nav-text nav-right">
+                                                    <button class="btn-links btn-prev">
+                                                        <span>prev</span>
+                                                    </button>
+                                                    <button class="btn-links btn-next">
+                                                        <span>next</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-12">
+
+                                                <div class="testimonial-carousel owl-carousel">
+
+
+                                                    @if ($college->course_fees)
+                                                        @foreach ($college->course_fees as $item)
+                                                            <div class="card border-success mb-3"
+                                                                style="max-width: 18rem;">
+                                                                <div class="card-header bg-transparent border-success">
+                                                                    Course Fee: {{ $item->amount }} /-
+                                                                </div>
+                                                                <div class="card-body text-success">
+                                                                    @if ($item->college_id == $college->id)
+                                                                        <h5 class="card-title">
+                                                                            {{ $item->course->name }}
+                                                                        </h5>
+                                                                    @endif
+
+                                                                    <p class="card-text">
+                                                                        {{ $item->course->sub_category->name }} in
+                                                                        {{ $item->course->sub_category->category->name }}
+                                                                    </p>
+
+                                                                    <p class="text-dark">
+                                                                        Course Duration:
+                                                                        {{ $item->course->course_duration->name }}
+                                                                    </p>
+
+
+                                                                </div>
+
+                                                                <div class="card text-white bg-primary"
+                                                                    style="max-width: 18rem;">
+                                                                    <div class="card-header">Semester/Year:
+                                                                        {{ $item->course->semester }}</div>
+                                                                    @php
+                                                                        $course_fee = $item->amount;
+                                                                        $course_semester = $item->course->semester;
+                                                                        $course_credit = $item->course->credit;
+
+                                                                        $semester_fee =
+                                                                            $course_semester > 0
+                                                                                ? $course_fee / $course_semester
+                                                                                : 0;
+
+                                                                        $credit_fee =
+                                                                            $course_credit > 0
+                                                                                ? $course_fee / $course_credit
+                                                                                : 0;
+
+                                                                    @endphp
+                                                                    <div class="card-header bg-dark text-white">Per
+                                                                        Semester/Year Course Fee:
+                                                                        {{ number_format($semester_fee, 1) }} /-</div>
+                                                                    <div class="card-header bg-warning text-dark">Course
+                                                                        Credit: {{ $item->course->credit }}</div>
+                                                                    <div class="card-header bg-success text-white">Per
+                                                                        Credit
+                                                                        Course Fee: {{ number_format($credit_fee, 1) }} /-
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div
+                                                                    class="card-footer bg-transparent border-success text-right ">
+                                                                    <a class="btn btn-dark text-warning"
+                                                                        href="{{ route('compare') }}">Compare Course</a>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
+                                                    @endif
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            {{-- admisstion --}}
                             <div class="listing-amenities" id="admisstion">
                                 <div class="small-title">
                                     <h3 class="heading">Admisstion {{ $college->name }}</h3>
-                                </div><!--~./ small-title ~-->
+                                </div>
                                 <div class="box-inner-content">
                                     <p>{!! $college->admisstion_current_time !!}</p>
                                 </div>
-                            </div><!--~./ end listing amenities ~-->
+                            </div>
 
-                            <!--~~~~~ Start Listing Nearby ~~~~~-->
+
                             <div class="listing-nearby" id="schollership">
                                 <div class="small-title">
                                     <h3 class="heading">Schollership {{ $college->name }}</h3>
-                                </div><!--~./ small-title ~-->
+                                </div>
                                 <div class="box-inner-content">
                                     <p>{!! $college->schollership !!}</p>
                                 </div>
@@ -131,7 +307,7 @@
                             <div class="listing-gallery" id="gallery">
                                 <div class="small-title">
                                     <h3 class="heading">Gallery</h3>
-                                </div><!--~./ small-title ~-->
+                                </div>
                                 <div class="box-inner-content">
                                     <div class="listing-gallery-slide owl-carousel carousel-nav-dots">
 
@@ -153,7 +329,7 @@
                             <div class="listing-virtual-tour" id="faculty">
                                 <div class="small-title">
                                     <h3 class="heading">Faculty {{ $college->name }}</h3>
-                                </div><!--~./ small-title ~-->
+                                </div>
                                 <div class="box-inner-content">
                                     <p>{!! $college->faculty !!}</p>
                                 </div>
@@ -162,7 +338,7 @@
                             <div class="listing-virtual-tour" id="hostel">
                                 <div class="small-title">
                                     <h3 class="heading">Hostel info {{ $college->name }}</h3>
-                                </div><!--~./ small-title ~-->
+                                </div>
                                 <div class="box-inner-content">
                                     <p>{!! $college->hostel !!}</p>
                                 </div>
@@ -172,7 +348,7 @@
                             <div class="listing-virtual-tour" id="placement">
                                 <div class="small-title">
                                     <h3 class="heading">Placement info {{ $college->name }}</h3>
-                                </div><!--~./ small-title ~-->
+                                </div>
                                 <div class="box-inner-content">
                                     <p>{!! $college->placement !!}</p>
                                 </div>
@@ -211,7 +387,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--~./ small-title ~-->
+
                                     <div class="box-inner-content">
                                         <ol class="comment-list">
                                             @if ($college->reviews->isNotEmpty())
@@ -290,7 +466,7 @@
                             <div class="listing-leave-review">
                                 <div class="small-title">
                                     <h3 class="heading">Leave a Review</h3>
-                                </div><!--~./ small-title ~-->
+                                </div>
                                 <div class="box-inner-content">
                                     <div class="leave-review-content">
                                         <form method="POST" action="{{ route('college-review', $college->id) }}">
@@ -374,6 +550,43 @@
                     <div class="col-lg-4">
                         <div class="sidebar-todos mrt-md-60">
 
+                            <aside class="widget bookmark-widget ">
+                                <div class="widget-content">
+                                    <div class="bookmark-btn-area">
+                                        <a href="{{ route('apply') }}"><button
+                                                class="btn btn-default bg-success btn-black">
+                                                Apply Institute</button></a>
+
+
+                                    </div>
+                                </div>
+                            </aside>
+
+                            <aside class="widget bookmark-widget ">
+                                <div class="widget-content">
+                                    <div class="bookmark-btn-area">
+                                        <form action="{{ route('save_list_post') }}" method="POST">@csrf
+                                            @if (auth()->user())
+                                                <input type="hidden" name="users" value="{{ auth()->user()->id }}">
+                                            @endif
+
+                                            <input type="hidden" value="{{ $college->id }}" name="colleges">
+                                            <button type="submit" class="btn btn-default bg-primary btn-black"><i
+                                                    class="fa fa-heart"></i> Save
+                                                Institute</button>
+
+
+                                            </button>
+
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </aside>
+
+
+
+
                             <aside class="widget map-location-widget">
                                 <h4 class="widget-title">Rank</h4>
                                 <div class="widget-content bg-dark">
@@ -410,8 +623,9 @@
                             <aside class="widget bookmark-widget">
                                 <div class="widget-content">
                                     <div class="bookmark-btn-area">
-                                        <button class="btn btn-default btn-black">Login to Compare Others
-                                            Institute</button>
+                                        <a href="{{ route('compare') }}"><button class="btn btn-default btn-black">
+                                                Compare Institute</button></a>
+
                                         <p>1400 people Compare this Institute</p>
                                     </div>
                                 </div>

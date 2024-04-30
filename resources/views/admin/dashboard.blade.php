@@ -8,6 +8,8 @@
     </div>
     <!-- Page Title End -->
 
+
+
     <div class="grid 2xl:grid-cols-4 gap-6 mb-6">
 
         <div class="2xl:col-span-3">
@@ -23,15 +25,17 @@
                             </div>
 
                         </div>
+                        @if ($lastUpdateDate_active_college)
+                            <div class="flex items-end">
+                                <div class="flex-grow">
+                                    <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold text-center"><i
+                                            class="mgc_alarm_2_line"></i> Last Update:
+                                        {{ $lastUpdateDate_active_college->format('F j, Y \a\t H.i A') }}</p>
+                                </div>
 
-                        <div class="flex items-end">
-                            <div class="flex-grow">
-                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold text-center"><i
-                                        class="mgc_alarm_2_line"></i> Last Update:
-                                    {{ $lastUpdateDate_active_college->format('F j, Y \a\t H.i A') }}</p>
                             </div>
+                        @endif
 
-                        </div>
                     </div>
                 </div>
 
@@ -45,36 +49,42 @@
                             </div>
 
                         </div>
+                        @if ($lastUpdateDate_inactive_college)
+                            <div class="flex items-end">
+                                <div class="flex-grow">
+                                    <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold text-center"><i
+                                            class="mgc_alarm_2_line"></i> Last Update:
+                                        {{ $lastUpdateDate_inactive_college->format('F j, Y \a\t H.i A') }}</p>
+                                </div>
 
-                        <div class="flex items-end">
-                            <div class="flex-grow">
-                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold text-center"><i
-                                        class="mgc_alarm_2_line"></i> Last Update:
-                                    {{ $lastUpdateDate_inactive_college->format('F j, Y \a\t H.i A') }}</p>
                             </div>
+                        @endif
 
-                        </div>
                     </div>
                 </div>
+
                 <div class="card">
                     <div class="p-6">
                         <div class="text-center">
                             <div>
-                                <h4 class="text-base mb-1 text-primary-600 dark:text-primary-400 text-primary">Courses</h4>
+                                <h4 class="text-base mb-1 text-primary-600 dark:text-primary-400 text-primary">Total Apply
+                                </h4>
                                 <p class="font-normal text-2xl text-gray-400 truncate dark:text-gray-500 ">
-                                    {{ $courses_count }}</p>
+                                    {{ $apply_count }}</p>
                             </div>
 
                         </div>
+                        @if ($lastUpdateDate_apply)
+                            <div class="flex items-end">
+                                <div class="flex-grow">
+                                    <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold text-center"><i
+                                            class="mgc_alarm_2_line"></i> Last Update:
+                                        {{ $lastUpdateDate_apply->format('F j, Y \a\t H.i A') }}</p>
+                                </div>
 
-                        <div class="flex items-end">
-                            <div class="flex-grow">
-                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold text-center"><i
-                                        class="mgc_alarm_2_line"></i> Last Update:
-                                    {{ $lastUpdateDate_course->format('F j, Y \a\t H.i A') }}</p>
                             </div>
+                        @endif
 
-                        </div>
                     </div>
                 </div>
 
@@ -88,15 +98,17 @@
                             </div>
 
                         </div>
+                        @if ($lastUpdateDate_blog)
+                            <div class="flex items-end">
+                                <div class="flex-grow">
+                                    <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold text-center"><i
+                                            class="mgc_alarm_2_line"></i> Last Update:
+                                        {{ $lastUpdateDate_blog->format('F j, Y \a\t H.i A') }}</p>
+                                </div>
 
-                        <div class="flex items-end">
-                            <div class="flex-grow">
-                                <p class="text-[13px] text-gray-400 dark:text-gray-500 font-semibold text-center"><i
-                                        class="mgc_alarm_2_line"></i> Last Update:
-                                    {{ $lastUpdateDate_blog->format('F j, Y \a\t H.i A') }}</p>
                             </div>
+                        @endif
 
-                        </div>
                     </div>
                 </div>
             </div>

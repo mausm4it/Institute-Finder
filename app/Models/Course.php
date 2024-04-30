@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Course extends Model
 {
     use HasFactory;
-    public function college():BelongsToMany
+    public function colleges():BelongsToMany
     {
         return $this->belongsToMany(College::class);
     }
@@ -20,5 +20,15 @@ class Course extends Model
     public function sub_category()
     {
         return $this->belongsTo(SubCategory::class);
+    }
+
+    public function course_fees()
+    {
+        return $this->hasMany(CourseFee::class);
+    }
+
+    public function applies()
+    {
+        return $this->hasMany(Apply::class);
     }
 }

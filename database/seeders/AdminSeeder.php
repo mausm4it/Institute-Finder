@@ -14,11 +14,41 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = User::create([
+        $superAdminUser = User::create([
             'name' => "Md Shofiq",
+           'email' => "super_admin@codetechbd.com",
+            'password' => Hash::make(12345678),
+        ]);
+
+        $superAdminUser->assignRole('super-admin');
+
+
+        $editorUser = User::create([
+            'name' => "Md Masum",
+           'email' => "editor@codetechbd.com",
+            'password' => Hash::make(12345678),
+        ]);
+
+        $editorUser->assignRole('editor');
+
+
+        $adminUser = User::create([
+            'name' => "Md Masum",
            'email' => "admin@codetechbd.com",
             'password' => Hash::make(12345678),
-        ])->assignRole(['admin']);
+        ]);
+
+        $adminUser->assignRole('admin');
+
+        $repoterUser = User::create([
+            'name' => "Md Masum",
+           'email' => "repoter@codetechbd.com",
+            'password' => Hash::make(12345678),
+        ]);
+
+        $repoterUser->assignRole('repoter');
+     
+     
  
        
        

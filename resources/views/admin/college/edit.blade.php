@@ -59,6 +59,24 @@
                         @enderror
 
                     </div>
+                    @can('publish institute')
+                        <div class="card p-6">
+
+
+                            <div class="flex items-center ">
+                                <input type="checkbox" id="publish" name="publish" class="form-switch square text-success"
+                                    required @if ($college->publish == 1) checked @endif>
+                                <label for="publish" class="ms-2">Publish</label>
+                            </div>
+
+                            @error('publish')
+                                <div class=" text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    @endcan
+
+
+
                     <div class="card p-6">
                         <h4>Institute Thumbline
                         </h4>
@@ -158,6 +176,8 @@
                                             @foreach ($college->courses as $item)
                                                 <option selected value="{{ $item->id }}">{{ $item->name }}</option>
                                             @endforeach
+                                        @else
+                                            <option value="">Select Course</option>
                                         @endif
                                         @isset($courses)
                                             @foreach ($courses as $course)
@@ -176,7 +196,7 @@
                             </div>
                         </div>
                     @endisset
-                    @isset($type_of_collages)
+                    @isset($type_of_colleges)
                         <div class="card p-6">
                             <div class="flex justify-between items-center mb-4">
                                 <p class="card-title">Type Of Institute</p>
@@ -188,21 +208,21 @@
 
                             <div class="flex flex-col gap-3">
                                 <div class="">
-                                    <label for="type_of_collage_id" class="mb-2 block">Type Of Institute</label>
-                                    <select name="type_of_collage_id" class="selectize" multiple="multiple">
+                                    <label for="type_of_college_id" class="mb-2 block">Type Of Institute</label>
+                                    <select name="type_of_college_id" class="selectize" multiple="multiple">
                                         @if ($college->type_of_college()->exists())
-                                            <option selected value="{{ $college->type_of_college_id }}">
+                                            <option value="{{ $college->type_of_college->id }}" selected>
                                                 {{ $college->type_of_college->name }}</option>
                                         @endif
-                                        @isset($type_of_collages)
-                                            @foreach ($type_of_collages as $type_of_college)
+                                        @isset($type_of_colleges)
+                                            @foreach ($type_of_colleges as $type_of_college)
                                                 <option value="{{ $type_of_college->id }}">{{ $type_of_college->name }}</option>
                                             @endforeach
                                         @endisset
 
 
                                     </select>
-                                    @error('type_of_collages')
+                                    @error('type_of_colleges')
                                         <div class=" text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
@@ -338,33 +358,6 @@
 
 
 
-                            {{-- <div class="">
-    <label for="product-status" class="mb-2 block">Status <span
-            class="text-red-500">*</span></label>
-    <div class="flex gap-x-6">
-
-
-        <div class="flex">
-            <input type="radio" name="radio-group" class="form-radio"
-                id="private">
-            <label for="private"
-                class="text-sm text-gray-500 ms-2 dark:text-gray-400">Private</label>
-        </div>
-
-    </div>
-</div> --}}
-
-                            {{-- <div class="grid md:grid-cols-2 gap-3">
-    <div class="">
-        <label for="start-date" class="mb-2 block">Start Date</label>
-        <input type="date" id="start-date" class="form-input">
-    </div>
-
-    <div class="">
-        <label for="due-date" class="mb-2 block">Due Date</label>
-        <input type="date" id="due-date" class="form-input">
-    </div>
-</div> --}}
 
 
                         </div>

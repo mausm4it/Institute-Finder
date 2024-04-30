@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ $settings->name }}</title>
 
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('public/build/assets/app.css') }}">
     <script src="{{ asset('public/build/assets/app.js') }}" defer></script>
-    <link rel="shortcut icon" href="{{ asset('public/assets/images/favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ asset('storage/app/' . $settings->icon) }}" sizes="32x32"
+        class="rounded-full border border-gray-300">
 
 
     {{-- external link start --}}
@@ -678,6 +679,28 @@
         }
     </script>
 
+    <script>
+        // Blog Image
+        function BgImage(event) {
+            const input = event.target;
+            const preview = document.getElementById('bgPreview');
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'inline-block';
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.src = '#';
+                preview.style.display = 'none';
+            }
+        }
+    </script>
+
 
     {{-- Image Preview Script End --}}
 
@@ -783,6 +806,12 @@
     <script>
         CKEDITOR.replace('about_college');
     </script>
+
+
+    <script>
+        CKEDITOR.replace('content');
+    </script>
+
 
     {{-- ck editor end --}}
 

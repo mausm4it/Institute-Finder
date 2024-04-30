@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="{{ asset('public/frontend/assets/css/style.css') }}">
 
     <script src="{{ asset('public/frontend/assets/js/modernizr.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </head>
 
 <body>
@@ -74,7 +77,41 @@
     <script src="{{ asset('public/frontend/assets/js/jquery-steps.min.js') }}"></script>
     <script src="{{ asset('public/frontend/assets/js/plugins.js') }}"></script>
     <script src="{{ asset('public/frontend/assets/js/main.js') }}"></script><!-- main-js -->
+    <script>
+        @if (session()->has('success'))
 
+            toastr.success('{{ session('success') }}');
+        @endif
+    </script>
+    <script>
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right"
+        }
+    </script>
+
+    <script>
+        // Blog Image
+        function BlogImage(event) {
+            const input = event.target;
+            const preview = document.getElementById('blog_imagePreview');
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'inline-block';
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.src = '#';
+                preview.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 

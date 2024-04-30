@@ -9,7 +9,7 @@
 
             <div class="flex items-center gap-2">
 
-                <a href="{{ route('dashboard') }}"
+                <a href="{{ route('admin.dashboard') }}"
                     class="text-sm font-medium text-slate-700 dark:text-slate-400">Dashboard</a>
             </div>
 
@@ -83,9 +83,10 @@
                                         for="role">Role</label>
 
                                     <select id="role" name="role" autocomplete="role-name"
-                                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                        required>
 
-                                        <option value="user">user</option>
+                                        <option value="">Select Role</option>
                                         @foreach ($roles as $role)
                                             <option value="{{ $role->name }}">
                                                 {{ $role->name }}</option>
@@ -243,7 +244,8 @@
                                                                     autocomplete="role-name"
                                                                     class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
 
-                                                                    <option value="user">user</option>
+                                                                    <option value="user">
+                                                                        {{ $item->getRoleNames()->first() }}</option>
                                                                     @foreach ($roles as $role)
                                                                         <option value="{{ $role->name }}">
                                                                             {{ $role->name }}</option>

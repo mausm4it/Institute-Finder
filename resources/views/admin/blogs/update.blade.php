@@ -147,41 +147,9 @@
                                     @error('content')
                                         <div class=" text-danger">{{ $message }}</div>
                                     @enderror
-                                    <div id="editor" style="height: 300px;">{!! $blog->content !!}
-                                    </div>
-                                    <input type="hidden" name="content" id="content">
+                                    <textarea id="content" name="content" class="form-input" rows="3"> {{ $blog->content }}</textarea>
+
                                 </div>
-
-
-
-                                {{-- <div class="">
-            <label for="product-status" class="mb-2 block">Status <span
-                    class="text-red-500">*</span></label>
-            <div class="flex gap-x-6">
-
-
-                <div class="flex">
-                    <input type="radio" name="radio-group" class="form-radio"
-                        id="private">
-                    <label for="private"
-                        class="text-sm text-gray-500 ms-2 dark:text-gray-400">Private</label>
-                </div>
-
-            </div>
-        </div> --}}
-
-                                {{-- <div class="grid md:grid-cols-2 gap-3">
-            <div class="">
-                <label for="start-date" class="mb-2 block">Start Date</label>
-                <input type="date" id="start-date" class="form-input">
-            </div>
-
-            <div class="">
-                <label for="due-date" class="mb-2 block">Due Date</label>
-                <input type="date" id="due-date" class="form-input">
-            </div>
-        </div> --}}
-
 
                             </div>
                         </div>

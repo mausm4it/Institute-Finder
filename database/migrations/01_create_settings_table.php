@@ -15,12 +15,18 @@ return new class extends Migration
             $table->id();
             $table->string('icon')->nullable();
             $table->string('logo')->nullable();
+            $table->string('home_search_background_image')->nullable();
             $table->string('name')->nullable();
             $table->string('address')->nullable();
             $table->longText('about')->nullable();
             $table->string('email')->nullable();
             // $table->string('mobile')->nullable();
             $table->string('phone')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('linkedin')->nullable();
+     
             $table->string('meta_keywords')->nullable();
             $table->string('meta_description')->nullable();
 

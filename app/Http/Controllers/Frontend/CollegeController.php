@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\College;
 use App\Models\Review;
 
+
+
 class CollegeController extends Controller
 {
     public function index($slug){
@@ -17,9 +19,23 @@ class CollegeController extends Controller
      $total_rating = $college->reviews->sum('rating_number');
      $total_count = $college->reviews->count();
      $avarage_rating = ($total_count > 0) ? $total_rating / $total_count: 0;
+  //    $videoUrl = $college->video_link;
 
+  //    if (!function_exists('embedVideo')) {
+  //     function embedVideo($url)
+  //     {
+       
+  //         if (strpos($url, 'youtube.com') !== false) {
+           
+  //             $videoId = explode('v=', parse_url($url, PHP_URL_QUERY))[1];
+  //             return "https://www.youtube.com/embed/$videoId";
+  //         }
+  
+  //         return $url;
+  //     }
+  // }
      
-
+  //    $embedUrl = embedVideo($videoUrl);
 
 
      
