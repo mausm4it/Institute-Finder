@@ -288,6 +288,18 @@
                      </li>
                  @endcan
 
+                 @can('control mail settings')
+                     <li class="menu-item">
+                         <a href="{{ route('mail-control') }}" class="menu-link">
+
+                             <span class="menu-icon"><i class="mgc_mail_fill"></i></span>
+
+                             <span class="menu-text">SMTP Mail Settings</span>
+                         </a>
+                     </li>
+                 @endcan
+
+
 
 
 

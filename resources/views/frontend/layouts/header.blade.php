@@ -100,7 +100,7 @@
                                             </ul>
                                         </li>
                                         <li>
-                                            <a href="#">Courses</a>
+                                            <a href="">Courses</a>
                                             <ul class="sub-menu">
                                                 @foreach ($courses as $item)
                                                     <li><a href="{{ route('course-list', $item->slug) }}">{{ $item->name }}
@@ -138,35 +138,30 @@
 
                                         </li>
 
+                                        <li>
+                                            @if (Auth::user())
+                                                <a class="user-reg-btn "
+                                                    href=" @if (Auth::user()->hasRole('admin')) {{ route('admin.dashboard') }}
+                                            @else
+                                            {{ route('dashboard') }} @endif  ">
+                                                    <span class="icon icon-user-1 text-light"></span>
+                                                    <span class="text text-light">Dashboard</span>
+                                                </a>
+                                            @else
+                                                <a class="user-reg-btn text-light" href="{{ route('login') }}">
+                                                    <span class="icon icon-user-1 text-light"></span>
+                                                    <span class="text text-light">Sign In</span>
+                                                </a>
+                                            @endif
+                                        </li>
+
                                     </ul> <!-- /.menu-list -->
                                 </div> <!-- /.hours-content-->
                             </div><!-- /.menu-wrapper -->
                         </nav>
                     </div><!--  /.site-navigation -->
 
-                    <div class="header-navigation-right">
-                        <div class="user-registration-area">
 
-
-                            @if (Auth::user())
-                                <a class="user-reg-btn"
-                                    href=" @if (Auth::user()->hasRole('admin')) {{ route('admin.dashboard') }}
-                                @else
-                                {{ route('dashboard') }} @endif  ">
-                                    <span class="icon icon-user-1"></span>
-                                    <span class="text">Dashboard</span>
-                                </a>
-                            @else
-                                <a class="user-reg-btn" href="{{ route('login') }}">
-                                    <span class="icon icon-user-1"></span>
-                                    <span class="text">Sign In</span>
-                                </a>
-                            @endif
-
-
-
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

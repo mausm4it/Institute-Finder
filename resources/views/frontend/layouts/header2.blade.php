@@ -131,35 +131,32 @@
                                                 <a href="{{ route('search') }}">Advance Search</a>
 
                                             </li>
+
+                                            <li>
+                                                @if (Auth::user())
+                                                    <a class="user-reg-btn "
+                                                        href=" @if (Auth::user()->hasRole('admin')) {{ route('admin.dashboard') }}
+                                                @else
+                                                {{ route('dashboard') }} @endif  ">
+                                                        <span class="icon icon-user-1 "></span>
+                                                        <span class="text ">Dashboard</span>
+                                                    </a>
+                                                @else
+                                                    <a class="user-reg-btn " href="{{ route('login') }}">
+                                                        <span class="icon icon-user-1 "></span>
+                                                        <span class="text t">Sign In</span>
+                                                    </a>
+                                                @endif
+                                            </li>
+
+
+
                                         </ul> <!-- /.menu-list -->
                                     </div> <!-- /.hours-content-->
                                 </div><!-- /.menu-wrapper -->
                             </nav>
                         </div><!-- /.site-navigation -->
 
-                        <div class="header-navigation-right">
-                            <div class="user-registration-area">
-
-
-                                @if (Auth::user())
-                                    <a class="user-reg-btn"
-                                        href=" @if (Auth::user()->hasRole('admin')) {{ route('admin.dashboard') }}
-                                    @else
-                                    {{ route('dashboard') }} @endif  ">
-                                        <span class="icon icon-user-1"></span>
-                                        <span class="text">Dashboard</span>
-                                    </a>
-                                @else
-                                    <a class="user-reg-btn" href="{{ route('login') }}">
-                                        <span class="icon icon-user-1"></span>
-                                        <span class="text">Sign In</span>
-                                    </a>
-                                @endif
-
-
-
-                            </div>
-                        </div><!--~./ header-navigation-right ~-->
                     </div><!-- /.header-navigation-right-area -->
                 </div><!-- /.navigation-area -->
             </div><!-- /.col-12 -->

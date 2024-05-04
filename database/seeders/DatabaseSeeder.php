@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call([BlogSeeder::class]);
         $this->call([CollegeSeeder::class]);
         $this->call([PageSeeder::class]);
+        $this->call([SMTPMailSeeder::class]);
         // $this->call([CountryCampusCourseInstituteCollegeSeeder::class]);
        
 

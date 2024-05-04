@@ -30,6 +30,7 @@ class RolePermissionSeeder extends Seeder
         Permission::create(['name' => 'control page']);
         Permission::create(['name' => 'control user contact']);
         Permission::create(['name' => 'control subscriber']);
+        Permission::create(['name' => 'control mail settings']);
       
         
         

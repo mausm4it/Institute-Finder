@@ -1405,7 +1405,7 @@ img {
 }
 
 .ptb-100 {
-  padding: 100px 0;
+  padding: 30px 0;
 }
 
 @media screen and (max-width: 767px) {
@@ -6057,9 +6057,9 @@ object {
 .site-header.header-style-one .navigation-area .header-navigation-left,
 .site-header.header-style-one .navigation-area .header-navigation-right {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 320px;
-  flex: 0 0 320px;
-  max-width: 320px;
+  -ms-flex: 0 0 100px;
+  flex: 0 0 100px;
+  max-width: 100px;
 }
 
 .site-header.header-style-one .header-navigation-right .user-registration-area .user-reg-btn {
@@ -8240,7 +8240,7 @@ a:active {
 }
 
 .frontpage-banner-section .row.align-items-center {
-  min-height: 850px;
+  min-height: 550px;
 }
 
 @media only screen and (max-width: 480px) {
@@ -9352,7 +9352,7 @@ a:active {
 .todo-item .item-thumb {
   position: relative;
   overflow: hidden;
-  min-height: 120px;
+  height: 200px;
   margin-bottom: 0;
 }
 

@@ -19,16 +19,21 @@ class HomeController extends Controller
             $sub_categories = SubCategory::all();
             $courses = Course::all();
             $countries = Country::all();
-            $colleges = College::where('publish', 1)
+            $top_colleges = College::where('publish', 1)
             ->orderBy('views', 'desc')
             ->take(9)
             ->latest()
             ->get();
 
+            $colleges = College::where('publish', 1)
+            ->orderBy('views', 'desc')
+            ->latest()
+            ->paginate(9);
+
           
 
             return view('frontend.home', compact('categories', 'courses' , 
-            'countries', 'colleges', 'sub_categories'));
+            'countries', 'top_colleges', 'sub_categories', 'colleges'));
      
     }
 

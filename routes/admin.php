@@ -212,4 +212,11 @@ Route::get('/user_update_view' , 'UserUpdateController@index')->name('user_updat
 Route::post('/update-user_profile' , 'UserUpdateController@UpdateProfile')->name('update-user_profile');
 Route::post('/update-user_password' , 'UserUpdateController@UpdatePassword')->name('update-user_password');
 
+//mail
+Route::middleware(['role_or_permission:control mail settings'])->group(function () {
+    Route::get('/mail-control', 'MailController@index')->name('mail-control');
+    Route::post('/update-mail-control', 'MailController@UpdateMailSettings')->name('update-mail-control');
+});
+
+
 });
