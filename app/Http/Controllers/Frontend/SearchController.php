@@ -72,7 +72,7 @@ class SearchController extends Controller
 
     if($request->has('query')){
         $query = $request->input('query');
-        $results = College::where('name', 'like', '%' . $query . '%')
+        $results = College::where('publish', 1)->where('name', 'like', '%' . $query . '%')
         ->orWhere('about_college', 'like', '%' .$query. '%')
         ->take(5)->get();
         if ($request->ajax()) {

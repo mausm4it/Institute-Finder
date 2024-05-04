@@ -21,6 +21,53 @@
                             </div>
                         </form>
                         <div id="search-results"></div>
+                        <script>
+                            $(document).ready(function() {
+                                $('#search-box').on('keyup', function() {
+                                    var query = $(this).val();
+
+                                    $.ajax({
+                                        url: '{{ route('search') }}',
+                                        method: 'GET',
+                                        data: {
+                                            query: query
+                                        },
+                                        success: function(response) {
+                                            // Clear previous suggestions
+                                            $('#search-results').empty();
+
+                                            // Append new suggestions
+                                            $.each(response, function(index, college) {
+                                                // Create a div for each college result
+                                                var collegeDiv = $('<div class="college-result"></div>');
+
+                                                // Create an anchor element for the college link
+                                                var collegeLink = $('<a href="/college/' + college.slug +
+                                                    '"></a>');
+
+                                                // Create an image element with the college thumbnail
+                                                var imgElement = $('<img src="storage/app/' + college
+                                                    .thumbline + '" alt="' + college.name + '"/>');
+
+                                                // Create a paragraph element with the college name
+                                                var nameElement = $('<span class="college-name">' + college
+                                                    .name + '</span>');
+
+                                                // Append the image and name to the college link
+                                                collegeLink.append(imgElement, nameElement);
+
+                                                // Append the college link to the college result div
+                                                collegeDiv.append(collegeLink);
+
+                                                // Append the college result div to the search results container
+                                                $('#search-results').append(collegeDiv);
+                                            });
+
+                                        }
+                                    });
+                                });
+                            });
+                        </script>
                     </div><!--~~./ page-header-content ~~-->
                 </div>
             </div>
