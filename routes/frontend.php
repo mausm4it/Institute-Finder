@@ -1,12 +1,15 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
-use App\Models\College;
+// use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\File;
+
+
 
 
 
 Route::get('/', 'HomeController@index')->name('home');
+
+
 Route::get('/suggest', 'SearchController@suggest')->name('suggest');
 
 Route::get('/college/{slug}', 'CollegeController@index')->name('college-details');

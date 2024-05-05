@@ -111,7 +111,7 @@
 
                                         <div class="flex gap-2">
                                             @can('update institute')
-                                                <a href="{{ route('edit-apply', $item->id) }}">
+                                                <a href="{{ route('edit-college', $item->id) }}">
                                                     <i class="mgc_edit_fill text-xl text-primary"></i>
                                                 </a>
                                             @endcan

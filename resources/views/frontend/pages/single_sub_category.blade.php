@@ -104,7 +104,8 @@
                                         </div><!--./ todo-type-cat -->
                                         <div class="todo-meta-bottom">
                                             <div class="todo-rating">
-                                                <span>{{ $avarage_rating }}</span>{{ $total_count }} Ratings
+                                                <span>{{ number_format($avarage_rating, 1) }}</span>{{ $total_count }}
+                                                Ratings
                                             </div><!--./ todo-rating -->
 
                                             <div style="margin-right: -10px">

@@ -10,6 +10,11 @@
 @endsection
 
 @section('container')
+    <p> <strong>Super Admin: </strong> super_admin@codetechbd.com </p>
+    <p> <strong>Admin: </strong> admin@codetechbd.com </p>
+    <p> <strong>Editor: </strong> editor@codetechbd.com </p>
+    <p> <strong>Repoter: </strong> repoter@codetechbd.com </p>
+    <p> <strong>Password: </strong> 12345678 </p>
     @if (session('message')['dbOutputLog'])
         <p><strong><small>{{ trans('installer_messages.final.migration') }}</small></strong></p>
         <pre><code>{{ session('message')['dbOutputLog'] }}</code></pre>

@@ -47,6 +47,9 @@ class CollegeSeeder extends Seeder
          $college->views = random_int(1, 5000);
 
         $college->save();
+        $college->campuses()->attach([1,2,3,4,5]);
+        $college->courses()->attach([1,2,3]);
+        $college->countries()->attach([1]);
 
 
 
@@ -86,7 +89,9 @@ class CollegeSeeder extends Seeder
          $college->publish = "1";
          $college->views = random_int(1, 5000);
         $college->save();
-
+        $college->campuses()->attach([1,2,3,4,5]);
+        $college->courses()->attach([1,2,3]);
+        $college->countries()->attach([2]);
         
         
         //3
@@ -123,7 +128,9 @@ class CollegeSeeder extends Seeder
          $college->publish = "1";
          $college->views = random_int(1, 5000);
         $college->save();
-
+        $college->campuses()->attach([1,2,3,4,5]);
+        $college->courses()->attach([1,2,3]);
+        $college->countries()->attach([1]);
 
         //4
         $college = new College();
@@ -159,7 +166,9 @@ class CollegeSeeder extends Seeder
          $college->publish = "1";
          $college->views = random_int(1, 5000);
         $college->save();
-
+        $college->campuses()->attach([1,2,3,4,5]);
+        $college->courses()->attach([1,2,3]);
+        $college->countries()->attach([2]);
 
 
         //5
@@ -196,7 +205,9 @@ class CollegeSeeder extends Seeder
          $college->publish = "1";
          $college->views = random_int(1, 5000);
         $college->save();
-
+        $college->campuses()->attach([1,2,3,4,5]);
+        $college->courses()->attach([1,2,3]);
+        $college->countries()->attach([1]);
 
 
         //6
@@ -234,7 +245,9 @@ class CollegeSeeder extends Seeder
          $college->publish = "1";
          $college->views = random_int(1, 5000);
         $college->save();
-
+        $college->campuses()->attach([1,2,3,4,5]);
+        $college->courses()->attach([1,2,3]);
+        $college->countries()->attach([1]);
         //7
         $college = new College();
         $college->name = "Sunset Hills University";
@@ -269,7 +282,9 @@ class CollegeSeeder extends Seeder
          $college->publish = "1";
          $college->views = random_int(1, 5000);
         $college->save();
-
+        $college->campuses()->attach([1,2,3,4,5]);
+        $college->courses()->attach([1,2,3]);
+        $college->countries()->attach([1]);
 
 
          //8
@@ -306,7 +321,9 @@ class CollegeSeeder extends Seeder
           $college->publish = "1";
           $college->views = random_int(1, 5000);
          $college->save();
-
+         $college->campuses()->attach([1,2,3,4,5]);
+         $college->courses()->attach([1,2,3]);
+         $college->countries()->attach([1]);
 
           //9
           $college = new College();
@@ -342,7 +359,9 @@ class CollegeSeeder extends Seeder
            $college->publish = "1";
            $college->views = random_int(1, 5000);
           $college->save();
-
+          $college->campuses()->attach([1,2,3,4,5]);
+          $college->courses()->attach([1,2,3]);
+          $college->countries()->attach([1]);
 
 
     }
