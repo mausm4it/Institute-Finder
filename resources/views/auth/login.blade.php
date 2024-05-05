@@ -19,6 +19,8 @@
 
     <!-- Theme Config Js -->
     <script src="{{ asset('public/assets/js/config.js') }}"></script>
+    <link rel="icon" type="image/png" href="{{ asset('storage/app/' . $settings->icon) }}" sizes="32x32"
+        class="rounded-full border border-gray-300">
 </head>
 
 <body>

@@ -20,7 +20,6 @@ class SMTPMailSeeder extends Seeder
             'MAIL_PORT' => '2525',
             'MAIL_USERNAME' => 'd8739a3148a5af',
             'MAIL_PASSWORD' => 'd8739a3148a5af',
-            'MAIL_ENCRYPTION' => 'tls',
             'MAIL_FROM_ADDRESS' => 'masum4it@gmail.com',
             'MAIL_FROM_NAME' => 'masum4it',
           

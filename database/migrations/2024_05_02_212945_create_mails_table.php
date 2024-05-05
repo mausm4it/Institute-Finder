@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('mail_port');
             $table->string('mail_username');
             $table->string('mail_password');
-            $table->string('mail_encryption');
             $table->string('mail_address');
             $table->string('mailer_name');
             $table->timestamps();

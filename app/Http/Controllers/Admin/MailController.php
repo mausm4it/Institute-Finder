@@ -23,7 +23,7 @@ class MailController extends Controller
                 'MAIL_PORT' => $request->input('mail_port'),
                 'MAIL_USERNAME' => $request->input('mail_username'),
                 'MAIL_PASSWORD' => $request->input('mail_password'),
-                'MAIL_ENCRYPTION' => $request->input('mail_encryption'),
+              
                 'MAIL_FROM_ADDRESS' => $request->input('mail_address'),
                 'MAIL_FROM_NAME' => $request->input('mailer_name'),
               

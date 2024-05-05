@@ -57,28 +57,7 @@
                 <input type="password" value="{{ old('mail_password', env('MAIL_PASSWORD')) }}" class="form-input"
                     name="mail_password" id="inputAddress" placeholder="Enter Mail Password" required>
             </div>
-            <div>
 
-                <div class="card">
-                    <div class="card-header">
-                        <div class="flex justify-between items-center">
-                            <h4 class="card-title">Mail
-                                Encryption</h4>
-
-                        </div>
-                    </div>
-
-                    <div class="p-6">
-                        <select class="selectize" name="mail_encryption"
-                            style="opacity: 0; width: 0px; padding: 0px; height: 0px;">
-                            <option value="tls">TLS</option>
-                            <option value="ssl">SSL</option>
-
-                        </select>
-
-                    </div>
-                </div>
-            </div>
 
 
 
