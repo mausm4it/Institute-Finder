@@ -24,7 +24,13 @@
     <div class="card mb-5">
         <div class="card-header">
             <div class="flex justify-between items-center">
-                <img width="100" src="{{ asset('storage/app/' . $user->user_profile) }}" class="rounded-lg">
+
+                @if (Auth::user()->user_profile != null && Auth::user()->user_profile != '')
+                    <img width="100" src="{{ asset('storage/app/' . $user->user_profile) }}" class="rounded-lg">
+                @else
+                    <img width="100" src="{{ asset('storage/app/user_profile/user.png') }}" class="rounded-lg">
+                @endif
+
 
 
 

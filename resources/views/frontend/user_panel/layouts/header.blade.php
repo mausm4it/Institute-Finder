@@ -6,7 +6,17 @@
                     <div class="author-registration-area">
                         <div class="dropdown registration">
                             <div class="user-thumb">
-                                <img src="{{ asset('storage/app/' . Auth::user()->user_profile) }}" alt="img">
+
+
+                                @if (Auth::user()->user_profile != null && Auth::user()->user_profile != '')
+                                    <img src="{{ asset('storage/app/' . Auth::user()->user_profile) }}" alt="img">
+                                @else
+                                    <img src="{{ asset('storage/app/user_profile/user.png') }}" alt="img">
+                                @endif
+
+
+
+
                             </div>
                             <button class="dropdown-toggle" type="button" id="authorButton">Hi
 

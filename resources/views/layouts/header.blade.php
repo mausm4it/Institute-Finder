@@ -218,9 +218,12 @@
      <!-- Profile Dropdown Button -->
      <div class="relative">
          <button data-fc-type="dropdown" data-fc-placement="bottom-end" type="button" class="nav-link">
-             <img src="{{ asset('storage/app/' . Auth::user()->user_profile) }}" alt="user-image"
-                 class="rounded-full h-10">
-
+             @if (Auth::user()->user_profile != null && Auth::user()->user_profile != '')
+                 <img src="{{ asset('storage/app/' . Auth::user()->user_profile) }}" alt="user-image"
+                     class="rounded-full h-10">
+             @else
+                 <img src="{{ asset('storage/app/user_profile/user.png') }}" alt="user-image" class="rounded-full h-10">
+             @endif
          </button>
 
          <div

@@ -7,7 +7,11 @@
 @section('title')
     <i class="fa fa-magic fa-fw" aria-hidden="true"></i>
     {!! trans('installer_messages.environment.wizard.title') !!}
+    <p style="color:rgb(250, 250, 250); background-color: rgb(255, 4, 4)"><strong>Do not click the install button more than
+            once.</strong>
+    </p>
 @endsection
+
 
 @section('container')
     <div class="tabs tabs-full">

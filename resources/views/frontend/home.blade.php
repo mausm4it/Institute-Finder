@@ -4,6 +4,49 @@
 @endsection
 
 @section('content')
+
+    <style>
+        .span {
+            color: #00AA9E;
+        }
+
+        .toggle {
+            display: none;
+        }
+
+        .active {
+            display: inline-block;
+        }
+
+        .college-result {
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+            padding: 5px;
+            display: flex;
+            align-items: stretch;
+            background-color: #ffffff;
+        }
+
+        .college-result img {
+            max-width: 100px;
+            height: auto;
+
+            margin-right: 10px;
+        }
+
+        .college-name {
+            margin: 0;
+            color: black;
+
+            font-weight: bold;
+        }
+
+        .star {
+            font-size: 50px;
+            cursor: pointer;
+            color: orangered;
+        }
+    </style>
     <div class="frontpage-banner-section frontpage-banner-style-one bg-overlay-violet bg-image ptb-100"
         style="background-image:url('{{ asset('storage/app/' . $settings->home_search_background_image) }}')">
         <div class="waves-effect bottom"
@@ -20,7 +63,24 @@
                             <span class="toggle span">University</span>
                             <span class="toggle span">School</span> in There
                         </h1>
+                        <script>
+                            function displayWord() {
+                                var words = document.getElementsByClassName("toggle");
+                                var wordCounter = 0;
 
+                                setInterval(updateWord, 1000);
+
+                                function updateWord() {
+                                    if (wordCounter >= words.length) wordCounter = 0;
+                                    for (var i = 0; i < words.length; i++) {
+                                        words[i].classList.remove('active');
+                                    }
+                                    words[wordCounter].classList.add('active');
+                                    wordCounter++;
+                                }
+                            }
+                            displayWord();
+                        </script>
 
                         <form action="{{ route('search') }}" class="advance-search-form" method="GET">
                             <div class="inner-form">

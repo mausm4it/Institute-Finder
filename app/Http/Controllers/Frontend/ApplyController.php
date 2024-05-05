@@ -31,6 +31,6 @@ class ApplyController extends Controller
         $apply->course_id = $request->course_id;
         $apply->user_id = $request->user_id;
         $apply->save();
-        return redirect()->route('home')->with('success', 'Your Apply Request Successfully We Will Contact Soon');
+        return redirect()->route('apply_institute_list')->with('success', 'Your Apply Request Successfully We Will Contact Soon');
     }
 }
