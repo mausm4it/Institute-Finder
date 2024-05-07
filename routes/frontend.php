@@ -80,6 +80,12 @@ Route::post('/settings-update' , 'UserPanelController@UpdateSettings')->name('se
 });
 
 
+ 
+Route::get('/auth/{client}/redirect', 'ProviderController@redirect' )->name('login-redirect');
+ 
+Route::get('/auth/{client}/callback', 'ProviderController@callback')->name('login-callback');
+
+
 
 // Route::get('/create-institute', 'UserPanelController@CreateInstitute')->name('create-institute');
 // Route::post('/store-college' , 'CollegeController@StoreInstitute')->name('store-college');

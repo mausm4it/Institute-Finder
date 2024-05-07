@@ -9,6 +9,8 @@ use App\Models\SubCategory;
 use App\Models\College;
 use App\Models\Course;
 use App\Models\Country;
+use App\Models\Campus;
+
 
 
 class HomeController extends Controller
@@ -19,6 +21,11 @@ class HomeController extends Controller
             $sub_categories = SubCategory::all();
             $courses = Course::all();
             $countries = Country::all();
+
+            
+            $campuses = Campus::latest()
+            ->get();
+
             $top_colleges = College::where('publish', 1)
             ->orderBy('views', 'desc')
             ->take(9)
@@ -33,7 +40,7 @@ class HomeController extends Controller
           
 
             return view('frontend.home', compact('categories', 'courses' , 
-            'countries', 'top_colleges', 'sub_categories', 'colleges'));
+            'countries', 'top_colleges', 'sub_categories', 'colleges', 'campuses'));
      
     }
 

@@ -234,7 +234,49 @@
         </div>
     @endif
 
+    <div class="testimonial-block bg-snow ptb-100">
+        <div class="container">
+            <div class="row">
 
+                <div class="col-lg-9">
+                    <div class="section-title">
+
+                        <h2 class="title-main">Top Study Places For BE/B.Tech</h2>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="carousel-nav-text nav-right">
+                        <button class="btn-links btn-prev">
+                            <span>prev</span>
+                        </button>
+                        <button class="btn-links btn-next">
+                            <span>next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="listing-todo-thumbnail-carousel owl-carousel">
+
+                        @foreach ($campuses as $campus)
+                            <div class="card p-1 m-1">
+                                <img style="height: 100px; width:100%;" class="card-img-top  mx-auto d-block"
+                                    src="{{ asset('storage/app/' . $campus->campus_image) }}" alt="Card image cap">
+                                <div class="">
+                                    <p class="text-center"><small>{{ $campus->name }}</small></p>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <div class="todos-block bg-snow ptb-100">
@@ -287,7 +329,8 @@
                                         <div style="margin-right: -10px">
                                             <form action="{{ route('save_list_post') }}" method="POST">@csrf
                                                 @if (auth()->user())
-                                                    <input type="hidden" name="users" value="{{ auth()->user()->id }}">
+                                                    <input type="hidden" name="users"
+                                                        value="{{ auth()->user()->id }}">
                                                 @endif
 
                                                 <input type="hidden" value="{{ $college->id }}" name="colleges">

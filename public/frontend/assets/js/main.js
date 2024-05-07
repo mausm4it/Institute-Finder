@@ -353,7 +353,7 @@
             if ($('.listing-todo-thumbnail-carousel').length) {
                 $('.listing-todo-thumbnail-carousel').owlCarousel({
                     center: false,
-                    items: 4,
+                    items: 9,
                     autoplay: false,
                     autoplayTimeout: 3000,
                     smartSpeed: 800,
@@ -361,26 +361,26 @@
                     margin: 1,
                     singleItem: true,
                     dots: false,
-                    nav: true,
-                    navText: ["<span class='icon-back1'></span>", "<span class='icon-next1'></span>"],
+                    nav: false,
+
                     responsive: {
                         280: {
-                            items: 1
+                            items: 2
                         },
                         501: {
-                            items: 2
+                            items: 4
                         },
                         768: {
-                            items: 2
+                            items: 5
                         },
                         992: {
-                            items: 2
+                            items: 7
                         },
                         1200: {
-                            items: 3
+                            items: 8
                         },
                         1400: {
-                            items: 4
+                            items: 9
                         }
                     }
                 });
@@ -434,6 +434,53 @@
                         },
                         1200: {
                             items: items
+                        }
+                    }
+                });
+            }
+            $('.testimonial-block .carousel-nav-text .btn-prev').click(function () {
+                $member_items.trigger('prev.owl.carousel');
+            });
+            $('.testimonial-block .carousel-nav-text .btn-next').click(function () {
+                $member_items.trigger('next.owl.carousel');
+            });
+        },
+
+
+        campus_carousel: function () {
+            var $member_items = $('.campus-carousel');
+            var items = 3;
+            if ($member_items.length) {
+                $member_items.owlCarousel({
+                    center: false,
+                    items: 4,
+                    autoplay: false,
+                    autoplayTimeout: 3000,
+                    smartSpeed: 800,
+                    loop: true,
+                    margin: 1,
+                    singleItem: true,
+                    dots: false,
+                    nav: true,
+
+                    responsive: {
+                        280: {
+                            items: 1
+                        },
+                        501: {
+                            items: 2
+                        },
+                        768: {
+                            items: 2
+                        },
+                        992: {
+                            items: 2
+                        },
+                        1200: {
+                            items: 3
+                        },
+                        1400: {
+                            items: 4
                         }
                     }
                 });

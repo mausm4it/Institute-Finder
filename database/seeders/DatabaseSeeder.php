@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
         $this->call([CourseFeeSeeder::class]);
         $this->call([UserSeeder::class]);
         $this->call([ReviewSeeder::class]);
+        $this->call([AdsSeeder::class]);
         
         
         // $this->call([CountryCampusCourseInstituteCollegeSeeder::class]);

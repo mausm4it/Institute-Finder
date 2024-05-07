@@ -219,4 +219,11 @@ Route::middleware(['role_or_permission:control mail settings'])->group(function 
 });
 
 
+//Ads
+Route::middleware(['role_or_permission:control ads'])->group(function () {
+    Route::get('/ads', 'AdsController@index')->name('ads');
+    Route::post('/update-ads', 'AdsController@UpdateAds')->name('update-ads');
+});
+
+
 });

@@ -54,13 +54,13 @@
                             </div>
                         @endif
                         <div class="px-4 py-8 overflow-y-auto">
-                            <form action="{{ route('create-campus') }}" method="POST">
+                            <form action="{{ route('create-campus') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
                                     <label for="name"
                                         class="text-gray-800 text-sm font-medium inline-block mb-2">Name</label>
                                     <input type="text" class="form-input" value="{{ old('name') }}" name="name"
-                                        id="name" placeholder="Enter Name">
+                                        id="name" placeholder="Enter Name" required>
                                     @error('name')
                                         <div class=" text-danger">{{ $message }}</div>
                                     @enderror
@@ -69,11 +69,28 @@
                                     <label for="slug"
                                         class="text-gray-800 text-sm font-medium inline-block mb-2">Slug</label>
                                     <input type="text" class="form-input" value="{{ old('slug') }}" name="slug"
-                                        id="slug" placeholder="Enter Slug">
+                                        id="slug" placeholder="Enter Slug" required>
                                     @error('slug')
                                         <div class=" text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
+                                <div class="mb-3">
+                                    <label for="campus_image"
+                                        class="text-gray-800 text-sm font-medium inline-block mb-2">icon</label>
+                                    <input onchange="BlogImage(event)" class="form-control" type="file"
+                                        name="campus_image" value="" required>
+                                    <img id="blog_imagePreview" src="#" alt="Preview"
+                                        style="display:none; max-width: 100%; max-height: 100px;">
+                                    @error('campus_image')
+                                        <div class=" text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+
+
+
+
+
                                 <div class="flex justify-end items-center gap-4 p-4 ">
                                     <button
                                         class="py-2 px-5 inline-flex justify-center items-center gap-2 rounded dark:text-gray-200 border dark:border-slate-700 font-medium hover:bg-slate-100 hover:dark:bg-slate-700 transition-all"
@@ -98,7 +115,8 @@
                         class="bg-slate-300 bg-opacampus-20 border-t dark:bg-slate-800 divide-gray-300 dark:border-gray-700">
                         <tr>
                             <th scope="col"
-                                class="py-3.5 ps-4 pe-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">ID
+                                class="py-3.5 ps-4 pe-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">
+                                Icon Image
                             </th>
                             <th scope="col"
                                 class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">
@@ -118,7 +136,8 @@
                                 <tr>
                                     <td
                                         class="whitespace-nowrap py-4 ps-4 pe-3 text-sm font-medium text-gray-900 dark:text-gray-200">
-                                        <b>#{{ $item->id }}</b>
+                                        <b><img width="70px" src="{{ asset('storage/app/' . $item->campus_image) }}"
+                                                alt=""></b>
                                     </td>
                                     <td class="whitespace-nowrap py-4 pe-3 text-sm">
                                         {{ $item->name }}
@@ -163,14 +182,15 @@
                                                         </div>
                                                     @endif
                                                     <div class="px-4 py-8 overflow-y-auto">
-                                                        <form action="{{ route('update-campus', $item->id) }}" method="POST">
+                                                        <form action="{{ route('update-campus', $item->id) }}" method="POST"
+                                                            enctype="multipart/form-data">
                                                             @csrf
                                                             <div class="mb-3">
                                                                 <label for="name"
                                                                     class="text-gray-800 text-sm font-medium inline-block mb-2">Name</label>
                                                                 <input type="text" class="form-input"
-                                                                    value="{{ $item->name }}" name="name" id="name"
-                                                                    placeholder="Enter Name">
+                                                                    value="{{ $item->name }}" name="name"
+                                                                    id="name" placeholder="Enter Name" required>
                                                                 @error('name')
                                                                     <div class=" text-danger">{{ $message }}</div>
                                                                 @enderror
@@ -181,11 +201,27 @@
                                                                     class="text-gray-800 text-sm font-medium inline-block mb-2">Slug</label>
                                                                 <input type="text" class="form-input"
                                                                     value="{{ $item->slug }}" name="slug"
-                                                                    id="slug" placeholder="Enter Slug">
+                                                                    id="slug" placeholder="Enter Slug" required>
                                                                 @error('slug')
                                                                     <div class=" text-danger">{{ $message }}</div>
                                                                 @enderror
                                                             </div>
+
+
+                                                            <div class="mb-3">
+                                                                <label for="campus_image"
+                                                                    class="text-gray-800 text-sm font-medium inline-block mb-2">icon</label>
+                                                                <input onchange="BlogImage(event)" class="form-control"
+                                                                    type="file" name="campus_image"
+                                                                    value="{{ $item->campus_image }}" required>
+                                                                <img id="blog_imagePreview" src="#" alt="Preview"
+                                                                    style="display:none; max-width: 100%; max-height: 100px;">
+                                                                @error('campus_image')
+                                                                    <div class=" text-danger">{{ $message }}</div>
+                                                                @enderror
+                                                            </div>
+
+
                                                             <div class="flex justify-end items-center gap-4 p-4 ">
                                                                 <button
                                                                     class="py-2 px-5 inline-flex justify-center items-center gap-2 rounded dark:text-gray-200 border dark:border-slate-700 font-medium hover:bg-slate-100 hover:dark:bg-slate-700 transition-all"

@@ -21,6 +21,19 @@ class CampusController extends Controller
           ]);
         $campus = new Campus();
 
+        if ($request->hasFile('campus_image')) {
+              
+            if ($campus->campus_image) {
+                Storage::delete($campus->campus_image);
+            }
+    
+          
+    
+            $imagePath = $request->file('campus_image')->storeAs('college_campus_image', 'campus_image' . now()->format('YmdHis') . '.' . $request->file('campus_image')->getClientOriginalExtension());
+            $campus->campus_image = $imagePath;
+           
+        }
+
         $campus->name = $request->name;
         $campus->slug = $request->slug;
         $campus->save();
@@ -39,7 +52,18 @@ class CampusController extends Controller
           ]);
         $campus =  Campus::find($id);
 
- 
+        if ($request->hasFile('campus_image')) {
+              
+            if ($campus->campus_image) {
+                Storage::delete($campus->campus_image);
+            }
+    
+          
+    
+            $imagePath = $request->file('campus_image')->storeAs('college_campus_image', 'campus_image' . now()->format('YmdHis') . '.' . $request->file('campus_image')->getClientOriginalExtension());
+            $campus->campus_image = $imagePath;
+           
+        }
          $campus->name = $request->name;
          $campus->slug = $request->slug;
          $campus->save();

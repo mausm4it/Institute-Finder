@@ -300,6 +300,18 @@
                  @endcan
 
 
+                 @can('control ads')
+                     <li class="menu-item">
+                         <a href="{{ route('mail-control') }}" class="menu-link">
+
+                             <span class="menu-icon"><i class="mgc_announcement_fill"></i></span>
+
+                             <span class="menu-text">Ads</span>
+                         </a>
+                     </li>
+                 @endcan
+
+
 
 
 

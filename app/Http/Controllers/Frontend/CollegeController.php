@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\College;
 use App\Models\Review;
+use App\Models\Advertisement;
 
 
 
@@ -19,6 +20,8 @@ class CollegeController extends Controller
      $total_rating = $college->reviews->sum('rating_number');
      $total_count = $college->reviews->count();
      $avarage_rating = ($total_count > 0) ? $total_rating / $total_count: 0;
+
+     $ads = Advertisement::get()->first();
   //    $videoUrl = $college->video_link;
 
   //    if (!function_exists('embedVideo')) {
@@ -39,7 +42,7 @@ class CollegeController extends Controller
 
 
      
-     return view('frontend.pages.college_details', compact('college' ,'total_count', 'avarage_rating'));
+     return view('frontend.pages.college_details', compact('college' ,'total_count', 'avarage_rating', 'ads'));
     }
 
 

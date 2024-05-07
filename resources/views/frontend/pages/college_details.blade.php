@@ -585,6 +585,12 @@
                             </aside>
 
 
+                            <aside class="widget bookmark-widget ">
+                                {!! $ads->banner !!}
+
+                            </aside>
+
+
 
 
                             <aside class="widget map-location-widget">
@@ -631,7 +637,10 @@
                                 </div>
                             </aside>
 
+                            <aside class="widget bookmark-widget ">
+                                {!! $ads->box !!}
 
+                            </aside>
 
 
                         </div>
