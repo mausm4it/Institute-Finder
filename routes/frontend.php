@@ -95,3 +95,8 @@ Route::get('/auth/{client}/callback', 'ProviderController@callback')->name('logi
 //     dd('Ok DOne');
     
 // });
+
+
+Route::get('/check-auth-status', function() {
+  return response()->json(['authenticated' => Auth::check()]);
+});

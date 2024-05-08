@@ -32,7 +32,8 @@ class RolePermissionSeeder extends Seeder
         Permission::create(['name' => 'control subscriber']);
         Permission::create(['name' => 'control mail settings']);
         Permission::create(['name' => 'control ads']);
-       
+        Permission::create(['name' => 'control social login']);
+        
         
         
         

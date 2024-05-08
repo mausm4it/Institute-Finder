@@ -312,6 +312,18 @@
                  @endcan
 
 
+                 @can('control social login')
+                     <li class="menu-item">
+                         <a href="{{ route('social-login') }}" class="menu-link">
+
+                             <span class="menu-icon"><i class="mgc_target_fill"></i></span>
+
+                             <span class="menu-text">Social Login Settings</span>
+                         </a>
+                     </li>
+                 @endcan
+
+
 
 
 

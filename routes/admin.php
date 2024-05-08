@@ -226,4 +226,13 @@ Route::middleware(['role_or_permission:control ads'])->group(function () {
 });
 
 
+//Social Login Info
+Route::middleware(['role_or_permission:control social login'])->group(function () {
+    Route::get('/social-login', 'ProviderController@index')->name('social-login');
+    Route::post('/update-social-login-github', 'ProviderController@UpdateGithub')->name('update-social-login-github');
+    Route::post('/update-social-login-google', 'ProviderController@UpdateGoogle')->name('update-social-login-google');
+    Route::post('/update-social-login-facebook', 'ProviderController@UpdateFacebook')->name('update-social-login-facebook');
+});
+
+
 });

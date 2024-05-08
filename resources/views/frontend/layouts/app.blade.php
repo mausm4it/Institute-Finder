@@ -48,8 +48,96 @@
 <body>
     <div class="site-content">
         {{-- @include('frontend.layouts.header') --}}
+
+
+
+
         @yield('header')
         <div id="sticky-header" class="sticky-header-one"></div>
+
+        @if (Auth::guest())
+            <div class="modal fade bd-example-modal-lg" id="loginPopup" tabindex="-1" role="dialog"
+                aria-labelledby="loginPopupLabel" aria-hidden="true">
+                <div class="modal-dialog d-flex justify-content-center" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+
+                            <h5 class="modal-title" id="loginPopupLabel">Login Required</h5>
+
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <p class="text-white text-center bg-success shadow-lg p-3 m-1 rounded">If You Want To See More
+                            Information And Apply
+                            Institutes
+                        </p>
+                        <div class="modal-body">
+                            <form id="signup-form" class="default-form signup-form" method="POST"
+                                action="{{ route('register') }}">
+                                @csrf
+                                <div class="form-group">
+                                    <input id="name" name="name" class="form-controllar" type="text"
+                                        placeholder="Name" required>
+                                    <span class="icon-user-1"></span>
+                                </div><!--/.form-group-->
+                                <div class="form-group">
+                                    <input id="email-up" name="email" class="form-controllar" type="email"
+                                        placeholder="Email Address" required>
+                                    <span class="icon-email"></span>
+                                </div><!--/.form-group-->
+                                <div class="form-group">
+                                    <input id="pass-up" name="password" class="form-controllar" type="password"
+                                        placeholder="Password" required>
+                                    <span class="icon-key3"></span>
+                                </div><!--/.form-group-->
+
+                                <div class="form-group">
+                                    <input id="pass-up-confirm" name="password_confirmation" class="form-controllar"
+                                        type="password" placeholder="Confirm Password" required>
+                                    <span class="icon-key3"></span>
+                                </div><!--/.form-group-->
+
+                                <div class="form-btn-group">
+                                    <button type="submit" class="btn btn-default btn-register btn-lg btn-block">
+                                        Register
+                                    </button>
+
+                                    <br>
+                                    <span>If you already Register</span>
+                                    <a href="{{ route('login') }}" class="text-success">
+                                        <b>Sign In</b>
+                                    </a>
+                                    <div class="reg-others-midea">
+                                        <div class="text">
+                                            Or Connect With
+                                        </div>
+                                        <div class="midea-icons">
+                                            <ul class="social-share">
+
+                                                <li><a class="twitter" href="{{ url('/auth/github/redirect') }}"><i
+                                                            class="fab fa-github"></i></a></li>
+                                                <li><a class="google-plus"
+                                                        href="{{ url('/auth/google/redirect') }}"><i
+                                                            class="fab fa-google"></i></a></li>
+                                                <li><a class="facebook"
+                                                        href="{{ url('/auth/facebook/redirect') }}"><i
+                                                            class="fab fa-facebook-f"></i></a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+
         @yield('content')
         @include('frontend.layouts.footer')
 
@@ -57,6 +145,29 @@
 
 
 
+    <script>
+        var idleTime = 0;
+        $(document).ready(function() {
+            // Increment the idle time counter every minute
+            var idleInterval = setInterval(timerIncrement, 6000); // 1 minute
+
+            // Reset the idle time counter on any user activity
+            $(this).mousemove(function(e) {
+                idleTime = 0;
+            });
+            $(this).keypress(function(e) {
+                idleTime = 0;
+            });
+
+            function timerIncrement() {
+                idleTime++;
+                if (idleTime > 2) { // Show popup after 2 minutes of inactivity
+                    // Show your login popup here
+                    $('#loginPopup').modal('show');
+                }
+            }
+        });
+    </script>
 
     <script src="{{ asset('public/frontend/assets/js/jquery.js') }}"></script>
     <script src="{{ asset('public/frontend/assets/js/popper.min.js') }}"></script>

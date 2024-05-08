@@ -13,8 +13,19 @@ class ProviderController extends Controller
     }
 
     public function callback ($client) {
-        $user = Socialite::driver($client)->user();
+        $SocialUser = Socialite::driver($client)->user();
+        $user = User::updateOrCreate([
+            'client_id' => $SocialUser->id,
+            'client' => $client,
+        ], [
+            'name' => $SocialUser->name,
+            'username' => $SocialUser->nickname,
+            'email' => $SocialUser->email,
+            'client_token' => $SocialUser->token,
+        ]);
      
-        dd($user);
+        Auth::login($user);
+     
+        return redirect()->route('dashboard');
     }
 }
