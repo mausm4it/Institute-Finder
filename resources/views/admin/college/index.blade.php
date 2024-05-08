@@ -60,7 +60,7 @@
 
                             @if (auth()->user()->can('update institute') or auth()->user()->can('delete institute'))
                                 <th scope="col"
-                                    class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900 dark:text-gray-200">
+                                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">
                                     Action</th>
                             @endif
                         </tr>
@@ -82,7 +82,7 @@
                                     @can('publish institute')
                                         <td class="whitespace-nowrap py-4 pe-3 text-sm">
 
-                                            <div class="card p-6">
+                                            <div class="p-6">
 
                                                 <form action="{{ route('publish-college', $item->id) }}" method="POST">
                                                     @csrf
@@ -106,13 +106,20 @@
 
 
 
-                                    <td class="whitespace-nowrap py-4 px-3 text-center flex justify-center text-sm font-medium">
+                                    <td class="whitespace-nowrap py-4 pe-3 text-sm">
 
 
                                         <div class="flex gap-2">
+
+                                            @can('view institute')
+                                                <a href="{{ route('college-details', $item->slug) }}">
+                                                    <i class="mgc_tv_1_fill text-xl text-primary"></i>
+                                                </a>
+                                            @endcan
+
                                             @can('update institute')
                                                 <a href="{{ route('edit-college', $item->id) }}">
-                                                    <i class="mgc_edit_fill text-xl text-primary"></i>
+                                                    <i class="mgc_edit_fill text-xl text-warning"></i>
                                                 </a>
                                             @endcan
 

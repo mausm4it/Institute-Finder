@@ -149,7 +149,7 @@
         var idleTime = 0;
         $(document).ready(function() {
             // Increment the idle time counter every minute
-            var idleInterval = setInterval(timerIncrement, 6000); // 1 minute
+            var idleInterval = setInterval(timerIncrement, 10000); // 1 minute
 
             // Reset the idle time counter on any user activity
             $(this).mousemove(function(e) {

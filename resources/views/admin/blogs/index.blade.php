@@ -307,7 +307,7 @@
 
                             @if (auth()->user()->can('update article') or auth()->user()->can('delete article'))
                                 <th scope="col"
-                                    class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900 dark:text-gray-200">
+                                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">
                                     Action</th>
                             @endif
 
@@ -336,7 +336,7 @@
                                     @can('publish article')
                                         <td class="whitespace-nowrap py-4 pe-3 text-sm">
 
-                                            <div class="card p-6">
+                                            <div class=" p-6">
 
                                                 <form action="{{ route('publish-blog', $item->id) }}" method="POST">
                                                     @csrf
@@ -358,10 +358,16 @@
                                         </td>
                                     @endcan
 
-                                    <td class="whitespace-nowrap py-4 px-3  flex justify-center text-sm font-medium">
+                                    <td class="whitespace-nowrap py-4 pe-3 text-sm">
+                                        @can('view institute')
+                                            <a href="{{ route('blog-details', $item->slug) }}">
+                                                <i class="mgc_tv_1_fill text-2xl pe-2 text-primary"></i>
+                                            </a>
+                                        @endcan
+
                                         @can('update article')
                                             <a href="{{ route('update-blog-view', $item->id) }}"><i
-                                                    class="mgc_edit_fill text-2xl text-primary pe-2"></i></a>
+                                                    class="mgc_edit_fill text-2xl text-warning pe-2"></i></a>
                                         @endcan
 
 
