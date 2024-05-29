@@ -7,6 +7,7 @@
                 <div class="subscribe-form">
                     <form method="POST" action="{{ route('subscriber') }}"
                         class="advance-search-form border border-warning rounded-left">
+                        @csrf
                         <div class="inner-form">
                             <div class="advance-form-input search">
                                 <input name="email" id="email" type="email" placeholder="Enter Your Email"

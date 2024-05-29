@@ -88,6 +88,13 @@
                                         placeholder="Email Address" required>
                                     <span class="icon-email"></span>
                                 </div><!--/.form-group-->
+
+                                <div class="form-group">
+                                    <input id="phone" name="phone" class="form-controllar" type="text"
+                                        placeholder="Phone Number" required>
+                                    <span class="icon-phone"></span>
+                                </div><!--/.form-group-->
+
                                 <div class="form-group">
                                     <input id="pass-up" name="password" class="form-controllar" type="password"
                                         placeholder="Password" required>
@@ -149,7 +156,7 @@
         var idleTime = 0;
         $(document).ready(function() {
             // Increment the idle time counter every minute
-            var idleInterval = setInterval(timerIncrement, 10000); // 1 minute
+            var idleInterval = setInterval(timerIncrement, 9000); // 1 minute
 
             // Reset the idle time counter on any user activity
             $(this).mousemove(function(e) {

@@ -116,7 +116,7 @@
                              @can('control type of institute')
                                  <li class="menu-item">
                                      <a href="{{ route('type-of-college') }}" class="menu-link">
-                                         <span class="menu-text">Type Of College</span>
+                                         <span class="menu-text">Type Of Institute</span>
                                      </a>
                                  </li>
                              @endcan
@@ -302,7 +302,7 @@
 
                  @can('control ads')
                      <li class="menu-item">
-                         <a href="{{ route('mail-control') }}" class="menu-link">
+                         <a href="{{ route('ads') }}" class="menu-link">
 
                              <span class="menu-icon"><i class="mgc_announcement_fill"></i></span>
 
